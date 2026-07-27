@@ -1,22 +1,21 @@
 import type { NavItem, PageContent, SiteMeta } from './types';
+import { f } from './filler';
 
 export const siteMeta: SiteMeta = {
 	coupleNames: 'Carolina & Fred',
-	date: 'September 7, 2024',
+	brandNames: 'Fred & Caro',
+	date: 'July 3, 2027',
 	location: 'Villa de Leyva, Boyacá, Colombia',
 	titleSuffix: 'Carolina & Fred',
-	countdownTarget: '2024-09-07T15:00:00'
+	countdownTarget: '2027-07-03T15:00:00'
 };
 
-const placeholderCarousel = [
-	{ src: '/placeholders/photo-1.svg', alt: 'Couple photo 1', aspect: 'landscape' as const },
-	{ src: '/placeholders/photo-2.svg', alt: 'Couple photo 2', aspect: 'landscape' as const },
-	{ src: '/placeholders/photo-3.svg', alt: 'Couple photo 3', aspect: 'portrait' as const }
-];
-
-const placeholderStory = [
-	{ src: '/placeholders/photo-1.svg', alt: 'Story photo', aspect: 'portrait' as const },
-	{ src: '/placeholders/photo-2.svg', alt: 'Story photo', aspect: 'portrait' as const }
+const storyCarousel = [
+	{ src: '/images/carousel-1.jpg', alt: 'Fred and Caro', aspect: 'portrait' as const },
+	{ src: '/images/carousel-2.jpg', alt: 'Fred and Caro', aspect: 'portrait' as const },
+	{ src: '/images/carousel-3.jpg', alt: 'Fred and Caro', aspect: 'portrait' as const },
+	{ src: '/images/carousel-4.jpg', alt: 'Fred and Caro', aspect: 'portrait' as const },
+	{ src: '/images/carousel-5.jpg', alt: 'Fred and Caro', aspect: 'portrait' as const }
 ];
 
 export const navigation: NavItem[] = [
@@ -28,39 +27,48 @@ export const navigation: NavItem[] = [
 	{ label: 'About Colombia', href: '/about-colombia/' },
 	{
 		label: 'Recommendations',
-		href: '/hair-makeup/',
+		href: '/food-and-drink/',
 		children: [
+			{ label: 'Food and Drink', href: '/food-and-drink/' },
 			{ label: 'Things to do', href: '/things-to-do/' },
 			{ label: 'Hotels', href: '/hotels/' },
-			{ label: 'Restaurants', href: '/restaurants/' },
-			{ label: 'Hair and Makeup', href: '/hair-makeup/' }
+			{ label: 'Restaurants', href: '/restaurants/' }
 		]
 	},
-	{ label: 'FAQs', href: '/faqs/' },
-	{ label: 'Gifts', href: '/gifts/' },
-	{ label: '🇪🇸 Spanish', href: '/espanol1/' }
+	{ label: 'FAQs', href: '/faqs/' }
 ];
 
 export const navigationEs: NavItem[] = [
-	{ label: 'Carolina & Fred', href: '/espanol1/' }
+	{ label: 'Inicio', href: '/es/' },
+	{ label: 'Nuestra Historia', href: '/es/our-story/' },
+	{ label: 'RSVP', href: '/es/rsvp/' },
+	{ label: 'Horario', href: '/es/schedule/' },
+	{ label: 'Viaje', href: '/es/travel-information/' },
+	{ label: 'Preguntas', href: '/es/faqs/' }
 ];
 
 export const pages: Record<string, PageContent> = {
 	'/': {
 		type: 'home',
 		title: 'HOME',
-		carousel: placeholderCarousel,
+		hero: {
+			src: '/images/hero.jpg',
+			alt: 'Fred and Caro',
+			aspect: 'landscape'
+		},
+		carousel: storyCarousel,
 		paragraphs: [
-			'We are absolutely thrilled to share this enchanting weekend with you. The air in Villa de Leyva holds a unique enchantment, and we can\u2019t fathom commencing our lifelong journey together anywhere else but here, in your company. Despite the distance for most of our guests, we\u2019ve spared no effort to make the costs manageable and the journey convenient, ensuring that this will be an unforgettable, fairy-tale weekend that will live in our hearts for a lifetime.',
-			'Given the location and logistics of the wedding, we kindly request your RSVP by June 15 through the RSVP tab.'
+			'We are so excited to share this weekend with you, and greatly appreciate you for the impact on our journies that lead us to each other.',
+			'We have detailed information about the wedding location, travel, and accommodations [here](/travel-information/). Please reach out to us if you have any questions.',
+			'Given the location and logistics of the wedding, we kindly request your RSVP by ' + f('May 15, 2027') + ' through the RSVP tab.',
+
+			'Fred and Caro'
 		],
 		countdownTarget: siteMeta.countdownTarget,
-		hashtag: {
-			title: '#FredIsLuckyGuy',
-			paragraphs: [
-				'Help us share and relate this great day with images.',
-				'Upload photos of before, during and after the wedding.'
-			]
+		details: {
+			date: 'July 3, 2027',
+			time: '3:00 PM',
+			venue: 'Casa de Buganvilias, Villa de Leyva'
 		}
 	},
 	'/our-story/': {
@@ -68,16 +76,11 @@ export const pages: Record<string, PageContent> = {
 		title: 'Our Story',
 		sections: [
 			{
-				heading: 'I\u2019ve never believed in love at first sight but...',
+				heading: '',
 				paragraphs: [
-					'... I feel like I\u2019ve loved Carolina since the day we met. It was after the wedding ceremony of our good friends Tico and Elisa, and the party was in full swing. Salsa music filled the room, and the dance floor was packed. I asked for her number that night; I knew I had to see her again.',
-					'Shortly after, we had our first date. And then our second, third, fourth... We talked about what we love, what we hate, our values, dreams, and everything in between. It was April, and Carolina was out of town. This was the first time we had been apart since we started dating, both on two-week vacations on opposite sides of the world. I had stopped at her house to drop off something, and as I was leaving, I turned around and said...',
-					'I love you, Carolina, and I can\u2019t wait to be your husband.',
-					'Then I got to planning. I didn\u2019t know how I was going to ask her, but I knew it had to be special. She had always mentioned her dream was to visit Paris, and I had already promised to make it happen.',
-					'I wasn\u2019t done yet. I conspired with her closest friends and arranged a celebration with our closest family and friends at a local spot, Lagniappe, one of her favorites. We spent that night celebrating with the people we love most.',
-					'Every day I wonder, how is it possible that I can love this woman more than I already do? But then I wake up, and that very fact is true. I truly feel like the luckiest man in the world.'
-				],
-				images: placeholderStory
+					'Fred and Caro met for the first time in March 2024 at a board game bar in Washington DC for a bumble date.',
+					'REST OF STORY HERE...'			],
+				images: storyCarousel
 			}
 		]
 	},
@@ -85,8 +88,8 @@ export const pages: Record<string, PageContent> = {
 		type: 'rsvp',
 		title: 'RSVP',
 		intro: [
-			'Due to limited space, we are only able to accommodate guests formally invited on your wedding invitation. If you have a plus one, it will be listed on your wedding invite and if you have any doubts check with the bride or groom.',
-			'Please RSVP individually for every person attending the wedding.'
+			'Please let us know if you will be able to attend the wedding by filling out the form below. We look forward to celebrating with you!',
+			'MORE RSVP INSTRUCTIONS HERE...'
 		],
 		fields: [
 			{ name: 'name', label: 'Name', type: 'text', placeholder: 'Name', required: true },
@@ -140,99 +143,34 @@ export const pages: Record<string, PageContent> = {
 			}
 		],
 		submitLabel: 'Send',
-		submitMessage: 'RSVP submission is not yet connected. Thank you for your interest!'
+		submitMessage: 'Thank you! Your RSVP has been received.'
 	},
 	'/schedule/': {
 		type: 'schedule',
 		title: 'Schedule',
+		mapNote: 'A map will be added closer to the date.',
 		days: [
 			{
-				date: 'Wednesday, September 4',
+				date: 'Friday, July 2, 2027',
 				events: [
 					{
-						title: 'Chiva Bus in Bogota | 7:00 PM',
+						title: 'Welcome Dinner',
 						paragraphs: [
-							'If you arrive early into the city, join the bride & groom for a Chiva ride around the city followed by some bites and drinks at the famous Andres D.C. and night caps at another favorite spot.',
-							'Since this is not a formal part of the wedding festivities, let us know you\u2019re interested in coming by clicking here.',
-							'The chiva ride has a limit to the first 30 people to sign up! If it fills up, folks are welcome to join us at another stop of the night.'
-						],
-						links: [{ label: 'here', href: '#' }]
-					}
-				]
-			},
-			{
-				date: 'Friday, September 6',
-				events: [
-					{
-						title: 'Bus Ride to Villa de Leyva | 10:00 AM \u2013 1:00 PM',
-						paragraphs: [
-							'Buses will leave from Bogota and travel directly to Villa de Leyva.',
-							'The pick-up spot will be updated closer to the date.',
-							'We ask that if you reside in Bogota, and own a vehicle, you drive on your own to Villa de Leyva.'
-						]
-					},
-					{
-						title: 'Welcome Reception | 8:00 PM \u2013 10:00 PM',
-						paragraphs: [
-							'Join us for a welcome reception right on the town\u2019s iconic main plaza. Light bites & drinks will be provided.',
-							'Note: No kid friendly.',
-							'Location: La Oster\u00eda',
-							'Attire: Cocktail',
-							'* Please refrain from wearing white*',
-							'Do you need ideas for what to wear? >> Click Here <<'
-						],
-						links: [
-							{ label: 'La Oster\u00eda', href: '#' },
-							{ label: 'Click Here', href: '#' }
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+							`Time: ${f('7:00 PM')} · Location: ${f('Plaza Mayor area, Villa de Leyva')}.`
 						]
 					}
 				]
 			},
 			{
-				date: 'Saturday, September 7',
+				date: 'Saturday, July 3, 2027',
 				events: [
 					{
-						title: 'Bus Ride to Casa de Buganvilla | 2:00 PM',
+						title: 'Wedding Ceremony, Dinner and Party | 3:00 PM',
 						paragraphs: [
-							'Busses will pick up all guests at Colegio Ricaurte.',
-							'If you drove into town, there is parking onsite.'
-						],
-						links: [{ label: 'Colegio Ricaurte', href: '#' }]
-					},
-					{
-						title: 'Wedding Ceremony, Dinner and Party | 3:00 PM \u2013 2:00 AM',
-						paragraphs: [
-							'Location: Casa de Buganvillas',
+							'Location: Casa de Buganvilias, Villa de Leyva',
 							'Attire: Formal Attire',
-							'Ladies, please refrain from wearing white, nudes, light pinks, lavender, metallics (gold or silver) and any glitter / shinny attire. If you have any questions, reach out to the bride. Thank you for your cooperation!',
-							'Do you need ideas for what to wear? >> Click Here <<',
-							'Note: No kid friendly'
-						],
-						links: [
-							{ label: 'Casa de Buganvilias', href: '#' },
-							{ label: 'Click Here', href: '#' }
-						]
-					},
-					{
-						title: 'Bus Ride to Villa de Leyva | Beginning at 12:00 AM',
-						paragraphs: [
-							'Buses will depart from Casa de Buganvillas to Villa de Leyva town at 12:00 AM, 1:00 AM and 2:00 AM'
-						]
-					}
-				],
-				location: {
-					heading: 'Location',
-					description: 'How to get to Casa de Buganvilias'
-				}
-			},
-			{
-				date: 'Sunday, September 8',
-				events: [
-					{
-						title: 'Return Bus Ride to Bogota | 11:00 AM \u2013 1:00 PM',
-						paragraphs: [
-							'Buses will leave from Villa de Leyva and travel directly to Bogota.',
-							'The schedule and pick-up spot will be updated closer to the date.'
+							'Ladies, please refrain from wearing white, nudes, light pinks, lavender, metallics (gold or silver) and any glitter / shinny attire. Thank you for your cooperation!',
 						]
 					}
 				]
@@ -243,55 +181,45 @@ export const pages: Record<string, PageContent> = {
 		type: 'sections',
 		title: 'Travel Information',
 		intro: [
-			'Our wedding will take place in the town of Villa de Leyva, three hours outside of the city of Bogota.',
-			'The best way to get there is to fly into Bogota and take either the bus provided by the bride and groom or book your own private transport.',
-			'Please see below for more information!'
+			"We're so excited to celebrate with you in Colombia! To help make your journey as smooth as possible, we've put together some helpful travel information below."
 		],
 		sections: [
 			{
-				heading: 'FLYING INTO EL DORADO INTERNATIONAL AIRPORT (BOG)',
-				level: 5,
+				heading: 'Flying to Colombia',
+				level: 4,
 				paragraphs: [
-					'For those visiting from out-of-town, we recommend you fly into El Dorado International Airport (BOG).'
-				],
-				children: [
-					{
-						heading: 'Important Passport Information',
-						level: 6,
-						paragraphs: [
-							'To travel internationally, most airlines require you to have 6 months validity left on your passport. Please check your passport.'
-						]
-					},
-					{
-						heading: 'VISAS',
-						level: 6,
-						paragraphs: [
-							'Citizens from the EU, the US, Brazil and a number of other countries do not need a visa to enter Colombia.'
-						]
-					},
-					{
-						heading: 'Customs at BOG',
-						level: 6,
-						paragraphs: [
-							'It is a mandatory requirement for all travelers entering Colombia to obtain a Check-MIG Colombia form. The Check MIG form is Colombia\u2019s version of a health declaration form, which requires all visitors to complete it before arrival.',
-							'Upon arriving you\u2019ll be shuffled to the customs line which can take anywhere from 30 mins to 2 hrs. depending on the air traffic. The customs officer will view your CheckMIG form, make sure to have it ready.'
-						],
-						links: [{ label: 'Check-MIG', href: 'https://apps.migracioncolombia.gov.co/pre-registro/public/preregistro.jsf' }]
-					}
+					"If you're traveling internationally, please book your flight to El Dorado International Airport (BOG) in Bogotá, Colombia. Bogotá is the country's largest international gateway and offers direct flights from many cities across North America, Europe, and Latin America."
 				]
 			},
 			{
-				heading: 'TRANSPORTATION IN BOGOTA',
+				heading: 'Passport & Visa Information',
 				level: 4,
 				paragraphs: [
-					'Although in general Colombia is a safe country, please take extra precautions and do not hail a cab from the streets. Instead use any of the below options:'
+					'Please ensure your passport is valid for at least six months beyond your date of entry into Colombia.',
+					'Many nationalities, including travelers from the United States, Ireland, the United Kingdom, and most European Union countries, do not require a tourist visa for short visits. However, entry requirements can change, so we encourage all guests to verify the latest requirements based on their nationality before traveling.'
+				]
+			},
+			{
+				heading: 'Customs at BOG',
+				level: 4,
+				paragraphs: [
+					'It is a mandatory requirement for all travelers entering Colombia to obtain a Check-MIG Colombia form. The Check MIG form is Colombia\u2019s version of a health declaration form, which requires all visitors to complete it before arrival.',
+					'Upon arriving you\u2019ll be shuffled to the customs line which can take anywhere from 30 mins to 2 hrs. depending on the air traffic. The customs officer will view your CheckMIG form, make sure to have it ready.'
+				],
+				links: [{ label: 'Check-MIG', href: 'https://apps.migracioncolombia.gov.co/pre-registro/public/preregistro.jsf' }]
+			},
+			{
+				heading: 'Transportation in Bogotá',
+				level: 4,
+				paragraphs: [
+					'Bogotá offers a variety of transportation options, including official airport taxis, ride-share services such as Uber, and private transportation. Although in general Colombia is a safe country, please take extra precautions and DO NOT hail a cab off the street.'
 				],
 				children: [
 					{
 						heading: 'UBER',
 						level: 6,
 						paragraphs: [
-							'Uber works like it does in anywhere else. Uber drivers prefer that the front passenger seat is taken first and then passengers can board the back.'
+							'Uber works like it does anywhere else and is incredibly cheap. In Colombia, Uber drivers prefer that the front passenger seat is taken first and then passengers can board the back.'
 						]
 					},
 					{
@@ -305,91 +233,129 @@ export const pages: Record<string, PageContent> = {
 						heading: 'Hotel Shuttle',
 						level: 6,
 						paragraphs: [
-							'Inquire with your hotel about the shuttles available to and from your Bogot\u00e1 hotel and the BOG airport.'
+							'Inquire with your hotel about the shuttles available to and from your Bogotá hotel and the BOG airport.'
 						]
 					}
 				]
 			},
 			{
-				heading: 'TRAVEL TO VILLA DE LEYVA VIA BUS',
+				heading: 'Transportation to Villa de Leyva',
 				level: 4,
 				paragraphs: [
-					'The bride and groom are going the extra mile to ensure the comfort and convenience of their guests. We will be providing transportation with a 3-4 hour bus ride. We hope your journey to Villa de Leyva is comfortable and enjoyable!',
-					'We ask that if you reside in Bogota, and own a vehicle, you drive on your own to Villa de Leyva. Thank you for your cooperation!',
-					'For those guests that will need transportation with a different schedule, we recommend booking private tourism transport at the cost of $150 USD approximately per trip. For more information, send a e-mail to the bride or groom.'
+					'We will be providing complimentary transportation from Bogotá to Villa de Leyva and back for wedding guests.',
+					'The journey is approximately 3 hours by private bus, and we hope you\'ll enjoy the beautiful scenery along the way while traveling together with family and friends.',
+					'If you reside in Bogotá and have access to a vehicle, we kindly ask that you drive directly to Villa de Leyva instead of using the provided transportation. Thank you for your cooperation!',
+					`For guests whose travel itinerary does not align with the scheduled shuttle times, we recommend arranging private transportation. Please contact ${f('+57 310 555 0198')} for additional information and recommendations.`
 				]
 			}
 		]
 	},
 	'/about-colombia/': {
-		type: 'sections',
+		type: 'colombia',
 		title: 'About Colombia',
 		intro: [
-			'We are thrilled to welcome you to Villa de Leyva, Colombia!',
-			'Our journey begins in the vibrant capital city, Bogot\u00e1, where we\u2019ll embark on a scenic bus ride to the enchanting town where our wedding will take place. While our wedding festivities will be centered in Villa de Leyva, we encourage you to explore more of this beautiful country.',
-			'In addition to providing information about the places you\u2019ll be visiting with us, we\u2019ve also included recommendations for must-see spots beyond our wedding festivities. Colombia truly has so much to offer!'
+			'Thank you so much for coming all the way here. It means the world to us that you have travelled so far to celebrate our love!',
+			"Welcome to beautiful Colombia, the world's second most biodiverse country, where breathtaking landscapes, vibrant culture, and warm hospitality await you!",
+			'Your journey begins in Bogotá, our vibrant capital city, where we will provide travelling options to the picturesque town of Villa de Leyva, Boyacá, the beautiful setting for our wedding celebration.',
+			"Although our wedding weekend will be centered in Villa de Leyva, we hope you'll have the opportunity to discover more of Colombia during your visit. To help you make the most of your trip, we've included recommendations for the destinations you'll experience with us, as well as a few of our favorite places throughout the country.",
+			"Whether you're drawn to colonial towns, lush mountains, Caribbean beaches, or world-renowned coffee regions, Colombia offers something for everyone. We can't wait for you to experience the warmth, beauty, and diversity of the country that welcomed Caro into this world!"
 		],
+		cities: [
+			{
+				heading: 'Bogotá',
+				scriptHeading: true,
+				paragraphs: [
+					"Bogotá is a high-altitude metropolis nestled in the Andes Mountains (8,660 feet above sea level) and the vibrant capital of Colombia, offering a captivating blend of rich history, cultural diversity, and breathtaking natural landscapes. If you have extra time before or after the wedding, we highly recommend exploring some of Bogotá's highlights. Please see our Recommendations section for things to do in Bogotá.",
+					"In Bogotá, the average low temperatures range from 7°C to 10°C (45°F to 50°F), while daytime highs typically range from 14°C to 19°C (57°F to 66°F). Due to its high altitude, Bogotá’s weather can change quickly, so it’s a good idea to dress in layers and be prepared for variations."
+				],
+				image: { src: '/images/bogota.jpg', alt: 'Bogotá', aspect: 'portrait' }
+			},
+			{
+				heading: 'Villa de Leyva',
+				scriptHeading: true,
+				paragraphs: [
+					"Nestled in the mountains of the Boyacá department (state), Villa de Leyva is one of Colombia's most charming and well-preserved colonial towns, where our wedding will take place. Founded in 1572, its cobblestone streets, whitewashed buildings, and timeless architecture create a setting that feels like stepping back in time. At the heart of the town lies the iconic Plaza Mayor—one of the largest town squares in South America—surrounded by cafés, artisan shops, and historic landmarks. Villa de Leyva is known for local olive oil, wine and leather goods. It's a place where history, nature, and romance come together—making it the perfect destination to celebrate one of the most meaningful weekends of our lives. We can't wait to share this magical town with you.",
+					'To see more recommendations about what to do in Villa de Leyva and surroundings, visit Things to do.'
+				],
+				image: { src: '/images/villa-de-leyva.jpg', alt: 'Villa de Leyva', aspect: 'landscape' }
+			},
+			{
+				heading: 'Cartagena',
+				paragraphs: [
+					"Cartagena is one of Colombia’s most vibrant coastal destinations, known for its colorful colonial architecture, Caribbean atmosphere, and lively historic walled city filled with plazas, restaurants, and street music. You can spend your days walking through the UNESCO-listed Old Town, visiting the imposing Castillo de San Felipe, relaxing on nearby beaches like Bocagrande or taking a boat trip to the Rosario Islands for clear turquoise water and coral reefs. To get there from Bogotá, the most efficient option is a direct flight, which takes about 1.5 to 2 hours from El Dorado International Airport; multiple airlines operate frequent daily routes."
+				],
+				image: { src: '/images/cartagena.jpg', alt: 'Cartagena', aspect: 'portrait' }
+			},
+			{
+				heading: 'Santa Marta',
+				paragraphs: [
+					"Santa Marta is one of Colombia’s most beautiful Caribbean destinations, known for its laid-back beach vibe, warm waters, and access to some of the country’s most stunning natural landscapes. It’s the perfect mix of history and nature: you can explore the historic downtown (one of the oldest cities in South America), relax along nearby beaches like Rodadero or Taganga, or take a short trip into the mountains to reach the breathtaking Tayrona National Natural Park, where jungle meets turquoise sea. To get there from Bogotá, the easiest option is a direct flight to Santa Marta, which takes around 1.5 to 2 hours."
+				],
+				image: { src: '/images/santa-marta.jpg', alt: 'Santa Marta', aspect: 'portrait' }
+			},
+			{
+				heading: 'Medellín',
+				paragraphs: [
+					'Medellín, known as the “City of Eternal Spring,” is one of Colombia’s most dynamic and innovative destinations, offering a perfect mix of culture, nightlife, and mountain scenery. Set in the Aburrá Valley, it’s famous for its year-round pleasant weather, vibrant neighborhoods like El Poblado and Laureles, and its transformation into a hub of design, art, and technology. Visitors can ride the iconic cable cars over the hillside communities, explore Plaza Botero and the Museum of Antioquia, or take day trips to nearby gems like Guatapé and the striking El Peñol rock. To get there from Bogotá, the fastest and most convenient option is a direct flight, which takes about 1 hour.'
+				],
+				image: { src: '/images/medellin-1.jpg', alt: 'Medellín', aspect: 'portrait' }
+			},
+			{
+				heading: 'Eje Cafetero',
+				paragraphs: [
+					"The Eje Cafetero, or Coffee Region, is one of the most scenic and charming areas of Colombia, famous for its rolling green hills, colonial-style towns, and coffee plantations. It’s best explored through its picturesque towns like Salento, known for its colorful streets and access to the stunning Cocora Valley, home to the tallest wax palm trees in the world. Nearby, Manizales offers breathtaking mountain views and hot springs, while Filandia is a quieter, equally colorful alternative to Salento with artisanal shops and beautiful viewpoints.",
+					'The Eje Cafetero is very accessible from Bogotá, and the most convenient option is a direct flight to the main regional airports in Manizales or Armenia, which take about 1 hour. From any of these cities, you can easily reach nearby coffee towns like Salento or Filandia by car or shared jeep (around 30 minutes to 1.5 hours depending on the destination).'
+				],
+				image: { src: '/images/eje-cafetero.jpg', alt: 'Eje Cafetero', aspect: 'portrait' }
+			},
+			{
+				heading: 'The Amazon Rainforest',
+				paragraphs: [
+					'Amazon Rainforest in Colombia is one of the most remote and biodiverse regions on the planet, offering a completely different experience from the country’s cities and coastal destinations. Centered around the small jungle gateway town of Leticia, the region sits at the triple border of Colombia, Peru, and Brazil and is only accessible by air or river, which helps preserve its untouched, immersive feel. From Leticia, travelers can take guided boat trips along the Amazon River, spot pink river dolphins, visit indigenous communities, hike through dense jungle with expert guides, and experience incredible wildlife including monkeys, exotic birds, and unique plant species. To get there from Bogotá, the only option is a direct flight to Leticia, which takes about 2 hours—there are no road connections.',
+					'Visiting the Amazon Rainforest is incredible, but it does require some real preparation because conditions are very different from typical travel destinations and certain vaccines are required. If you’re interested in exploring the Amazon, please let us know to help you find certified local guides.'
+				],
+				image: { src: '/images/amazon.jpg', alt: 'Amazon Rainforest', aspect: 'square' }
+			}
+		]
+	},
+	'/food-and-drink/': {
+		type: 'sections',
+		title: 'Food and Drink',
+		intro: ['What must I try while visiting Colombia?'],
 		sections: [
 			{
-				heading: 'VILLA DE LEYVA',
-				level: 3,
+				heading: 'Fruits',
+				level: 4,
 				paragraphs: [
-					'Villa de Leyva is a charming colonial town located in the heart of Colombia, known for its stunning beauty and rich history. We hope you are captivated by the well-preserved cobblestone streets, whitewashed buildings, and the picturesque main plaza.',
-					'Here, you can immerse yourself in the town\u2019s colonial past, with structures dating back to the 16th century, including the Casa de Nari\u00f1o, where the first Colombian president was born.',
-					'Surrounded by beautiful countryside and desert landscapes, Villa de Leyva is the perfect destination for outdoor enthusiasts. You can explore the nearby Iguaque National Park, visit the iconic El F\u00f3sil, and much more.'
+					'Colombia is one of the most fruit-diverse countries in the world and many of those fruits only grow here! Caro’s personal recommendations are:'
+				],
+				list: [
+					'Lulo (citrusy, tangy — used in juices)',
+					'Guanábana (creamy tropical fruit, often in smoothies)',
+					'Feijoa',
+					'Chontaduro (salty, starchy fruit, often eaten with honey or salt)',
+					'Granadilla',
+					'Uchuva (golden berry)'
 				]
 			},
 			{
-				heading: 'BOGOT\u00c1',
-				level: 3,
-				paragraphs: [
-					'Bogot\u00e1, the vibrant capital of Colombia, is a city that offers a captivating blend of rich history, cultural diversity, and breathtaking natural landscapes.',
-					'As you explore this high-altitude metropolis nestled in the Andes Mountains, you\u2019ll be greeted by a plethora of experiences. We recommend you take a few days (if you can) to explore all it has to offer.',
-					'Bogot\u00e1 also boasts an exciting culinary scene with a wide range of traditional Colombian dishes and international cuisine. For panoramic views of the city, visit Monserrate, a mountaintop sanctuary.',
-					'In Bogot\u00e1, the average low temperatures range from 7\u00b0C to 10\u00b0C (45\u00b0F to 50\u00b0F), while daytime highs typically range from 14\u00b0C to 19\u00b0C (57\u00b0F to 66\u00b0F).'
+				heading: 'Traditional Cuisine',
+				level: 4,
+				list: [
+					'Ajiaco santafereño: iconic Bogotá soup with chicken, 3 types of potatoes, corn, capers, and cream',
+					'Sancocho de gallina: chicken soup with potatoes, yuca and green plantains',
+					'Caldo de costilla: beef rib broth, typically eaten for breakfast with rice',
+					'Tamales tolimenses: wrapped in banana leaves, filled with pork, chicken, chickpeas, and corn dough',
+					'Arepa boyacense style: grilled corn cakes with cheese (simple but essential)',
+					'Chocolate completo: hot chocolate served with cheese, bread, and almojábanas (yes, you dip the cheese)',
+					'Almojábanas and pandebono: cheesy bread rolls, perfect with coffee',
+					'Longaniza Boyacense: local sausage, often grilled and served with arepa or potatoes',
+					'Fresh fruit juices (jugos naturales) — try lulo, guanábana, maracuyá, mora. In Colombia, juices are offered with either milk or water.'
 				]
 			},
 			{
-				heading: 'CARTAGENA',
-				level: 3,
-				paragraphs: [
-					'Nestled along the Caribbean coast, Cartagena stands as a pristine example of Spanish colonial architecture and is recognized as a UNESCO World Heritage site.'
-				]
-			},
-			{
-				heading: 'SANTA MARTA',
-				level: 3,
-				paragraphs: [
-					'Situated on the Caribbean coast, Santa Marta offers a harmonious blend of history, nature, and beachfront allure.'
-				]
-			},
-			{
-				heading: 'BARICHARA AND SANTANDER',
-				level: 3,
-				paragraphs: [
-					'Nestled in the Santander region, Barichara is a beautifully preserved colonial town known for its tranquility and stone-paved streets.'
-				]
-			},
-			{
-				heading: 'MEDELLIN',
-				level: 3,
-				paragraphs: [
-					'Medell\u00edn has undergone a remarkable transformation, emerging as a symbol of urban revitalization.'
-				]
-			},
-			{
-				heading: 'THE AMAZON RAINFOREST',
-				level: 3,
-				paragraphs: [
-					'Colombia boasts a portion of the expansive Amazon rainforest, accessible through Leticia in the Amazonas Department.'
-				]
-			},
-			{
-				heading: 'EJE CAFETERO',
-				level: 3,
-				paragraphs: [
-					'Discover the heart of Colombia in the Coffee Cultural Landscape, \u201cEl Eje Cafetero.\u201d This UNESCO World Heritage region captivates with its rolling hills of coffee plantations.'
-				]
+				heading: 'And of course, coffee.',
+				level: 4
 			}
 		]
 	},
@@ -397,133 +363,113 @@ export const pages: Record<string, PageContent> = {
 		type: 'attractions',
 		title: 'Things to do',
 		intro: [
-			'We\u2019ve have highlighted some of the best experiences in Bogot\u00e1 and Villa de Leyva below. We hope you find the time to explore these recommendations during your trip.',
-			'While our suggestions focus specifically on Bogot\u00e1 and Villa de Leyva, if your schedule allows, we highly recommend venturing into other cities across the country for a more comprehensive Colombian experience.',
+			'We’ve have highlighted some of the best experiences in Bogotá and Villa de Leyva below. We hope you find the time to explore these recommendations during your trip.',
+			'While our suggestions focus specifically on Bogotá and Villa de Leyva, if your schedule allows, we highly recommend venturing into other cities across the country for a more comprehensive Colombian experience.',
 			'Enjoy your journey!'
 		],
 		groups: [
 			{
-				heading: 'BOGOT\u00c1',
+				heading: 'Bogotá',
 				attractions: [
 					{
-						heading: 'ZONA T',
+						heading: 'La Candelaria Neighborhood',
 						level: 5,
-						paragraphs: [
-							'Zona T is a pedestrianized zone within Zona Rosa, where you can find several trendy restaurants and bars that fill the streets of Bogot\u00e1 at night.',
-							'This is a neighborhood to be visited both day and night. With more modern buildings, it is the sophisticated neighborhood of Bogot\u00e1.'
+						paragraphs: [],
+						links: [
+							{
+								label: 'Guide to La Candelaria',
+								href: 'https://elrinconcolombiano.com/guia-completa-para-visitar-el-barrio-la-candelaria-de-bogota/'
+							}
 						]
 					},
 					{
-						heading: 'MONSERRATE',
+						heading: 'Monserrate',
 						level: 5,
 						paragraphs: [
-							'Over time, Cerro de Monserrate has become a cultural symbol of the city, where national and international visitors choose it as a must-see tourist destination in Bogot\u00e1.',
-							'Cerro de Monserrate is open 365 days a year with a sanctuary, market, and restaurants on top of this mountain.'
+							'Ride the cable car or funicular to the top of Monserrate for breathtaking views of the city.'
+						],
+						links: [{ label: 'Monserrate', href: 'https://monserrate.co/en/' }]
+					},
+					{
+						heading: 'Gold Museum (Museo del Oro)',
+						level: 5,
+						paragraphs: [
+							'Visit the world-famous Gold Museum, home to the largest collection of pre-Hispanic gold artifacts in the world.'
+						],
+						links: [
+							{
+								label: 'Museo del Oro',
+								href: 'https://www.visitingbogota.com/en/museo-del-oro/'
+							}
 						]
 					},
 					{
-						heading: 'USAQU\u00c9N FLEA MARKET',
+						heading: 'Catedral de Sal de Zipaquirá',
 						level: 5,
 						paragraphs: [
-							'An absolute must-visit when visiting the capital. It\u2019s one of the most emblematic happenings of the city.',
-							'This street is also filled with delicious restaurants and great bars!'
+							'On your way out of Bogotá, a stop at the Salt Cathedral is an unforgettable addition. Located about 1–1.5 hours north of the city, this extraordinary underground cathedral is carved deep inside a working salt mine.'
+						],
+						links: [{ label: 'Catedral de Sal', href: 'https://www.catedraldesal.gov.co/' }]
+					}
+				]
+			},
+			{
+				heading: 'Villa de Leyva',
+				intro: [
+					'Also known for its peaceful atmosphere, stunning natural landscapes, and rich cultural heritage, Villa de Leyva offers the perfect blend of history, adventure, and relaxation.'
+				],
+				attractions: [
+					{
+						heading: 'In town',
+						level: 5,
+						paragraphs: [
+							'Wander through its massive cobblestone main square, visit the Paleontological Museum and Chocolate Museum, explore colonial streets lined with whitewashed buildings, and enjoy slow afternoons in cafés and artisan shops.'
+						],
+						links: [
+							{
+								label: 'Paleontological Museum',
+								href: 'https://ciencias.bogota.unal.edu.co/museos_y_centros/museo_paleontologico_de_villa_de_leyva/'
+							}
 						]
 					},
 					{
-						heading: 'SALT CATHEDRAL',
+						heading: 'Vineyards',
 						level: 5,
-						paragraphs: [
-							'A favorite day trip for visitors to Bogot\u00e1 is the city of Zipaquir\u00e1. About 40 kilometers (25 miles) from Bogot\u00e1, Zipaquir\u00e1 is known for its Catedral de Sal\u2014a cathedral built in a salt mine.'
+						paragraphs: ['Vineyard experiences at local wineries.'],
+						links: [
+							{ label: 'Viñedo Ain Karim', href: 'https://ainkarim.co/' },
+							{ label: 'Viñedo Umaña Dajud', href: 'https://www.umanadajud.com/' }
 						]
 					},
 					{
-						heading: 'LAKE GUATAVITA',
+						heading: 'Casa Terracota',
 						level: 5,
 						paragraphs: [
-							'Lake Guatavita is steeped in cultural history and legend. It is renowned as the site of the El Dorado myth.',
-							'Pro tip: the hike up is worth the spectacular views!'
-						]
+							'A home designed by architect Octavio Mendoza that seems straight out of a fairy tale. With its organic shape and terracotta hue, the house blends perfectly with the surrounding landscape.'
+						],
+						links: [{ label: 'Casa Terracota', href: 'https://casaterracota.com/en/casa-terracotta/' }]
 					},
 					{
-						heading: 'ANDR\u00c9S CARNE DE RES',
+						heading: 'Just outside town',
 						level: 5,
-						paragraphs: [
-							'A restaurant-cum-nightclub-cum-wonderland, Andr\u00e9s Carne de Res has been a prime destination for diners, drinkers and party-goers since its opening in 1982.'
+						paragraphs: [],
+						links: [
+							{ label: 'Pozos Azules', href: 'https://pozosazules.com.co/' },
+							{ label: 'Hot Springs', href: 'https://termalesdevilladeleyva.com/' },
+							{ label: 'Aventura Park', href: 'http://www.aventuraparkvilladeleyva.com/segundo-inicio.html' },
+							{ label: 'ATV & Buggy Adventures', href: 'https://cuatrimotosvilladeleyva.com/' },
+							{ label: 'Granja de Avestruces', href: 'https://www.espexoticas.com.co/' }
 						]
 					}
 				]
 			},
 			{
-				heading: 'VILLA DE LEYVA',
+				heading: 'Ráquira',
 				intro: [
-					'There are so many activities and places to eat in Villa de Leyva. You\u2019ll find local artisans for crafts and leather goods, coffee shops, museums, art galleries, the church on the square, monastery gifts and more.',
-					'You can also enjoy activities such as the traditional chiva, horseback riding and ecological hikes, ATV tours, among others.',
-					'For more information, contact the tourism offices:',
-					'Gaia Adventure: +57 3213109525',
-					'We recommend you work with your hotel to book your transportation for these tours.'
+					'This town is perfect for shopping handmade ceramics and colorful crafts.'
 				],
-				links: [
-					{ label: 'Tourist Directory', href: '#' },
-					{ label: '90 Grados Territorio Aventura', href: '#' }
-				],
-				attractions: [
-					{
-						heading: 'MUSEO DEL CHOCOLATE',
-						level: 5,
-						paragraphs: [
-							'This Chocolate Museum is not to be confused with the restaurant location of the same name.'
-						]
-					},
-					{
-						heading: 'FOSSIL MUSEUM',
-						level: 5,
-						paragraphs: [
-							'Villa De Leyva is known for its abundance in prehistoric sea creature fossils.'
-						]
-					},
-					{
-						heading: 'GRANJA DE AVESTRUCES',
-						level: 5,
-						paragraphs: [
-							'Interested in feeding ostriches and pet animals? This is a fun tour for you!'
-						]
-					},
-					{
-						heading: 'CASA TERRACOTA',
-						level: 5,
-						paragraphs: [
-							'Terracotta House is a construction project that uses the four elements, earth, air, water and fire, turning baked earth into architecture.'
-						]
-					},
-					{
-						heading: 'SANTO ECCE HOMO CONVENT',
-						level: 4,
-						paragraphs: [
-							'The Santo Ecce-Homo of Villa de Leyva is a medieval fortress that stands before a green valley.'
-						]
-					},
-					{
-						heading: 'IGUAQUE FLORA AND FAUNA SANCTUARY',
-						level: 4,
-						paragraphs: [
-							'In Iguaque Fauna and Flora Sanctuary, the visitor can find the Sacred Lagoon of Iguaque.'
-						]
-					},
-					{
-						heading: 'VINEYARD AIN KARIM',
-						level: 5,
-						paragraphs: [
-							'As a result of its cool temperatures, dry climate, and rich soil, Villa de Leyva has established itself as a wine region.'
-						]
-					},
-					{
-						heading: 'PLAZA DE R\u00c1QUIRA',
-						level: 5,
-						paragraphs: [
-							'This is a very colorful ceramics town. A must-visit town near Villa de Leyva.'
-						]
-					}
-				]
+				links: [{ label: 'Pueblito de Barro', href: 'https://www.pueblitodebarro.com/' }],
+				attractions: []
 			}
 		]
 	},
@@ -532,259 +478,278 @@ export const pages: Record<string, PageContent> = {
 		title: 'Hotels',
 		intro: [
 			'We want to ensure that your stay is as smooth and easy as possible. Below, we are recommending hotels in Bogota and Villa de Leyva that are in convenient areas for activities and our transportation logistics.',
-			'You can also find more options in Booking or Airbnb. You can coordinate with friends and family to rent an entire apartment/house for significantly cheaper.'
+			'You can also find more options in [Booking](https://www.booking.com) or [Airbnb](https://www.airbnb.com). You can coordinate with friends and family to rent an entire apartment/house for significantly cheaper.'
 		],
 		groups: [
 			{
-				heading: 'HOTELS IN BOGOT\u00c1',
+				heading: 'Hotels in Bogotá',
 				intro: [
-					'We recommend for your stay in Bogota that you stay near or at La Zona T! It is filled with restaurants, incredible shopping, and nightlife. The bus pick-ups will likely be there.'
-				],
-				links: [
-					{ label: 'Booking', href: 'https://www.booking.com' },
-					{ label: 'Airbnb', href: 'https://www.airbnb.com' }
+					'We recommend for your stay in Bogota that you stay near or at La Zona T! It is filled with restaurants, incredible shopping, and nightlife.'
 				],
 				tiers: [
 					{
 						price: '$',
-						items: [{ name: 'Hotel Parque El Virrey', href: '#' }]
+						items: [{ name: 'Hotel Parque El Virrey' }]
 					},
 					{
 						price: '$ $',
 						items: [
-							{ name: 'B.O.G. Hotel', href: '#' },
-							{ name: 'Casa Dann Carlton Hotel & Spa', href: '#' }
+							{ name: 'B.O.G. Hotel' },
+							{ name: 'Casa Dann Carlton Hotel & Spa' }
 						]
 					},
 					{
 						price: '$ $ $',
 						items: [
-							{ name: 'JW Marriott Hotel Bogota', href: '#' },
-							{ name: 'Four Seasons', href: '#' },
-							{ name: 'Hilton Bogot\u00e1', href: '#' }
+							{ name: 'JW Marriott Hotel Bogota' },
+							{ name: 'Four Seasons' },
+							{ name: 'Hilton Bogotá' }
 						]
 					}
 				]
 			},
 			{
-				heading: 'HOTELS IN VILLA DE LEYVA',
+				heading: 'Hotels in Villa de Leyva',
 				intro: [
-					'We recommend staying walking distance from the plaza, as the pick-up and drop-off spots will be there. If you stay outside, you\u2019ll likely need a vehicle to get around.'
+					'We recommend staying walking distance from the plaza, as the pick-up and drop-off spots will be there. If you stay outside, you’ll likely need a vehicle to get around.'
 				],
 				tiers: [
 					{
 						price: '$',
 						items: [
-							{ name: 'Sie Casa Hotel', href: '#' },
-							{ name: 'Casa Boutique Villa de Leyva', href: '#' },
-							{ name: 'Hotel Mes\u00f3n de los Virreyes', href: '#' },
-							{ name: 'Hotel Boutique La Espa\u00f1ola', href: '#' },
-							{ name: 'Provenzal', href: '#' }
+							{ name: 'Sie Casa Hotel' },
+							{ name: 'Casa Boutique Villa de Leyva' },
+							{ name: 'Hotel Mesón de los Virreyes' },
+							{ name: 'Hotel Boutique La Española' },
+							{ name: 'Provenzal' }
 						]
 					},
 					{
 						price: '$$',
 						items: [
-							{ name: 'Hotel Plaza Mayor', href: '#' },
-							{ name: 'Maria Bonita', href: '#' },
-							{ name: 'Campanario de La Villa', href: '#' },
-							{ name: 'Casa Terra', href: '#' }
+							{ name: 'Hotel Plaza Mayor' },
+							{ name: 'Maria Bonita' },
+							{ name: 'Campanario de La Villa' },
+							{ name: 'Casa Terra' }
 						]
 					},
 					{
 						price: '$$$',
 						items: [
-							{ name: 'La Corada', href: '#' },
-							{ name: 'Casa Real', href: '#' },
-							{ name: 'Caney Centro', href: '#' },
-							{ name: 'Casa del \u00c1rbol', href: '#' },
-							{ name: 'Hotel Alcestre', href: '#' }
+							{ name: 'La Corada' },
+							{ name: 'Casa Real' },
+							{ name: 'Caney Centro' },
+							{ name: 'Casa del Árbol' },
+							{ name: 'Hotel Alcestre' }
 						]
 					}
 				]
 			}
 		]
 	},
+
 	'/restaurants/': {
 		type: 'attractions',
 		title: 'Restaurants',
 		intro: [],
 		groups: [
 			{
-				heading: 'VILLA DE LEYVA',
+				heading: 'Villa de Leyva',
 				attractions: [
 					{
-						heading: 'BBC \u2013 BODEGA VILLA DE LEYVA',
+						heading: 'BBC – Bodega Villa de Leyva',
 						level: 5,
 						paragraphs: [
-							'Want to try a large variety of national Colombian beers? Head over to BBC \u2013 also located in Bogota!'
+							'Want to try a large variety of national Colombian beers? Head over to BBC – also located in Bogota!'
 						]
 					},
 					{
-						heading: 'EL SOLAR DE LA GUACA',
+						heading: 'El Solar de la Guaca',
 						level: 5,
 						paragraphs: [
 							'A local favorite restaurant featuring 6 different kitchens, the choice is yours! They feature a musical show that is unique and very diverse!'
 						]
 					},
 					{
-						heading: 'BOMBON DIVINA COCINA',
+						heading: 'Bombon Divina Cocina',
 						level: 5,
 						paragraphs: [
 							'Italian Colombian food and fusions! This spot also features incredible cocktails and cappuccinos.'
 						]
 					},
 					{
-						heading: 'MUSEO DEL CHOCOLATE \u2013 RESTAURANTE CACAO',
+						heading: 'Museo del Chocolate – Restaurante Cacao',
 						level: 5,
 						paragraphs: [
-							'We recommend ordering a hot chocolate. Don\u2019t forget to drink it like a local by adding melty cheese to your cup (we promise it\u2019s delicious)!',
-							'Pro tip: on the menu the cheese is referred to as a \u201cpancho\u201d!'
+							'We recommend ordering a hot chocolate. Don’t forget to drink it like a local by adding melty cheese to your cup (we promise it’s delicious)!',
+							'Pro tip: on the menu the cheese is referred to as a “pancho”!'
 						]
 					},
 					{
-						heading: 'CHUSKA COCINA',
+						heading: 'Chuska Cocina',
 						level: 5,
 						paragraphs: [
 							'The food is so fresh, elegant and unique. You can count on a beautiful, quiet atmosphere.'
 						]
 					},
 					{
-						heading: 'EL \u00c1TICO',
+						heading: 'El Ático',
 						level: 5,
 						paragraphs: [
 							'A large trendy courtyard filled with multiple types of cuisines, wines, smoothies, live music and stores.'
 						]
 					},
 					{
-						heading: 'LA GALLETA PASTELER\u00cdA CAF\u00c9',
+						heading: 'La Galleta Pastelería Café',
 						level: 5,
 						paragraphs: [
-							'Milhojas, meaning \u201cthousand sheets\u201d, are desserts made with stacked layers of puff pastry.'
+							'Milhojas, meaning “thousand sheets”, are desserts made with stacked layers of puff pastry.'
 						]
 					},
 					{
-						heading: 'CHOCOLATE BEAN TO BAR',
+						heading: 'Chocolate Bean to Bar',
 						level: 5,
 						paragraphs: [
-							'Yes another chocolate place, it\u2019s never enough.',
+							'Yes another chocolate place, it’s never enough.',
 							'You can purchase bean-to-bar chocolates with or without sugar and dairy.'
-						]
-					},
-					{
-						heading: 'OTHER INCREDIBLE RESTAURANTS',
-						level: 5,
-						paragraphs: [],
-						links: [
-							{ label: 'Restaurante Casa San Pedro', href: '#' },
-							{ label: 'Restaurante Amore M\u00edo', href: '#' },
-							{ label: 'Restaurante El Mercado Municipal', href: '#' },
-							{ label: 'Casa Quintero', href: '#' },
-							{ label: 'Camale\u00f3n', href: '#' },
-							{ label: 'Merc\u00e9', href: '#' },
-							{ label: 'Genki', href: '#' },
-							{ label: 'El Pescador Pasteler\u00eda', href: '#' },
-							{ label: 'La Oster\u00eda', href: '#' },
-							{ label: 'Pasteler\u00eda Francesa', href: '#' },
-							{ label: 'El Patio', href: '#' }
 						]
 					}
 				]
 			}
 		]
 	},
+
 	'/hair-makeup/': {
 		type: 'sections',
 		title: 'Hair and Makeup',
 		sections: [
 			{
-				heading: 'Estilos Cris',
+				heading: f('Estilos Cris'),
 				level: 6,
-				paragraphs: ['Phone Number: +57 314 331 2838']
+				paragraphs: [`Phone Number: ${f('+57 314 331 2838')}`]
 			},
 			{
-				heading: 'Denny Montes',
+				heading: f('Denny Montes'),
 				level: 6,
-				paragraphs: ['Phone number: +57 321 211 5183']
+				paragraphs: [`Phone number: ${f('+57 321 211 5183')}`]
 			},
 			{
-				heading: 'Luxbeauty Sal\u00f3n',
+				heading: f('Luxbeauty Salón'),
 				level: 6,
 				paragraphs: [
-					'Phone number: +57 314 3783290',
-					'Location: Cra. 11 #11-51, Villa de Leyva'
+					`Phone number: ${f('+57 314 378 3290')}`,
+					`Location: ${f('Cra. 11 #11-51, Villa de Leyva')}`
 				]
 			},
 			{
-				heading: 'CQ Maquillaje y Est\u00e9tica (Tunja)',
+				heading: f('CQ Maquillaje y Estética (Tunja)'),
 				level: 6,
-				paragraphs: ['Phone number: +57 310 699 6351']
+				paragraphs: [`Phone number: ${f('+57 310 699 6351')}`]
 			}
 		]
 	},
+
 	'/faqs/': {
 		type: 'faq',
 		title: 'FAQs',
 		items: [
 			{
-				question: 'IS IT SAFE TO TRAVEL TO COLOMBIA?',
-				list: [
-					'Ask in advance for the price of items so that you are not sticker shocked. Pro tip: most times, prices are negotiable in the markets.',
-					'Credit cards work well, for the most part AMEX and Visa is accepted in most establishments.',
-					'Remember to carry cash (e.g. to pay taxis or tolls). In Colombia, the COP (Colombian Peso) is used as currency.',
-					'Be mindful of surroundings and avoid walking with your phone out.',
-					'Consider booking tours in advance or via the hotel.',
-					'If your cellphone plan does not include international service, purchase a prepaid SIM card for data.',
-					'Leave your valuables in the hotel safe.',
-					'Always keep your bags and purses in sight.',
-					'Order taxis at the designated areas at the airport, at your hotel or via Uber. Do not hail your own cab off the street.',
-					'The Colombian version of Ubereats is Rappi. Download the app if you\u2019d like anything delivered to your door.',
-					'You can reach the police on 113.'
+				question: 'Is it safe to travel to Colombia?',
+				paragraphs: [
+					'Colombia has become an increasingly popular travel destination and is generally very welcoming to tourists. As with any international travel, we recommend practicing standard travel safety:',
+					'Bogotá and Villa de Leyva both have strong tourism infrastructure and are considered safe for visitors. We want you to feel completely at ease during your time in Colombia. This is a warm, welcoming country filled with incredible people, and we are here to make your experience as smooth and enjoyable as possible.'
 				],
-				paragraphs: [
-					'Colombia is generally a safe country to travel in. Here are some \u201cpro-tips\u201d for a smoother trip around Colombia:'
+				list: [
+					'Stay aware of your surroundings in busy areas.',
+					'Keep bags and personal belongings in sight at all times.',
+					'Avoid displaying valuables such as expensive jewelry or large amounts of cash.',
+					'Use official taxis or trusted ride-sharing services.',
+					'Stick to well-traveled and recommended areas, especially at night.'
 				]
 			},
 			{
-				question: 'SHOULD I VISIT OTHER CITIES IN COLOMBIA?',
-				paragraphs: [
-					'Absolutely! In fact, we encourage you to extend your stay in Colombia, there is just too much to see! Visit our About Colombia tab for a full list.'
+				question: 'Pro tips when visiting Colombia',
+				list: [
+					'Always ask prices in advance; local market prices are often negotiable.',
+					'“Rappi” is the Colombia version of UberEats and the main delivery app for food and essentials.',
+					'In Bogotá or any other big city, avoid using your phone openly in busy areas (for Villa de Leyva and small towns it is fine).',
+					'Book tours in advance or through your hotel when possible.',
+					'DO NOT hail a cab off the street.',
+					'When using Uber or any other transportation service, please be gentle when closing car doors.',
+					'A simple “Por favor” (please) and “Gracias” (thank you) is always appreciated.',
+					'Tipping in Colombia is appreciated but not expected in the same way as in the U.S. Some restaurants often include a 10% optional service charge (“propina”) in the check.',
+					'Emergency number in Colombia: 112.'
 				]
 			},
 			{
-				question: 'ARE KIDS WELCOME?',
+				question: 'How do I get to the venue?',
+				paragraphs: [`Complimentary shuttle from Plaza Mayor to Casa de Buganvilias (~${f('15 minutes')}). Exact pickup times shared the week of the wedding.`]
+			},
+			{
+				question: 'When do I need to RSVP?',
+				paragraphs: [`Please RSVP by ${f('May 15, 2027')} through this website.`]
+			},
+			{
+				question: 'Do you have a gift list?',
 				paragraphs: [
-					'The little ones are near and dear to our heart. Although our ceremony and reception are not kid friendly.'
+					`Lorem ipsum dolor sit amet. If you wish to give something, see the Gifts page. Registry: ${f('no formal gift list — bank transfer preferred')}.`
+				],
+				links: [{ label: 'Gifts', href: '/gifts/' }]
+			},
+			{
+				question: 'Where to stay?',
+				paragraphs: [
+					'We have provided a list of hotels and accommodations. Please check the recommendations section.'
+				],
+				links: [{ label: 'Hotels', href: '/hotels/' }]
+			},
+			{
+				question: 'What’s the local currency?',
+				paragraphs: [
+					'Colombia uses the Colombian Peso (COP).',
+					'Credit cards are widely accepted in cities, but it’s helpful to carry some cash, especially in small towns. Visa and Mastercard are widely accepted. Amex is less common.',
+					'ATMs are readily available in Bogotá and Villa de Leyva but we recommend that you exchange some money at the airport beforehand. However, don’t exchange all your money at the airport, as exchange rates are often less favorable.'
 				]
 			},
 			{
-				question: 'CAN I BRING A PLUS 1?',
+				question: 'What’s the weather in Colombia?',
 				paragraphs: [
-					'Due to limited space, we are only able to accommodate guests formally invited on your wedding invitation. If you have a plus one, it will be listed on your wedding invite.'
+					"Colombia's mountainous landscape makes the weather difficult to predict, and weather apps are often inaccurate. We recommend packing layers and being prepared for sunshine, cooler temperatures, and the occasional rain shower, all in the same day!",
+					'Villa de Leyva enjoys mild spring-like temperatures year-round. Expect daytime temperatures around 65–72°F (18–22°C) and cooler evenings around 50–55°F (10–13°C). We recommend bringing a light jacket or sweater, especially for the evening.'
 				]
 			},
 			{
-				question: 'HOW DO I MAKE RESERVATIONS OR CALL ANYONE WHILE IN OTHER COUNTRY?',
+				question: 'Altitude notice',
 				paragraphs: [
-					'Communicating with your hotel, a restaurant, a vendor is so simple! Colombia loves WhatApp and you can download the app and text them.'
+					'Bogotá sits at 8,660 ft (2,640 m) above sea level. Some visitors may experience mild altitude symptoms such as shortness of breath or headaches. Stay hydrated, avoid strenuous activity on your first day, and take it easy if needed.'
 				]
 			},
 			{
-				question: 'ARE THE VENUES INDOORS OR OUTDOORS?',
-				paragraphs: [
-					'Most of our venues will have an indoor / outdoor concept. As always there is a chance of rain but our wedding planner will be prepared in that event!'
+				question: 'What should I pack?',
+				list: [
+					'The Colombian sun is much stronger than many visitors expect. Even on cool or cloudy days, UV exposure can be intense. Bring sunscreen, sunglasses, and a hat.',
+					'Bring comfortable walking shoes — Villa de Leyva is known for cobblestone streets.',
+					'Colombia uses 110V electricity with Type A and Type B plugs (the same as the United States and Canada). Guests traveling from Europe or other regions will need a plug adapter.'
 				]
 			},
 			{
-				question: 'WHAT SHOULD I WEAR?',
+				question: 'Can I bring kids?',
+				paragraphs: [f('Adults-only celebration; infants in arms welcome with prior notice.')]
+			},
+			{
+				question: 'What’s the dress code?',
+				paragraphs: [f('Garden formal — cocktail attire; light jacket recommended for evening.')]
+			},
+			{
+				question: 'Can I bring a plus one?',
 				paragraphs: [
-					'Temperature in Villa de Leyva 25\u00b0C during the day, 13\u00b0C at night. We recommend guests bring a jacket or sweater for the evening. The town has cobblestone streets, it is very important to bring shoes that are comfortable for walking.'
+					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
 				]
 			},
 			{
-				question: 'WHERE CAN I DO MY HAIR AND MAKEUP?',
-				paragraphs: ['We have provided a list of hair and make-up artists. Please check the recommendations tab.'],
-				links: [{ label: 'recommendations tab', href: '/hair-makeup/' }]
+				question: 'Where can I do my hair and makeup?',
+				paragraphs: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Please check the recommendations tab.'],
+				links: [{ label: 'Hair and Makeup', href: '/hair-makeup/' }]
 			}
 		]
 	},
@@ -792,29 +757,234 @@ export const pages: Record<string, PageContent> = {
 		type: 'gifts',
 		title: 'Gifts',
 		paragraphs: [
-			'Your presence is enough of a gift to us! If you still would like to give us something, we preferred a bank transfer:'
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
 		],
 		bankDetails: [
-			{ label: 'Name:', value: 'Carolina & Fred' },
-			{ label: 'Bank:', value: 'Bank of America' },
-			{ label: 'Account number:', value: 'Contact the couple for details' }
+			{ label: 'Name:', value: f('Carolina & Fred') },
+			{ label: 'Bank:', value: f('Bank of America') },
+			{ label: 'Account number:', value: f('Contact the couple — last 4: 4821') },
+			{ label: 'Routing:', value: f('026009593') }
 		]
 	},
-	'/espanol1/': {
+	/* Spanish pages */
+	'/es/': {
 		type: 'home',
-		title: 'HOME',
-		carousel: placeholderCarousel,
+		title: 'INICIO',
+		hero: {
+			src: '/images/hero.jpg',
+			alt: 'Fred y Caro',
+			aspect: 'landscape'
+		},
 		paragraphs: [
-			'\u00a1Estamos absolutamente encantados de compartir este encantador fin de semana contigo! Para aquellos que no lo saben, la novia es oriunda de Colombia y su lugar m\u00e1s preciado en su tierra natal es la m\u00e1gica Villa de Leyva.',
-			'Dada la ubicaci\u00f3n y la log\u00edstica de la boda, te solicitamos amablemente tu confirmaci\u00f3n de asistencia antes del 15 de junio a trav\u00e9s de la p\u00e1gina RSVP.'
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+			`Duis aute irure dolor in reprehenderit. Confirma asistencia en RSVP antes del ${f('15 de mayo de 2027')}.`
 		],
 		countdownTarget: siteMeta.countdownTarget,
-		hashtag: {
-			title: '#FredIsLuckyGuy',
-			paragraphs: [
-				'Ay\u00fadanos a compartir y relatar con im\u00e1genes este gran d\u00eda.',
-				'Sube las fotos del antes, durante y despu\u00e9s de la boda.'
-			]
+		details: {
+			date: '3 de julio de 2027',
+			time: '3:00 PM',
+			venue: 'Casa de Buganvilias, Villa de Leyva'
+		}
+	},
+	'/es/our-story/': {
+		type: 'story',
+		title: 'Nuestra Historia',
+		sections: [
+			{
+				heading: 'Lorem ipsum dolor sit amet...',
+				paragraphs: [
+					'... consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+					'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+					'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.',
+					'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.'
+				],
+				images: storyCarousel
+			}
+		]
+	},
+	'/es/rsvp/': {
+		type: 'rsvp',
+		title: 'RSVP',
+		intro: [
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+			'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.'
+		],
+		fields: [
+			{ name: 'name', label: 'Nombre', type: 'text', placeholder: 'Nombre', required: true },
+			{ name: 'email', label: 'Correo', type: 'email', placeholder: 'Correo', required: true },
+			{
+				name: 'phone',
+				label: 'Teléfono (+código de país)',
+				type: 'tel',
+				placeholder: 'Teléfono',
+				required: true
+			},
+			{
+				name: 'attendWedding',
+				label: '¿Puedes asistir a la boda?',
+				type: 'select',
+				options: ['Sí', 'No'],
+				required: true
+			},
+			{
+				name: 'attendWelcome',
+				label: '¿Asistirás a la noche de bienvenida?',
+				type: 'select',
+				options: ['Sí', 'No'],
+				required: true
+			},
+			{
+				name: 'transportBogota',
+				label: '¿Necesitarás transporte de Bogotá a Villa de Leyva y de regreso?',
+				type: 'select',
+				options: ['Sí', 'No'],
+				required: true
+			},
+			{
+				name: 'transportCeremony',
+				label: '¿Necesitarás transporte de Villa de Leyva al lugar de la ceremonia: Casa Buganvilia?',
+				type: 'select',
+				options: ['Sí', 'No'],
+				required: true
+			},
+			{
+				name: 'dietary',
+				label: '¿Alguna restricción alimentaria?',
+				type: 'textarea',
+				required: true
+			},
+			{
+				name: 'songs',
+				label: '¿Canciones para bailar?',
+				type: 'textarea',
+				required: true
+			}
+		],
+		submitLabel: 'Enviar',
+		submitMessage: '¡Gracias! Hemos recibido tu confirmación.'
+	},
+	'/es/schedule/': {
+		type: 'schedule',
+		title: 'Horario',
+		mapNote: 'Agregaremos un mapa más cerca de la fecha.',
+		days: [
+			{
+				date: 'Viernes, 2 de julio de 2027',
+				events: [
+					{
+						title: 'Cena de bienvenida',
+						paragraphs: [
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+							`Hora: ${f('7:00 PM')} · Lugar: ${f('zona Plaza Mayor, Villa de Leyva')}.`
+						]
+					}
+				]
+			},
+			{
+				date: 'Sábado, 3 de julio de 2027',
+				events: [
+					{
+						title: 'Ceremonia, cena y fiesta | 3:00 PM',
+						paragraphs: [
+							'Lugar: Casa de Buganvilias, Villa de Leyva',
+							'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+						]
+					}
+				]
+			}
+		]
+	},
+	'/es/travel-information/': {
+		type: 'sections',
+		title: 'Información de viaje',
+		intro: [
+			'¡Estamos muy emocionados de celebrar con ustedes en Colombia! Aquí encontrarán información útil para que su viaje sea lo más sencillo posible.'
+		],
+		sections: [
+			{
+				heading: 'Vuelos a Colombia',
+				level: 4,
+				paragraphs: [
+					'Si viajan internacionalmente, reserven su vuelo al Aeropuerto Internacional El Dorado (BOG) en Bogotá, Colombia.'
+				]
+			},
+			{
+				heading: 'Pasaporte y visa',
+				level: 4,
+				paragraphs: [
+					'Asegúrense de que su pasaporte sea válido por al menos seis meses después de la fecha de ingreso a Colombia.',
+					'Muchas nacionalidades, incluyendo Estados Unidos, Irlanda, Reino Unido y la mayoría de países de la Unión Europea, no requieren visa de turismo para visitas cortas. Verifiquen los requisitos actualizados según su nacionalidad.'
+				]
+			},
+			{
+				heading: 'Transporte en Bogotá',
+				level: 4,
+				paragraphs: [
+					'Bogotá ofrece taxis oficiales del aeropuerto, Uber y transporte privado. Por favor NO tomen un taxi en la calle.'
+				]
+			},
+			{
+				heading: 'Transporte a Villa de Leyva',
+				level: 4,
+				paragraphs: [
+					'Ofreceremos transporte gratuito de Bogotá a Villa de Leyva y de regreso para los invitados de la boda.',
+					'El viaje dura aproximadamente 3 horas en bus privado.',
+					'Si viven en Bogotá y tienen vehículo, les pedimos que conduzcan directamente a Villa de Leyva.',
+					`Si su itinerario no coincide con los horarios del bus, contacten a ${f('+57 310 555 0198')} para recomendaciones de transporte privado.`
+				]
+			}
+		]
+	},
+	'/es/faqs/': {
+		type: 'faq',
+		title: 'Preguntas frecuentes',
+		items: [
+			{
+				question: '¿Es seguro viajar a Colombia?',
+				paragraphs: [
+					'Colombia se ha convertido en un destino turístico cada vez más popular y es generalmente muy acogedor con los visitantes. Como en cualquier viaje internacional, recomendamos precauciones básicas de seguridad.',
+					'Bogotá y Villa de Leyva tienen buena infraestructura turística y se consideran seguros para visitantes.'
+				]
+			},
+			{
+				question: '¿Cuándo debo confirmar asistencia (RSVP)?',
+				paragraphs: [`Por favor confirmen antes del ${f('15 de mayo de 2027')}.`]
+			},
+			{
+				question: '¿Dónde alojarse?',
+				paragraphs: ['Hemos preparado una lista de hoteles. Revisen la sección de recomendaciones.'],
+				links: [{ label: 'Hoteles', href: '/hotels/' }]
+			},
+			{
+				question: '¿Cuál es la moneda local?',
+				paragraphs: [
+					'Colombia usa el peso colombiano (COP). Las tarjetas Visa y Mastercard son ampliamente aceptadas; Amex es menos común. Conviene llevar algo de efectivo, especialmente en pueblos pequeños.'
+				]
+			},
+			{
+				question: '¿Cuál es el código de vestimenta?',
+				paragraphs: [f('Formal de jardín — cóctel; chaqueta ligera recomendada por la noche.')]
+			}
+		]
+	},
+	/* Legacy Spanish URL → same as /es/ home content for bookmarks */
+	'/espanol1/': {
+		type: 'home',
+		title: 'INICIO',
+		hero: {
+			src: '/images/hero.jpg',
+			alt: 'Fred y Caro',
+			aspect: 'landscape'
+		},
+		paragraphs: [
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+			'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+		],
+		countdownTarget: siteMeta.countdownTarget,
+		details: {
+			date: '3 de julio de 2027',
+			time: '3:00 PM',
+			venue: 'Casa de Buganvilias, Villa de Leyva'
 		}
 	}
 };

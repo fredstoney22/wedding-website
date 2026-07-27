@@ -1,13 +1,14 @@
 <script lang="ts">
 	import type { ListingGroup } from '$lib/content';
+	import FillerText from './FillerText.svelte';
 	import ProseBlock from './ProseBlock.svelte';
 
 	let { groups }: { groups: ListingGroup[] } = $props();
 </script>
 
 {#each groups as group}
-	<section class="listing-group">
-		<h3>{group.heading}</h3>
+	<section class="listing-group text-panel">
+		<h3><FillerText text={group.heading} /></h3>
 		{#if group.intro}
 			<ProseBlock paragraphs={group.intro} />
 		{/if}
@@ -17,14 +18,14 @@
 		{#if group.tiers}
 			{#each group.tiers as tier}
 				<div class="tier">
-					<p class="tier-price">{tier.price}</p>
+					<p class="tier-price"><FillerText text={tier.price} /></p>
 					<ul class="link-list">
 						{#each tier.items as item}
 							<li>
 								{#if item.href}
-									<a href={item.href}>{item.name}</a>
+									<a href={item.href}><FillerText text={item.name} /></a>
 								{:else}
-									{item.name}
+									<FillerText text={item.name} />
 								{/if}
 							</li>
 						{/each}
@@ -37,9 +38,9 @@
 				{#each group.items as item}
 					<li>
 						{#if item.href}
-							<a href={item.href}>{item.name}</a>
+							<a href={item.href}><FillerText text={item.name} /></a>
 						{:else}
-							{item.name}
+							<FillerText text={item.name} />
 						{/if}
 					</li>
 				{/each}
@@ -51,6 +52,17 @@
 <style>
 	.listing-group {
 		margin-bottom: var(--space-xl);
+	}
+
+	.listing-group > h3 {
+		font-size: clamp(1.4rem, 3.5vw, 1.85rem);
+		font-weight: 600;
+		letter-spacing: 0.02em;
+	}
+
+	/* Space between group intro/links and following tiers/lists */
+	.listing-group > :global(.prose) {
+		margin-bottom: var(--space-md);
 	}
 
 	.tier {

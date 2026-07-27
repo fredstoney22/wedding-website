@@ -1,6 +1,6 @@
 <script lang="ts">
 	import PageTitle from '$lib/components/PageTitle.svelte';
-	import ContentSections from '$lib/components/ContentSections.svelte';
+	import ColombiaCities from '$lib/components/ColombiaCities.svelte';
 	import ProseBlock from '$lib/components/ProseBlock.svelte';
 	import { getPage, pageTitle } from '$lib/content';
 
@@ -11,12 +11,20 @@
 	<title>{pageTitle('About Colombia')}</title>
 </svelte:head>
 
-{#if content?.type === 'sections'}
-	<div class="page-content">
+{#if content?.type === 'colombia'}
+	<div class="page-content page-content--wide">
 		<PageTitle title={content.title} level={3} />
 		{#if content.intro}
-			<ProseBlock paragraphs={content.intro} />
+			<div class="intro text-panel">
+				<ProseBlock paragraphs={content.intro} />
+			</div>
 		{/if}
-		<ContentSections sections={content.sections} />
+		<ColombiaCities cities={content.cities} />
 	</div>
 {/if}
+
+<style>
+	.intro {
+		margin-bottom: var(--space-xl);
+	}
+</style>

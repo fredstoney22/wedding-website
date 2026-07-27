@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { ContentSection } from '$lib/content';
+	import FillerText from './FillerText.svelte';
 	import ProseBlock from './ProseBlock.svelte';
 	import Self from './ContentSections.svelte';
 
@@ -22,13 +23,15 @@
 </script>
 
 {#each sections as section}
-	<section class="content-section">
-		<svelte:element this={headingTag(section.level)}>{section.heading}</svelte:element>
+	<section class="content-section text-panel">
+		<svelte:element this={headingTag(section.level)}
+			><FillerText text={section.heading} /></svelte:element
+		>
 		<ProseBlock paragraphs={section.paragraphs} links={section.links} />
 		{#if section.list}
 			<ol>
 				{#each section.list as item}
-					<li>{item}</li>
+					<li><FillerText text={item} /></li>
 				{/each}
 			</ol>
 		{/if}
@@ -43,6 +46,23 @@
 <style>
 	.content-section {
 		margin-bottom: var(--space-lg);
+	}
+
+	.content-section > :global(h3),
+	.content-section > :global(h4) {
+		font-size: clamp(1.4rem, 3.5vw, 1.85rem);
+		font-weight: 600;
+		letter-spacing: 0.02em;
+	}
+
+	/* Avoid nested frosted boxes stacking inside a parent panel */
+	.content-section :global(.content-section) {
+		background: transparent;
+		backdrop-filter: none;
+		-webkit-backdrop-filter: none;
+		padding: var(--space-sm) 0 0;
+		border-radius: 0;
+		margin-bottom: var(--space-md);
 	}
 
 	.nested {

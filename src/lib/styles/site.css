@@ -1,25 +1,75 @@
 :root {
-	--color-bg: #ffffff;
-	--color-text: #1a1a1a;
-	--color-text-muted: #4a4a4a;
-	--color-border: #e0e0e0;
-	--color-accent: #1a1a1a;
+	/* Cream / gold modern elegance — shared tokens for all tracks */
+	--color-bg: #f5f0e4;
+	--color-bg-cream: #e8e4c8;
+	--color-text: #6d532a;
+	--color-text-muted: #8a7349;
+	--color-border: #d4c9a8;
+	--color-accent: #6d532a;
+	--color-accent-deep: #4a391c;
+	--color-on-accent: #f5f0e4;
 	--color-placeholder: #e8e4df;
-	--font-serif: Georgia, 'Times New Roman', serif;
-	--font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+	/* Palette accents (from requirements palette) */
+	--color-olive: #3d4029;
+	--color-moss: #8b9356;
+	--color-terracotta: #af5330;
+	--color-apricot: #db7f47;
+	--color-peach: #f4d1ba;
+
+	/* Font roles: New Icon / Pynion Script / TT Hoves — free substitutes until licensed files land */
+	--font-display: 'Cormorant Garamond', 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+	--font-script: 'Dancing Script', 'Segoe Script', 'Apple Chancery', cursive;
+	--font-sans: 'DM Sans', 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+	--font-serif: var(--font-display);
+
 	--max-width: 720px;
+	--max-width-wide: 960px;
 	--header-height: 64px;
 	--space-xs: 0.5rem;
 	--space-sm: 1rem;
 	--space-md: 1.5rem;
 	--space-lg: 2.5rem;
 	--space-xl: 4rem;
+
+	/* Mobile-first page gutters — tighten at ~400px, open up on larger screens */
+	--page-gutter: 1.15rem;
+	--panel-pad-y: 1.15rem;
+	--panel-pad-x: 1.15rem;
+
+	--section-bg-image: url('/images/section-bg.png');
+}
+
+@media (min-width: 480px) {
+	:root {
+		--page-gutter: 1.35rem;
+		--panel-pad-y: 1.35rem;
+		--panel-pad-x: 1.5rem;
+	}
+}
+
+@media (min-width: 720px) {
+	:root {
+		--page-gutter: 1.5rem;
+		--panel-pad-y: 1.5rem;
+		--panel-pad-x: 2rem;
+	}
+}
+
+@media (min-width: 960px) {
+	:root {
+		--panel-pad-x: 2.5rem;
+	}
 }
 
 *,
 *::before,
 *::after {
 	box-sizing: border-box;
+}
+
+html {
+	overflow-x: clip;
 }
 
 body {
@@ -30,6 +80,8 @@ body {
 	color: var(--color-text);
 	background: var(--color-bg);
 	-webkit-font-smoothing: antialiased;
+	overflow-x: clip;
+	overflow-wrap: break-word;
 }
 
 h1,
@@ -38,7 +90,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: var(--font-serif);
+	font-family: var(--font-display);
 	font-weight: 400;
 	line-height: 1.3;
 	margin: 0 0 var(--space-sm);
@@ -98,15 +150,63 @@ ol {
 
 .site-main {
 	min-height: calc(100dvh - var(--header-height));
-	padding: var(--space-lg) var(--space-md) var(--space-xl);
+	padding: var(--space-md) max(var(--page-gutter), env(safe-area-inset-right, 0px))
+		var(--space-xl) max(var(--page-gutter), env(safe-area-inset-left, 0px));
+}
+
+.site-main.has-section-bg {
+	background-image: var(--section-bg-image);
+	/* Fit full image height in the viewport below the header; crop left/right */
+	background-size: auto calc(100dvh - var(--header-height));
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+}
+
+@media (min-width: 720px) {
+	.site-main {
+		padding-top: var(--space-lg);
+	}
+
+	.site-main.has-section-bg {
+		background-attachment: fixed;
+	}
 }
 
 .page-content {
 	max-width: var(--max-width);
 	margin: 0 auto;
+	width: 100%;
+}
+
+.page-content--wide {
+	max-width: var(--max-width-wide);
 }
 
 .prose p:last-child {
+	margin-bottom: 0;
+}
+
+.prose a {
+	overflow-wrap: anywhere;
+}
+
+/* Soft white panel for text over section backgrounds */
+.text-panel {
+	background: rgba(255, 255, 255, 0.68);
+	border-radius: 0.85rem;
+	padding: var(--panel-pad-y) var(--panel-pad-x);
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+}
+
+@media (min-width: 720px) {
+	.text-panel {
+		border-radius: 1rem;
+	}
+}
+
+.text-panel > :last-child {
 	margin-bottom: 0;
 }
 
@@ -118,4 +218,36 @@ ol {
 
 .link-list li {
 	margin-bottom: var(--space-xs);
+}
+
+/* Typography utilities (Track A / Wave 2) */
+.title-display {
+	font-family: var(--font-display);
+	font-weight: 500;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--color-text);
+}
+
+.title-script {
+	font-family: var(--font-script);
+	font-weight: 600;
+	font-size: clamp(1.5rem, 4vw, 2.25rem);
+	letter-spacing: 0.01em;
+	text-transform: none;
+	color: var(--color-text);
+	line-height: 1.35;
+}
+
+/* Important filler (not yet confirmed in requirements) */
+.filler-aura {
+	color: #9b1c1c;
+	background: rgba(220, 38, 38, 0.1);
+	box-shadow:
+		0 0 0 1px rgba(220, 38, 38, 0.25),
+		0 0 10px rgba(239, 68, 68, 0.45),
+		0 0 22px rgba(239, 68, 68, 0.28);
+	border-radius: 3px;
+	padding: 0.05em 0.2em;
+	text-shadow: 0 0 6px rgba(248, 113, 113, 0.55);
 }

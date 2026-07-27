@@ -1,20 +1,21 @@
 <script lang="ts">
 	import type { FaqItem } from '$lib/content';
+	import FillerText from './FillerText.svelte';
 	import ProseBlock from './ProseBlock.svelte';
 
 	let { items }: { items: FaqItem[] } = $props();
 </script>
 
 {#each items as item}
-	<article class="faq-item">
-		<h6>{item.question}</h6>
+	<article class="faq-item text-panel">
+		<h4><FillerText text={item.question} /></h4>
 		<ProseBlock paragraphs={item.paragraphs} links={item.links} />
 		{#if item.list}
-			<ol>
+			<ul>
 				{#each item.list as entry}
-					<li>{entry}</li>
+					<li><FillerText text={entry} /></li>
 				{/each}
-			</ol>
+			</ul>
 		{/if}
 	</article>
 {/each}
@@ -24,7 +25,11 @@
 		margin-bottom: var(--space-lg);
 	}
 
-	.faq-item h6 {
+	.faq-item h4 {
+		font-size: clamp(1.4rem, 3.5vw, 1.85rem);
+		font-weight: 600;
+		letter-spacing: 0.02em;
 		margin-bottom: var(--space-sm);
+		text-transform: none;
 	}
 </style>

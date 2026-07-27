@@ -13,15 +13,17 @@
 {#if content?.type === 'gifts'}
 	<div class="page-content">
 		<PageTitle title={content.title} level={3} />
-		<ProseBlock paragraphs={content.paragraphs} />
-		<dl class="bank-details">
-			{#each content.bankDetails as detail}
-				<div class="bank-row">
-					<dt>{detail.label}</dt>
-					<dd>{detail.value}</dd>
-				</div>
-			{/each}
-		</dl>
+		<div class="text-panel">
+			<ProseBlock paragraphs={content.paragraphs} />
+			<dl class="bank-details">
+				{#each content.bankDetails as detail}
+					<div class="bank-row">
+						<dt>{detail.label}</dt>
+						<dd>{detail.value}</dd>
+					</div>
+				{/each}
+			</dl>
+		</div>
 	</div>
 {/if}
 

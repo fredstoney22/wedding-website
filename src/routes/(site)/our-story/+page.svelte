@@ -1,6 +1,7 @@
 <script lang="ts">
 	import PageTitle from '$lib/components/PageTitle.svelte';
-	import PlaceholderImage from '$lib/components/PlaceholderImage.svelte';
+	import FillerText from '$lib/components/FillerText.svelte';
+	import ImageCarousel from '$lib/components/ImageCarousel.svelte';
 	import ProseBlock from '$lib/components/ProseBlock.svelte';
 	import { getPage, pageTitle } from '$lib/content';
 
@@ -15,16 +16,14 @@
 	<div class="page-content">
 		<PageTitle title={content.title} />
 		{#each content.sections as section}
-			<section class="story-section">
+			<section class="story-section text-panel">
 				{#if section.heading}
-					<h3>{section.heading}</h3>
+					<h3 class="title-script"><FillerText text={section.heading} /></h3>
+				{/if}
+				{#if section.images?.length}
+					<ImageCarousel images={section.images} />
 				{/if}
 				<ProseBlock paragraphs={section.paragraphs} />
-				{#if section.images}
-					{#each section.images as image}
-						<PlaceholderImage {image} />
-					{/each}
-				{/if}
 			</section>
 		{/each}
 	</div>
@@ -33,5 +32,10 @@
 <style>
 	.story-section {
 		margin-bottom: var(--space-xl);
+	}
+
+	.story-section h3 {
+		text-transform: none;
+		letter-spacing: 0.02em;
 	}
 </style>
