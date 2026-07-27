@@ -1,14 +1,15 @@
 <script lang="ts">
-	import HomePageView from '$lib/components/HomePageView.svelte';
-	import { getPage, pageTitle } from '$lib/content';
+	import { goto } from '$app/navigation';
+	import { onMount } from 'svelte';
 
-	const content = getPage('/espanol1/');
+	onMount(() => {
+		goto('/es/', { replaceState: true });
+	});
 </script>
 
 <svelte:head>
-	<title>{pageTitle('HOME Español')}</title>
+	<meta http-equiv="refresh" content="0;url=/es/" />
+	<title>Redirecting…</title>
 </svelte:head>
 
-{#if content?.type === 'home'}
-	<HomePageView {content} locale="es" />
-{/if}
+<p><a href="/es/">Continuar en español</a></p>

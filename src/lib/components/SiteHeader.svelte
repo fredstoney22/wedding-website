@@ -2,10 +2,16 @@
 	import { siteMeta } from '$lib/content';
 	import SiteNav from './SiteNav.svelte';
 	import type { NavItem } from '$lib/content';
+	import { page } from '$app/stores';
 
 	let { navItems }: { navItems: NavItem[] } = $props();
 
 	let menuOpen = $state(false);
+	const homeHref = $derived(
+		$page.url.pathname.startsWith('/es') || $page.url.pathname.startsWith('/espanol1')
+			? '/es/'
+			: '/'
+	);
 
 	function toggleMenu() {
 		menuOpen = !menuOpen;
@@ -18,8 +24,8 @@
 
 <header class="site-header">
 	<div class="header-inner">
-		<a href="/" class="logo" aria-label={siteMeta.coupleNames}>
-			<span class="monogram">C<span class="heart">♥</span>F</span>
+		<a href={homeHref} class="logo" aria-label={siteMeta.coupleNames}>
+			<span class="brand title-display">{siteMeta.brandNames}</span>
 		</a>
 
 		<button
@@ -46,31 +52,32 @@
 		background: var(--color-bg);
 		border-bottom: 1px solid var(--color-border);
 		min-height: var(--header-height);
+		/* Keep overflow visible so the mobile dropdown can paint below the bar */
+		overflow: visible;
 	}
 
 	.header-inner {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		padding: var(--space-sm) var(--space-md);
+		gap: var(--space-sm);
+		padding: var(--space-sm) max(var(--page-gutter), env(safe-area-inset-right, 0px))
+			var(--space-sm) max(var(--page-gutter), env(safe-area-inset-left, 0px));
 		max-width: 960px;
 		margin: 0 auto;
+		width: 100%;
+		box-sizing: border-box;
 	}
 
 	.logo {
 		text-decoration: none;
 		color: var(--color-text);
+		min-width: 0;
 	}
 
-	.monogram {
-		font-family: var(--font-serif);
-		font-size: 1.5rem;
-		font-style: italic;
-	}
-
-	.heart {
-		font-style: normal;
-		font-size: 0.85em;
+	.brand {
+		font-size: clamp(1rem, 4.2vw, 1.15rem);
+		letter-spacing: 0.1em;
 	}
 
 	.menu-toggle {
@@ -81,6 +88,7 @@
 		border: none;
 		cursor: pointer;
 		padding: 0.5rem;
+		flex-shrink: 0;
 	}
 
 	.bar {

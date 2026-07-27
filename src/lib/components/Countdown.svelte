@@ -49,22 +49,28 @@
 <style>
 	.countdown {
 		display: grid;
-		grid-template-columns: repeat(4, 1fr);
-		gap: var(--space-sm);
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		gap: 0.5rem;
 		margin: var(--space-lg) 0;
 		text-align: center;
+	}
+
+	@media (min-width: 480px) {
+		.countdown {
+			gap: var(--space-sm);
+		}
 	}
 
 	.countdown-value {
 		display: block;
 		font-family: var(--font-serif);
-		font-size: clamp(1.5rem, 4vw, 2rem);
+		font-size: clamp(1.25rem, 5.5vw, 2rem);
 		line-height: 1.2;
 	}
 
 	.countdown-label {
 		display: block;
-		font-size: 0.75rem;
+		font-size: clamp(0.65rem, 2.8vw, 0.75rem);
 		text-transform: uppercase;
 		letter-spacing: 0.06em;
 		color: var(--color-text-muted);

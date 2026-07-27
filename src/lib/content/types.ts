@@ -84,16 +84,20 @@ export type FaqItem = {
 	links?: InlineLink[];
 };
 
+export type HomeDetails = {
+	date: string;
+	time: string;
+	venue: string;
+};
+
 export type HomePage = {
 	type: 'home';
 	title: string;
-	carousel: ImageRef[];
+	hero?: ImageRef;
+	carousel?: ImageRef[];
 	paragraphs: string[];
 	countdownTarget: string;
-	hashtag: {
-		title: string;
-		paragraphs: string[];
-	};
+	details?: HomeDetails;
 };
 
 export type StoryPage = {
@@ -115,6 +119,7 @@ export type SchedulePage = {
 	type: 'schedule';
 	title: string;
 	days: ScheduleDay[];
+	mapNote?: string;
 };
 
 export type SectionsPage = {
@@ -138,6 +143,23 @@ export type AttractionsPage = {
 	groups: ListingGroup[];
 };
 
+export type CitySection = {
+	heading: string;
+	/** When true, render heading in script style (Pynion role). */
+	scriptHeading?: boolean;
+	/** Optional region label above the city (e.g. Beach side). */
+	region?: string;
+	paragraphs: string[];
+	image?: ImageRef;
+};
+
+export type ColombiaPage = {
+	type: 'colombia';
+	title: string;
+	intro: string[];
+	cities: CitySection[];
+};
+
 export type FaqPage = {
 	type: 'faq';
 	title: string;
@@ -159,11 +181,14 @@ export type PageContent =
 	| SectionsPage
 	| ListingsPage
 	| AttractionsPage
+	| ColombiaPage
 	| FaqPage
 	| GiftsPage;
 
 export type SiteMeta = {
 	coupleNames: string;
+	/** Short brand for header (e.g. Fred & Caro). */
+	brandNames: string;
 	date: string;
 	location: string;
 	titleSuffix: string;

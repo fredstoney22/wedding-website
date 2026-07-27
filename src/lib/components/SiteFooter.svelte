@@ -3,27 +3,29 @@
 </script>
 
 <footer class="site-footer">
-	<p class="monogram" aria-hidden="true">C♥F</p>
-	<p class="names">{siteMeta.coupleNames}</p>
+	<p class="brand title-script">{siteMeta.brandNames}</p>
+	<p class="meta">{siteMeta.date} · {siteMeta.location}</p>
 </footer>
 
 <style>
 	.site-footer {
 		text-align: center;
-		padding: var(--space-xl) var(--space-md);
+		padding: var(--space-xl) max(var(--page-gutter), env(safe-area-inset-right, 0px))
+			max(var(--space-xl), env(safe-area-inset-bottom, 0px))
+			max(var(--page-gutter), env(safe-area-inset-left, 0px));
 		border-top: 1px solid var(--color-border);
+		background: color-mix(in srgb, var(--color-bg-cream) 70%, var(--color-bg));
 	}
 
-	.monogram {
-		font-family: var(--font-serif);
-		font-size: 1.25rem;
-		font-style: italic;
+	.brand {
 		margin: 0 0 var(--space-xs);
+		font-size: clamp(1.35rem, 5vw, 1.75rem);
 	}
 
-	.names {
-		margin: 0;
-		font-size: 0.85rem;
+	.meta {
+		margin: var(--space-xs) 0 0;
+		font-size: 0.8rem;
 		color: var(--color-text-muted);
+		padding-inline: 0.25rem;
 	}
 </style>

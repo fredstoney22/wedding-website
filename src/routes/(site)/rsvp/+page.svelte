@@ -14,11 +14,19 @@
 {#if content?.type === 'rsvp'}
 	<div class="page-content">
 		<PageTitle title={content.title} />
-		<ProseBlock paragraphs={content.intro} />
-		<RsvpForm
-			fields={content.fields}
-			submitLabel={content.submitLabel}
-			submitMessage={content.submitMessage}
-		/>
+		<div class="text-panel rsvp-panel">
+			<ProseBlock paragraphs={content.intro} />
+			<RsvpForm
+				fields={content.fields}
+				submitLabel={content.submitLabel}
+				submitMessage={content.submitMessage}
+			/>
+		</div>
 	</div>
 {/if}
+
+<style>
+	.rsvp-panel {
+		margin-top: var(--space-sm);
+	}
+</style>

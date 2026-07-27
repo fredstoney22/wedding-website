@@ -9,9 +9,19 @@
 </script>
 
 {#if level === 1}
-	<h1>{title}</h1>
+	<h1 class="page-title">{title}</h1>
 {:else if level === 3}
-	<h3>{title}</h3>
+	<h3 class="page-title">{title}</h3>
 {:else}
-	<h2>{title}</h2>
+	<h2 class="page-title">{title}</h2>
 {/if}
+
+<style>
+	.page-title {
+		font-size: clamp(1.65rem, 6vw, 2.5rem);
+		font-weight: 600;
+		letter-spacing: 0.04em;
+		margin-bottom: var(--space-md);
+		overflow-wrap: break-word;
+	}
+</style>

@@ -13,6 +13,6 @@
 {#if content?.type === 'schedule'}
 	<div class="page-content">
 		<PageTitle title={content.title} level={3} />
-		<ScheduleTimeline days={content.days} />
+		<ScheduleTimeline days={content.days} mapNote={content.mapNote} />
 	</div>
 {/if}

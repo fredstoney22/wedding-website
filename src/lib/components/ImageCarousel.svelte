@@ -31,7 +31,7 @@
 
 	.carousel-slide {
 		flex: 0 0 auto;
-		width: min(280px, 70vw);
+		width: min(260px, 78vw);
 		padding: 0 0.35rem;
 	}
 
