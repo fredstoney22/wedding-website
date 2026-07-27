@@ -1,4 +1,5 @@
 <script lang="ts">
+	import FillerText from '$lib/components/FillerText.svelte';
 	import PageTitle from '$lib/components/PageTitle.svelte';
 	import ProseBlock from '$lib/components/ProseBlock.svelte';
 	import { getPage, pageTitle } from '$lib/content';
@@ -19,7 +20,7 @@
 				{#each content.bankDetails as detail}
 					<div class="bank-row">
 						<dt>{detail.label}</dt>
-						<dd>{detail.value}</dd>
+						<dd><FillerText text={detail.value} /></dd>
 					</div>
 				{/each}
 			</dl>

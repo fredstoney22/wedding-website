@@ -44,10 +44,17 @@
 		return spanishPaths.has(candidate) ? candidate : '/es/';
 	});
 
+	function normalizePath(path: string): string {
+		if (path === '/') return '/';
+		return path.endsWith('/') ? path : `${path}/`;
+	}
+
 	function isActive(href: string): boolean {
-		const path = $page.url.pathname;
-		if (href === '/') return path === '/';
-		return path.startsWith(href);
+		const path = normalizePath($page.url.pathname);
+		const normalizedHref = normalizePath(href);
+		if (normalizedHref === '/') return path === '/';
+		if (normalizedHref === '/es/') return path === '/es/';
+		return path.startsWith(normalizedHref);
 	}
 
 	function handleNavClick() {

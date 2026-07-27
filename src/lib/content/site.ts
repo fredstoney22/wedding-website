@@ -619,36 +619,6 @@ export const pages: Record<string, PageContent> = {
 		]
 	},
 
-	'/hair-makeup/': {
-		type: 'sections',
-		title: 'Hair and Makeup',
-		sections: [
-			{
-				heading: f('Estilos Cris'),
-				level: 6,
-				paragraphs: [`Phone Number: ${f('+57 314 331 2838')}`]
-			},
-			{
-				heading: f('Denny Montes'),
-				level: 6,
-				paragraphs: [`Phone number: ${f('+57 321 211 5183')}`]
-			},
-			{
-				heading: f('Luxbeauty Salón'),
-				level: 6,
-				paragraphs: [
-					`Phone number: ${f('+57 314 378 3290')}`,
-					`Location: ${f('Cra. 11 #11-51, Villa de Leyva')}`
-				]
-			},
-			{
-				heading: f('CQ Maquillaje y Estética (Tunja)'),
-				level: 6,
-				paragraphs: [`Phone number: ${f('+57 310 699 6351')}`]
-			}
-		]
-	},
-
 	'/faqs/': {
 		type: 'faq',
 		title: 'FAQs',
@@ -745,11 +715,6 @@ export const pages: Record<string, PageContent> = {
 				paragraphs: [
 					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
 				]
-			},
-			{
-				question: 'Where can I do my hair and makeup?',
-				paragraphs: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Please check the recommendations tab.'],
-				links: [{ label: 'Hair and Makeup', href: '/hair-makeup/' }]
 			}
 		]
 	},

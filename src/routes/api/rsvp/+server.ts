@@ -64,9 +64,29 @@ export const POST: RequestHandler = async ({ request }) => {
 			redirect: 'follow'
 		});
 
+		const detail = await sheetRes.text();
+
 		if (!sheetRes.ok) {
-			const detail = await sheetRes.text();
 			console.error('[rsvp] Google Sheets webhook error', sheetRes.status, detail);
+			return json(
+				{ error: 'Could not save RSVP to the spreadsheet. Please try again later.' },
+				{ status: 502 }
+			);
+		}
+
+		let sheetBody: { ok?: boolean };
+		try {
+			sheetBody = JSON.parse(detail) as { ok?: boolean };
+		} catch {
+			console.error('[rsvp] Google Sheets webhook invalid JSON', detail);
+			return json(
+				{ error: 'Could not save RSVP to the spreadsheet. Please try again later.' },
+				{ status: 502 }
+			);
+		}
+
+		if (sheetBody.ok !== true) {
+			console.error('[rsvp] Google Sheets webhook rejected', detail);
 			return json(
 				{ error: 'Could not save RSVP to the spreadsheet. Please try again later.' },
 				{ status: 502 }
