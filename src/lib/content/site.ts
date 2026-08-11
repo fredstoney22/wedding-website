@@ -212,7 +212,7 @@ export const pages: Record<string, PageContent> = {
 				heading: 'Transportation in Bogotá',
 				level: 4,
 				paragraphs: [
-					'Bogotá offers a variety of transportation options, including official airport taxis, ride-share services such as Uber, and private transportation. Although in general Colombia is a safe country, please take extra precautions and DO NOT hail a cab off the street.'
+					'Bogotá offers a variety of transportation options, including official airport taxis, ride-share services such as Uber, and private transportation. Although in general Colombia is a safe country, please take extra precautions and **DO NOT hail a cab off the street**.'
 				],
 				children: [
 					{
@@ -477,37 +477,10 @@ export const pages: Record<string, PageContent> = {
 		type: 'listings',
 		title: 'Hotels',
 		intro: [
-			'We want to ensure that your stay is as smooth and easy as possible. Below, we are recommending hotels in Bogota and Villa de Leyva that are in convenient areas for activities and our transportation logistics.',
+			'We want to ensure that your stay is as smooth and easy as possible. Below, we are recommending hotels in Villa de Leyva that are in convenient areas for activities and our transportation logistics.',
 			'You can also find more options in [Booking](https://www.booking.com) or [Airbnb](https://www.airbnb.com). You can coordinate with friends and family to rent an entire apartment/house for significantly cheaper.'
 		],
 		groups: [
-			{
-				heading: 'Hotels in Bogotá',
-				intro: [
-					'We recommend for your stay in Bogota that you stay near or at La Zona T! It is filled with restaurants, incredible shopping, and nightlife.'
-				],
-				tiers: [
-					{
-						price: '$',
-						items: [{ name: 'Hotel Parque El Virrey' }]
-					},
-					{
-						price: '$ $',
-						items: [
-							{ name: 'B.O.G. Hotel' },
-							{ name: 'Casa Dann Carlton Hotel & Spa' }
-						]
-					},
-					{
-						price: '$ $ $',
-						items: [
-							{ name: 'JW Marriott Hotel Bogota' },
-							{ name: 'Four Seasons' },
-							{ name: 'Hilton Bogotá' }
-						]
-					}
-				]
-			},
 			{
 				heading: 'Hotels in Villa de Leyva',
 				intro: [
@@ -515,32 +488,38 @@ export const pages: Record<string, PageContent> = {
 				],
 				tiers: [
 					{
-						price: '$',
-						items: [
-							{ name: 'Sie Casa Hotel' },
-							{ name: 'Casa Boutique Villa de Leyva' },
-							{ name: 'Hotel Mesón de los Virreyes' },
-							{ name: 'Hotel Boutique La Española' },
-							{ name: 'Provenzal' }
-						]
-					},
-					{
 						price: '$$',
 						items: [
-							{ name: 'Hotel Plaza Mayor' },
-							{ name: 'Maria Bonita' },
-							{ name: 'Campanario de La Villa' },
-							{ name: 'Casa Terra' }
+							{ name: 'Sie Casa Hotel', href: 'https://siecasahotel.com/sie-casahotel/' },
+							{
+								name: 'Casa Boutique Villa de Leyva',
+								href: 'https://www.casaboutiquevilladeleyva.com/?lang=es'
+							},
+							{
+								name: 'Hotel Boutique La Española',
+								href: 'https://www.hotelboutiquelaespanola.com/'
+							},
+							{ name: 'Hotel Plaza Mayor', href: 'https://www.hotelplazamayorvilladeleyva.com/' },
+							{ name: 'Maria Bonita Hotel', href: 'https://www.mariabonitahoteles.com/' },
+							{ name: 'Casa Terra', href: 'https://casa-terra.hotels-villa-de-leyva.com/es/' },
+							{
+								name: 'Airbnb',
+								href: 'https://www.airbnb.com/s/Villa-de-Leyva--Boyac%C3%A1--Colombia/homes?place_id=ChIJGaF4PA7XQY4R3ZMRZnhrRGM&search_type=unknown&refinement_paths%5B%5D=%2Fhomes&acp_id=44e51621-a6ca-4e8f-95d3-9965a792afd0&date_picker_type=flexible_dates&checkin=2027-07-02&checkout=2027-07-06&query=Villa%20de%20Leyva%2C%20Boyac%C3%A1%2C%20Colombia&flexible_trip_lengths%5B%5D=one_week&monthly_start_date=2026-08-01&monthly_length=3&monthly_end_date=2026-11-01&search_mode=regular_search&price_filter_input_type=2&price_filter_num_nights=4&channel=EXPLORE&source=structured_search_input_header'
+							}
 						]
 					},
 					{
 						price: '$$$',
 						items: [
-							{ name: 'La Corada' },
-							{ name: 'Casa Real' },
-							{ name: 'Caney Centro' },
-							{ name: 'Casa del Árbol' },
-							{ name: 'Hotel Alcestre' }
+							{
+								name: 'Campanario de La Villa',
+								href: 'https://www.hotelcampanariodelavilla.com/'
+							},
+							{ name: 'La Corada', href: 'https://www.lacorada.com/' },
+							{ name: 'Casa Real', href: 'https://www.villadeleyvahotelcr.com/en/' },
+							{ name: 'Hotel El Giro', href: 'https://elgiro.com.co/reservaciones/' },
+							{ name: 'Casa del Árbol', href: 'https://hotellacasadelarbol.com/' },
+							{ name: 'Hotel Casa Alcestre', href: 'https://www.alcestre.com/' }
 						]
 					}
 				]
@@ -555,64 +534,16 @@ export const pages: Record<string, PageContent> = {
 		groups: [
 			{
 				heading: 'Villa de Leyva',
-				attractions: [
+				links: [
+					{ label: 'El Atico', href: 'https://www.instagram.com/centroelatico' },
+					{ label: 'El Patio', href: 'https://www.instagram.com/elpatiovilladeleyva' },
+					{ label: 'Casa San Pedro', href: 'https://casasanpedro.com/' },
+					{ label: 'Bombón Cocina Divina', href: 'https://www.instagram.com/bombondivinacocina' },
+					{ label: 'Chuska Cocina', href: 'https://www.instagram.com/chuskacocina/' },
+					{ label: 'Museo del Chocolate', href: 'https://museodelchocolate.com.co/' },
 					{
-						heading: 'BBC – Bodega Villa de Leyva',
-						level: 5,
-						paragraphs: [
-							'Want to try a large variety of national Colombian beers? Head over to BBC – also located in Bogota!'
-						]
-					},
-					{
-						heading: 'El Solar de la Guaca',
-						level: 5,
-						paragraphs: [
-							'A local favorite restaurant featuring 6 different kitchens, the choice is yours! They feature a musical show that is unique and very diverse!'
-						]
-					},
-					{
-						heading: 'Bombon Divina Cocina',
-						level: 5,
-						paragraphs: [
-							'Italian Colombian food and fusions! This spot also features incredible cocktails and cappuccinos.'
-						]
-					},
-					{
-						heading: 'Museo del Chocolate – Restaurante Cacao',
-						level: 5,
-						paragraphs: [
-							'We recommend ordering a hot chocolate. Don’t forget to drink it like a local by adding melty cheese to your cup (we promise it’s delicious)!',
-							'Pro tip: on the menu the cheese is referred to as a “pancho”!'
-						]
-					},
-					{
-						heading: 'Chuska Cocina',
-						level: 5,
-						paragraphs: [
-							'The food is so fresh, elegant and unique. You can count on a beautiful, quiet atmosphere.'
-						]
-					},
-					{
-						heading: 'El Ático',
-						level: 5,
-						paragraphs: [
-							'A large trendy courtyard filled with multiple types of cuisines, wines, smoothies, live music and stores.'
-						]
-					},
-					{
-						heading: 'La Galleta Pastelería Café',
-						level: 5,
-						paragraphs: [
-							'Milhojas, meaning “thousand sheets”, are desserts made with stacked layers of puff pastry.'
-						]
-					},
-					{
-						heading: 'Chocolate Bean to Bar',
-						level: 5,
-						paragraphs: [
-							'Yes another chocolate place, it’s never enough.',
-							'You can purchase bean-to-bar chocolates with or without sugar and dairy.'
-						]
+						label: 'Bogota Beer Company (Traditional Colombian Brewery)',
+						href: 'https://www.tripadvisor.com/Restaurant_Review-g676524-d15670431-Reviews-BBC_Cerveceria_Bodega_Villa_de_Leyva-Villa_de_Leyva_Boyaca_Department.html'
 					}
 				]
 			}
@@ -644,7 +575,7 @@ export const pages: Record<string, PageContent> = {
 					'“Rappi” is the Colombia version of UberEats and the main delivery app for food and essentials.',
 					'In Bogotá or any other big city, avoid using your phone openly in busy areas (for Villa de Leyva and small towns it is fine).',
 					'Book tours in advance or through your hotel when possible.',
-					'DO NOT hail a cab off the street.',
+					'**DO NOT hail a cab off the street.**',
 					'When using Uber or any other transportation service, please be gentle when closing car doors.',
 					'A simple “Por favor” (please) and “Gracias” (thank you) is always appreciated.',
 					'Tipping in Colombia is appreciated but not expected in the same way as in the U.S. Some restaurants often include a 10% optional service charge (“propina”) in the check.',
@@ -658,13 +589,6 @@ export const pages: Record<string, PageContent> = {
 			{
 				question: 'When do I need to RSVP?',
 				paragraphs: [`Please RSVP by ${f('May 15, 2027')} through this website.`]
-			},
-			{
-				question: 'Do you have a gift list?',
-				paragraphs: [
-					`Lorem ipsum dolor sit amet. If you wish to give something, see the Gifts page. Registry: ${f('no formal gift list — bank transfer preferred')}.`
-				],
-				links: [{ label: 'Gifts', href: '/gifts/' }]
 			},
 			{
 				question: 'Where to stay?',
@@ -704,31 +628,25 @@ export const pages: Record<string, PageContent> = {
 			},
 			{
 				question: 'Can I bring kids?',
-				paragraphs: [f('Adults-only celebration; infants in arms welcome with prior notice.')]
+				paragraphs: [
+					'While we adore celebrating with children, we are only able to accommodate the children who are specifically invited. If you have any doubts check in with the groom or bride.'
+				]
 			},
 			{
 				question: 'What’s the dress code?',
-				paragraphs: [f('Garden formal — cocktail attire; light jacket recommended for evening.')]
+				paragraphs: [
+					'Garden formal attire.',
+					'We kindly ask guests to please avoid wearing white or cream-colored attire.',
+					'Our dinner will be outdoors under the open sky, so we recommend bringing a light jacket or shawl for the evening.',
+					'For the ladies, we recommend wearing shoes or heels that are comfortable to walk in on cobblestone.'
+				]
 			},
 			{
 				question: 'Can I bring a plus one?',
 				paragraphs: [
-					'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+					'Due to limited space, we are only able to accommodate guests formally invited on your wedding invitation. If you have a plus one, it will be listed on your wedding invite and if you have any doubts check in with the groom or bride. Thank you for understanding!'
 				]
 			}
-		]
-	},
-	'/gifts/': {
-		type: 'gifts',
-		title: 'Gifts',
-		paragraphs: [
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-		],
-		bankDetails: [
-			{ label: 'Name:', value: f('Carolina & Fred') },
-			{ label: 'Bank:', value: f('Bank of America') },
-			{ label: 'Account number:', value: f('Contact the couple — last 4: 4821') },
-			{ label: 'Routing:', value: f('026009593') }
 		]
 	},
 	/* Spanish pages */
@@ -870,7 +788,7 @@ export const pages: Record<string, PageContent> = {
 				heading: 'Vuelos a Colombia',
 				level: 4,
 				paragraphs: [
-					'Si viajan internacionalmente, reserven su vuelo al Aeropuerto Internacional El Dorado (BOG) en Bogotá, Colombia.'
+					'Si viajan internacionalmente, reserven su vuelo al Aeropuerto Internacional El Dorado (BOG) en Bogotá, Colombia. Bogotá es la principal puerta de entrada internacional del país y ofrece vuelos directos desde muchas ciudades de Norteamérica, Europa y Latinoamérica.'
 				]
 			},
 			{
@@ -878,14 +796,46 @@ export const pages: Record<string, PageContent> = {
 				level: 4,
 				paragraphs: [
 					'Asegúrense de que su pasaporte sea válido por al menos seis meses después de la fecha de ingreso a Colombia.',
-					'Muchas nacionalidades, incluyendo Estados Unidos, Irlanda, Reino Unido y la mayoría de países de la Unión Europea, no requieren visa de turismo para visitas cortas. Verifiquen los requisitos actualizados según su nacionalidad.'
+					'Muchas nacionalidades, incluyendo viajeros de Estados Unidos, Irlanda, Reino Unido y la mayoría de países de la Unión Europea, no requieren visa de turismo para visitas cortas. Sin embargo, los requisitos de entrada pueden cambiar, así que les recomendamos verificar la información más actualizada según su nacionalidad antes de viajar.'
 				]
+			},
+			{
+				heading: 'Aduana en el BOG',
+				level: 4,
+				paragraphs: [
+					'Es obligatorio para todos los viajeros que ingresan a Colombia diligenciar el formulario Check-MIG. El Check-MIG es la versión colombiana de una declaración de salud, y todos los visitantes deben completarlo antes de llegar.',
+					'Al llegar, pasarán a la fila de migración, que puede tardar entre 30 minutos y 2 horas dependiendo del tráfico aéreo. El oficial de migración revisará su formulario Check-MIG, así que tengan listo el comprobante.'
+				],
+				links: [{ label: 'Check-MIG', href: 'https://apps.migracioncolombia.gov.co/pre-registro/public/preregistro.jsf' }]
 			},
 			{
 				heading: 'Transporte en Bogotá',
 				level: 4,
 				paragraphs: [
-					'Bogotá ofrece taxis oficiales del aeropuerto, Uber y transporte privado. Por favor NO tomen un taxi en la calle.'
+					'Bogotá ofrece una variedad de opciones de transporte, incluyendo taxis oficiales del aeropuerto, servicios de transporte privado como Uber, y transporte privado. Aunque Colombia es en general un país seguro, tomen precauciones adicionales y NO tomen un taxi en la calle.'
+				],
+				children: [
+					{
+						heading: 'UBER',
+						level: 6,
+						paragraphs: [
+							'Uber funciona igual que en cualquier otro lugar y es muy económico. En Colombia, los conductores de Uber prefieren que el asiento delantero se ocupe primero y luego los pasajeros suban a la parte trasera.'
+						]
+					},
+					{
+						heading: 'Taxi del hotel',
+						level: 6,
+						paragraphs: [
+							'Coordinen con su hotel para programar un taxi. También pueden tomar un taxi oficial dentro del aeropuerto hacia su hotel.'
+						]
+					},
+					{
+						heading: 'Shuttle del hotel',
+						level: 6,
+						paragraphs: [
+							'Consulten con su hotel sobre los shuttles disponibles hacia y desde su hotel en Bogotá y el aeropuerto BOG.'
+						]
+					}
 				]
 			},
 			{
@@ -893,9 +843,9 @@ export const pages: Record<string, PageContent> = {
 				level: 4,
 				paragraphs: [
 					'Ofreceremos transporte gratuito de Bogotá a Villa de Leyva y de regreso para los invitados de la boda.',
-					'El viaje dura aproximadamente 3 horas en bus privado.',
-					'Si viven en Bogotá y tienen vehículo, les pedimos que conduzcan directamente a Villa de Leyva.',
-					`Si su itinerario no coincide con los horarios del bus, contacten a ${f('+57 310 555 0198')} para recomendaciones de transporte privado.`
+					'El viaje dura aproximadamente 3 horas en bus privado, y esperamos que disfruten del hermoso paisaje mientras viajan junto a familiares y amigos.',
+					'Si viven en Bogotá y tienen vehículo, les pedimos amablemente que conduzcan directamente a Villa de Leyva en lugar de usar el transporte proporcionado. ¡Gracias por su colaboración!',
+					`Si su itinerario de viaje no coincide con los horarios programados del bus, les recomendamos organizar transporte privado. Por favor contacten a ${f('+57 310 555 0198')} para más información y recomendaciones.`
 				]
 			}
 		]
@@ -927,8 +877,20 @@ export const pages: Record<string, PageContent> = {
 				]
 			},
 			{
+				question: '¿Puedo llevar niños?',
+				paragraphs: [
+					'Aunque nos encanta celebrar con los niños, solo podemos recibir a los niños que hayan sido específicamente invitados. Ante cualquier duda, consulten con la novia o el novio.'
+				]
+			},
+			{
 				question: '¿Cuál es el código de vestimenta?',
 				paragraphs: [f('Formal de jardín — cóctel; chaqueta ligera recomendada por la noche.')]
+			},
+			{
+				question: '¿Puedo llevar acompañante?',
+				paragraphs: [
+					'Debido al espacio limitado, solo podemos recibir a los invitados formalmente indicados en su invitación de boda. Si cuentan con un acompañante, aparecerá especificado en su invitación; ante cualquier duda, consulten con la novia o el novio. ¡Gracias por su comprensión!'
+				]
 			}
 		]
 	},
