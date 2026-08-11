@@ -27,6 +27,7 @@
 			<img class="hero-image" src={content.hero.src} alt={content.hero.alt} fetchpriority="high" />
 		{/if}
 		<div class="hero-overlay" aria-hidden="true"></div>
+		<p class="hero-headline title-script">{locale === 'es' ? '¡Nos casamos!' : 'We are getting married!'}</p>
 	</section>
 
 	<div class="page-content home-body">
@@ -83,7 +84,7 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		object-position: center 35%;
+		object-position: calc(50% + 10px) 35%;
 		animation: hero-fade 1.2s ease-out both;
 	}
 
@@ -97,6 +98,20 @@
 			rgba(61, 64, 41, 0.35) 100%
 		);
 		pointer-events: none;
+	}
+
+	.hero-headline {
+		position: absolute;
+		top: calc(50% - 60px);
+		left: 50%;
+		transform: translate(-50%, -50%);
+		margin: 0;
+		width: 90%;
+		font-size: clamp(2rem, 7vw, 3.5rem);
+		color: var(--color-bg-cream);
+		text-shadow: 0 2px 16px rgba(61, 64, 41, 0.55);
+		text-align: center;
+		animation: hero-headline-rise 1s ease-out 0.15s both;
 	}
 
 	.home-body {
@@ -151,6 +166,17 @@
 	.details-list dd {
 		margin: 0;
 		font-family: var(--font-display);
+	}
+
+	@keyframes hero-headline-rise {
+		from {
+			opacity: 0;
+			transform: translate(-50%, calc(-50% + 12px));
+		}
+		to {
+			opacity: 1;
+			transform: translate(-50%, -50%);
+		}
 	}
 
 	@keyframes hero-fade {
