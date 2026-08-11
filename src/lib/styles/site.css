@@ -173,6 +173,15 @@ ol {
 	}
 }
 
+/* section-bg.png is 660x400 (aspect ratio 33/20). Once the viewport is wider
+   than that ratio, fitting to height leaves empty gutters on the sides, so
+   switch to fitting the width instead (upscaling the image, softening it). */
+@media (min-aspect-ratio: 33/20) {
+	.site-main.has-section-bg {
+		background-size: 100% auto;
+	}
+}
+
 .page-content {
 	max-width: var(--max-width);
 	margin: 0 auto;
