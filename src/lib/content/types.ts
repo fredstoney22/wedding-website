@@ -166,13 +166,6 @@ export type FaqPage = {
 	items: FaqItem[];
 };
 
-export type GiftsPage = {
-	type: 'gifts';
-	title: string;
-	paragraphs: string[];
-	bankDetails: { label: string; value: string }[];
-};
-
 export type PageContent =
 	| HomePage
 	| StoryPage
@@ -182,8 +175,7 @@ export type PageContent =
 	| ListingsPage
 	| AttractionsPage
 	| ColombiaPage
-	| FaqPage
-	| GiftsPage;
+	| FaqPage;
 
 export type SiteMeta = {
 	coupleNames: string;
