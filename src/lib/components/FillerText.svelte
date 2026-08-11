@@ -11,6 +11,8 @@
 		<span class="filler-aura">{part.value}</span>
 	{:else if part.type === 'link'}
 		<a href={part.href}>{part.value}</a>
+	{:else if part.type === 'bold'}
+		<strong>{part.value}</strong>
 	{:else}
 		{part.value}
 	{/if}

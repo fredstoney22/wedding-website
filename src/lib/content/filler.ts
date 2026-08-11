@@ -12,9 +12,10 @@ export function f(value: string): string {
 export type TextPart =
 	| { type: 'text'; value: string }
 	| { type: 'filler'; value: string }
-	| { type: 'link'; value: string; href: string };
+	| { type: 'link'; value: string; href: string }
+	| { type: 'bold'; value: string };
 
-const TOKEN_RE = /⟦([\s\S]+?)⟧|\[([^\]]+)\]\(([^)]+)\)/g;
+const TOKEN_RE = /⟦([\s\S]+?)⟧|\[([^\]]+)\]\(([^)]+)\)|\*\*([\s\S]+?)\*\*/g;
 
 export function parseFillerText(text: string): TextPart[] {
 	const parts: TextPart[] = [];
@@ -26,6 +27,8 @@ export function parseFillerText(text: string): TextPart[] {
 		}
 		if (match[1] !== undefined) {
 			parts.push({ type: 'filler', value: match[1] });
+		} else if (match[4] !== undefined) {
+			parts.push({ type: 'bold', value: match[4] });
 		} else {
 			parts.push({ type: 'link', value: match[2] ?? '', href: match[3] ?? '' });
 		}
