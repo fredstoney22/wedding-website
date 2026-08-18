@@ -1,57 +1,25 @@
-# Wedding website
+# Wedding Website — Carolina & Fred
 
-SvelteKit 2 + Svelte 5 (Runes), deployed on Vercel — cream/gold invitation site for Carolina & Fred (July 2027).
+**Live site: [carolina.frederickstoney.com](https://carolina.frederickstoney.com)**
 
-## Develop
+A bilingual (English/Spanish) wedding site with a full RSVP flow, built for a destination wedding in Colombia (July 2027).
+
+## Features
+
+- Fully bilingual site — every page (schedule, travel info, hotels, FAQs, our story) has an `/es` mirror.
+- RSVP form (`POST /api/rsvp`) that logs each submission to a Google Sheet via an Apps Script webhook and optionally sends a confirmation email through Resend.
+- Content-driven pages: schedule/itinerary, travel + transport logistics between Bogotá and the ceremony, dietary preferences, and a song-request field.
+- Countdown, image carousel, and a custom cream/gold visual theme.
+
+## Stack
+
+SvelteKit 2 · Svelte 5 (Runes) · TypeScript · Vercel (hosting) · Google Sheets (Apps Script webhook) · Resend (email)
+
+## Running locally
 
 ```sh
 npm install
 npm run dev
 ```
 
-## Build
-
-```sh
-npm run build
-npm run preview
-```
-
-## RSVP (optional)
-
-The form posts to `POST /api/rsvp`. Configure a Google Sheet webhook and/or email. Without either, submissions are accepted and logged on the server.
-
-### Google Sheet (recommended)
-
-1. Create a Sheet with a tab named `RSVPs` and this header row:
-
-   `Timestamp | Name | Email | Phone | Attend wedding | Attend welcome | Transport Bogota | Transport ceremony | Dietary | Songs`
-
-2. **Extensions → Apps Script**, paste [`scripts/rsvp-google-sheet.gs`](scripts/rsvp-google-sheet.gs), Save.
-
-3. **Deploy → New deployment → Web app**
-   - Execute as: **Me**
-   - Who has access: **Anyone**
-   - Copy the web app URL
-
-4. Set `GOOGLE_SHEETS_WEBHOOK_URL` to that URL in `.env` and Vercel.
-
-### Email (optional ping)
-
-| Variable | Purpose |
-|----------|---------|
-| `GOOGLE_SHEETS_WEBHOOK_URL` | Apps Script web app URL (appends a row per RSVP) |
-| `RSVP_TO_EMAIL` | Inbox that receives RSVPs |
-| `RESEND_API_KEY` | [Resend](https://resend.com) API key |
-| `RSVP_FROM_EMAIL` | Optional From header (defaults to Resend onboarding address) |
-
-## Fonts
-
-Display / script / body roles currently use Google Fonts substitutes (Cormorant Garamond, Great Vibes, DM Sans). Drop licensed **New Icon**, **Pynion Script**, and **TT Hoves** files into `static/fonts/` and update `@font-face` rules in `src/lib/styles/site.css` when available.
-
-## Deploy to Vercel
-
-```sh
-npx vercel
-```
-
-Or connect the repo in the [Vercel dashboard](https://vercel.com/new) and use the default SvelteKit build settings.
+RSVP submissions work out of the box (logged server-side); wiring up `GOOGLE_SHEETS_WEBHOOK_URL` and/or `RESEND_API_KEY` in `.env` enables the Sheet row + email notification — see [`scripts/rsvp-google-sheet.gs`](scripts/rsvp-google-sheet.gs) for the Apps Script side.
