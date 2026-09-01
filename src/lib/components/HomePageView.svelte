@@ -3,6 +3,7 @@
 	import { siteMeta } from '$lib/content';
 	import Countdown from './Countdown.svelte';
 	import ProseBlock from './ProseBlock.svelte';
+	import HeroStamps from './HeroStamps.svelte';
 
 	let {
 		content,
@@ -27,6 +28,7 @@
 			<img class="hero-image" src={content.hero.src} alt={content.hero.alt} fetchpriority="high" />
 		{/if}
 		<div class="hero-overlay" aria-hidden="true"></div>
+		<HeroStamps />
 		<p class="hero-headline title-script">{locale === 'es' ? '¡Nos casamos!' : 'We are getting married!'}</p>
 	</section>
 
@@ -102,6 +104,7 @@
 
 	.hero-headline {
 		position: absolute;
+		z-index: 2;
 		top: calc(50% - 60px);
 		left: 50%;
 		transform: translate(-50%, -50%);
