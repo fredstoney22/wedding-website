@@ -60,7 +60,7 @@ export const pages: Record<string, PageContent> = {
 		paragraphs: [
 			'We are so excited to share this weekend with you, and greatly appreciate you for the impact on our journies that lead us to each other.',
 			'We have detailed information about the wedding location, travel, and accommodations [here](/travel-information/). Please reach out to us if you have any questions.',
-			'Given the location and logistics of the wedding, we kindly request your RSVP by ' + f('May 15, 2027') + ' through the RSVP tab.',
+			'Given the location and logistics of the wedding, we kindly request your RSVP by ' + f('January 15, 2027') + ' through the RSVP tab.',
 
 			'Fred and Caro'
 		],
@@ -76,11 +76,35 @@ export const pages: Record<string, PageContent> = {
 		title: 'Our Story',
 		sections: [
 			{
-				heading: '',
+				heading: 'How We Met',
 				paragraphs: [
-					'Fred and Caro met for the first time in March 2024 at a board game bar in Washington DC for a bumble date.',
-					'REST OF STORY HERE...'			],
+					"In March 2024, Fred and Carolina swiped right on Bumble. After getting to know a bit about each other, Fred was inspired by Carolina's excitement for life and intellectual curiosity, and Carolina was inspired by Fred's interests and kindness. With Fred's obsession with board games, Carolina joined him at The Board Room in DC, where they shared a couple beers over Jenga, Sushi Go, and UNO. On that winter night, as Fred walked Carolina to the metro, he will always remember how Carolina clutched him in her arms waiting for the walk sign, as she was trying to stay warm."
+				],
 				images: storyCarousel
+			},
+			{
+				heading: 'Getting to Know DC (and Arlington)',
+				paragraphs: [
+					'The months that followed were a whirlwind, and Fred and Caro committed to check the box on all that DC (and Arlington) had to offer: a 360° view over DC, an evening exploring Dupont Underground, minigolf, comedy shows, cultural music festivals, a tour of embassies, paint and sips, a trip to National Harbor, and last but not least memorable, we ate more chicken and whiskey arepas than either of us can count. Somewhere in there, and countless evenings playing Overcooked, Fred also took on the very serious task of learning Spanish and the difference between "Te Amo" and "Te Quiero," while Carolina worked on learning the board games that Fred likes the most.'
+				]
+			},
+			{
+				heading: 'Greece, April 2025',
+				paragraphs: [
+					"As time passed, and to celebrate our first year anniversary, we went on our first international trip together to Greece in April 2025. We didn't only survive, but also came to the realization that it was the beginning of something more meaningful that we both wanted to keep building."
+				]
+			},
+			{
+				heading: 'Harpers Ferry',
+				paragraphs: [
+					'On November 8th, 2025, Fred and Carolina went on a weekend trip to Harpers Ferry, a cute little town in West Virginia with beautiful hikes and views of the fall foliage. Carolina was wondering that morning why Fred had decided to wear semiformal pants for the upcoming hike (the main activity of the trip), but Fred insisted those were the only pants he had packed that were left. Knowing Fred’s packing skills, Carolina believed that it was the case. Going up the hike, Fred had to navigate gatekeeping the drawstring bag with the water and sunscreen, and convince Carolina to leave a wonderful spot to find a more secluded area to “explore.” We found ourselves a rock with a view where we sat side by side. Fred had prepared a speech (and his outfit), but given the excitement and shock of the moment, Carolina can’t remember beyond the first sentence and her first reaction: “Is this for real?” It was for real, and here we are!'
+				]
+			},
+			{
+				heading: 'Onward to Colombia',
+				paragraphs: [
+					"We are very excited to continue our story in Colombia next summer with you all, and we can't wait to celebrate!"
+				]
 			}
 		]
 	},
@@ -88,8 +112,7 @@ export const pages: Record<string, PageContent> = {
 		type: 'rsvp',
 		title: 'RSVP',
 		intro: [
-			'Please let us know if you will be able to attend the wedding by filling out the form below. We look forward to celebrating with you!',
-			'MORE RSVP INSTRUCTIONS HERE...'
+			'Please let us know if you will be able to attend the wedding by January 15th 2027. We look forward to celebrating with you!'
 		],
 		fields: [
 			{ name: 'name', label: 'Name', type: 'text', placeholder: 'Name', required: true },
@@ -588,7 +611,7 @@ export const pages: Record<string, PageContent> = {
 			},
 			{
 				question: 'When do I need to RSVP?',
-				paragraphs: [`Please RSVP by ${f('May 15, 2027')} through this website.`]
+				paragraphs: [`Please RSVP by ${f('January 15, 2027')} through this website.`]
 			},
 			{
 				question: 'Where to stay?',
@@ -674,14 +697,35 @@ export const pages: Record<string, PageContent> = {
 		title: 'Nuestra Historia',
 		sections: [
 			{
-				heading: 'Lorem ipsum dolor sit amet...',
+				heading: 'Cómo nos conocimos',
 				paragraphs: [
-					'... consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-					'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-					'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.',
-					'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.'
+					'En marzo de 2024, Fred y Carolina se dieron un “like” en Bumble. Después de conocerse un poco, Fred quedó inspirado por la emoción de Carolina por la vida y su curiosidad intelectual, y Carolina quedó inspirada por los intereses y la amabilidad de Fred. Con la obsesión de Fred por los juegos de mesa, Carolina lo acompañó a The Board Room en Washington DC, donde compartieron un par de cervezas jugando Jenga, Sushi Go y UNO. Esa noche de invierno, mientras Fred acompañaba a Carolina al metro, él siempre recordará cómo ella se aferró a sus brazos esperando la señal para cruzar, tratando de mantenerse abrigada.'
 				],
 				images: storyCarousel
+			},
+			{
+				heading: 'Conociendo DC (y Arlington)',
+				paragraphs: [
+					'Los meses que siguieron fueron un torbellino, y Fred y Caro se propusieron probar todo lo que DC (y Arlington) tenían para ofrecer: una vista panorámica de 360 grados de DC, una tarde explorando Dupont Underground, minigolf, shows de comedia, festivales de música cultural, un recorrido por las embajadas, noches de “paint and sip”, una excursión a National Harbor y, por supuesto, más arepas de pollo y whiskey de las que cualquiera de los dos puede contar. En algún punto, entre incontables noches jugando Overcooked, Fred también se propuso la seria tarea de aprender español y la diferencia entre “Te Amo” y “Te Quiero”, mientras Carolina se dedicaba a aprender los juegos de mesa favoritos de Fred.'
+				]
+			},
+			{
+				heading: 'Grecia, abril de 2025',
+				paragraphs: [
+					'Con el paso del tiempo, y para celebrar nuestro primer aniversario, hicimos nuestro primer viaje internacional juntos a Grecia en abril de 2025. No solo sobrevivimos, sino que también nos dimos cuenta de que era el comienzo de algo más significativo que ambos queríamos seguir construyendo.'
+				]
+			},
+			{
+				heading: 'Harpers Ferry',
+				paragraphs: [
+					'El 8 de noviembre de 2025, Fred y Carolina se fueron de viaje de fin de semana a Harpers Ferry, un pueblito encantador en West Virginia con hermosas caminatas y vistas del follaje de otoño. Esa mañana, Carolina se preguntaba por qué Fred había decidido usar un pantalón semiformal para la caminata (la actividad principal del viaje), pero Fred insistió en que eran los únicos pantalones que le quedaban limpios en la maleta. Conociendo las habilidades de Fred para empacar, Carolina le creyó. Durante la subida, Fred tuvo que hacerse cargo de la bolsa con el agua y el protector solar, y convencer a Carolina de dejar un lugar hermoso para buscar uno más apartado y “explorar”. Encontramos una roca con una vista increíble donde nos sentamos juntos, uno al lado del otro. Fred había preparado un discurso (y su outfit), pero dada la emoción y la sorpresa del momento, Carolina no recuerda mucho más allá de la primera frase y su primera reacción: “¿Esto es en serio?”. Era en serio, ¡y aquí estamos!'
+				]
+			},
+			{
+				heading: 'Rumbo a Colombia',
+				paragraphs: [
+					'Estamos muy emocionados de continuar nuestra historia en Colombia el próximo verano junto a todos ustedes, ¡y no podemos esperar para celebrar!'
+				]
 			}
 		]
 	},
@@ -689,8 +733,7 @@ export const pages: Record<string, PageContent> = {
 		type: 'rsvp',
 		title: 'RSVP',
 		intro: [
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-			'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.'
+			'Por favor confírmanos si podrás asistir a la boda antes del 15 de enero de 2027. ¡Esperamos celebrar contigo!'
 		],
 		fields: [
 			{ name: 'name', label: 'Nombre', type: 'text', placeholder: 'Nombre', required: true },
@@ -863,7 +906,7 @@ export const pages: Record<string, PageContent> = {
 			},
 			{
 				question: '¿Cuándo debo confirmar asistencia (RSVP)?',
-				paragraphs: [`Por favor confirmen antes del ${f('15 de mayo de 2027')}.`]
+				paragraphs: [`Por favor confirmen antes del ${f('15 de enero de 2027')}.`]
 			},
 			{
 				question: '¿Dónde alojarse?',
