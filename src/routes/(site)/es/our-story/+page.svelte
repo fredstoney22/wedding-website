@@ -3,6 +3,7 @@
 	import FillerText from '$lib/components/FillerText.svelte';
 	import ProseBlock from '$lib/components/ProseBlock.svelte';
 	import ImageCarousel from '$lib/components/ImageCarousel.svelte';
+	import StoryStamps from '$lib/components/StoryStamps.svelte';
 	import { getPage, pageTitle } from '$lib/content';
 
 	const content = getPage('/es/our-story/');
@@ -14,6 +15,7 @@
 
 {#if content?.type === 'story'}
 	<div class="page-content">
+		<StoryStamps />
 		<PageTitle title={content.title} level={3} />
 		{#each content.sections as section}
 			<section class="story-section text-panel">
