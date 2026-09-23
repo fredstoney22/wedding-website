@@ -1,5 +1,4 @@
 import type { NavItem, PageContent, SiteMeta } from './types';
-import { f } from './filler';
 
 export const siteMeta: SiteMeta = {
 	coupleNames: 'Carolina & Fred',
@@ -178,7 +177,7 @@ export const pages: Record<string, PageContent> = {
 						title: 'Welcome Dinner',
 						paragraphs: [
 							'Kick things off with us! Please join us the night before our wedding for a casual evening of drinks and bites.',
-							`Time: ${f('7:00 PM')} · Location: ${f('Plaza Mayor area, Villa de Leyva')}.`
+							'Time: 7:00 PM · Location: Plaza Mayor area, Villa de Leyva.'
 						]
 					}
 				]
@@ -794,7 +793,7 @@ export const pages: Record<string, PageContent> = {
 						title: 'Cena de bienvenida',
 						paragraphs: [
 							'¡Empecemos la celebración! Acompáñennos la noche antes de nuestra boda para una velada informal de tragos y bocados.',
-							`Hora: ${f('7:00 PM')} · Lugar: ${f('zona Plaza Mayor, Villa de Leyva')}.`
+							'Hora: 7:00 PM · Lugar: zona Plaza Mayor, Villa de Leyva.'
 						]
 					}
 				]
