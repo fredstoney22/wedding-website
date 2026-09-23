@@ -755,21 +755,21 @@ export const pages: Record<string, PageContent> = {
 			},
 			{
 				name: 'transportBogota',
-				label: '¿Necesitarás transporte de Bogotá a Villa de Leyva y de regreso?',
+				label: '¿Necesitarás transporte de Bogotá a Villa de Leyva y de regreso? (Invitados del exterior)',
 				type: 'select',
 				options: ['Sí', 'No'],
 				required: true
 			},
 			{
 				name: 'transportCeremony',
-				label: '¿Necesitarás transporte de Villa de Leyva al lugar de la ceremonia: Casa Buganvilia?',
+				label: '¿Necesitarás transporte de Villa de Leyva al lugar de la ceremonia: Casa de Buganvilias?',
 				type: 'select',
 				options: ['Sí', 'No'],
 				required: true
 			},
 			{
 				name: 'dietary',
-				label: '¿Alguna restricción alimentaria?',
+				label: '¿Alguna restricción alimentaria o alergia?',
 				type: 'textarea',
 				required: true
 			},
@@ -794,7 +794,7 @@ export const pages: Record<string, PageContent> = {
 					{
 						title: 'Cena de bienvenida',
 						paragraphs: [
-							'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+							'¡Empecemos la celebración! Acompáñennos la noche antes de nuestra boda para una velada informal de tragos y bocados.',
 							`Hora: ${f('7:00 PM')} · Lugar: ${f('zona Plaza Mayor, Villa de Leyva')}.`
 						]
 					}
@@ -807,7 +807,7 @@ export const pages: Record<string, PageContent> = {
 						title: 'Ceremonia, cena y fiesta | 3:00 PM',
 						paragraphs: [
 							'Lugar: Casa de Buganvilias, Villa de Leyva',
-							'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+							'Vestimenta formal de jardín. Nuestra cena será al aire libre bajo el cielo abierto, así que recomendamos traer una chaqueta ligera o chal para la noche. Para las damas, recomendamos usar zapatos o tacones cómodos para caminar sobre calles empedradas.'
 						]
 					}
 				]
@@ -882,7 +882,7 @@ export const pages: Record<string, PageContent> = {
 					'Ofreceremos transporte gratuito de Bogotá a Villa de Leyva y de regreso para los invitados de la boda.',
 					'El viaje dura aproximadamente 3 horas en bus privado, y esperamos que disfruten del hermoso paisaje mientras viajan junto a familiares y amigos.',
 					'Si viven en Bogotá y tienen vehículo, les pedimos amablemente que conduzcan directamente a Villa de Leyva en lugar de usar el transporte proporcionado. ¡Gracias por su colaboración!',
-					`Si su itinerario de viaje no coincide con los horarios programados del bus, les recomendamos organizar transporte privado. Por favor contacten a ${f('+57 310 555 0198')} para más información y recomendaciones.`
+					'Si su itinerario de viaje no coincide con los horarios programados del bus, les recomendamos organizar transporte privado. Por favor contacten a +57 3215009618 para más información y recomendaciones.'
 				]
 			}
 		]
@@ -894,8 +894,14 @@ export const pages: Record<string, PageContent> = {
 			{
 				question: '¿Es seguro viajar a Colombia?',
 				paragraphs: [
-					'Colombia se ha convertido en un destino turístico cada vez más popular y es generalmente muy acogedor con los visitantes. Como en cualquier viaje internacional, recomendamos precauciones básicas de seguridad.',
-					'Bogotá y Villa de Leyva tienen buena infraestructura turística y se consideran seguros para visitantes.'
+					'Colombia se ha convertido en un destino turístico cada vez más popular y es generalmente muy acogedor con los visitantes. Bogotá y Villa de Leyva tienen buena infraestructura turística y se consideran seguros para los visitantes. Queremos que se sientan completamente tranquilos durante su estadía en Colombia. Este es un país cálido y acogedor, lleno de gente maravillosa, y estamos aquí para que su experiencia sea lo más fácil y agradable posible. Como en cualquier viaje internacional, recomendamos precauciones básicas de seguridad:'
+				],
+				list: [
+					'Estén atentos a su entorno en zonas concurridas.',
+					'Mantengan bolsos y pertenencias a la vista en todo momento.',
+					'Eviten mostrar objetos de valor como joyas costosas o grandes cantidades de efectivo.',
+					'Usen taxis oficiales o servicios de transporte confiables.',
+					'Manténganse en zonas transitadas y recomendadas, especialmente de noche.'
 				]
 			},
 			{
@@ -921,7 +927,9 @@ export const pages: Record<string, PageContent> = {
 			},
 			{
 				question: '¿Cuál es el código de vestimenta?',
-				paragraphs: [f('Formal de jardín — cóctel; chaqueta ligera recomendada por la noche.')]
+				paragraphs: [
+					'Vestimenta formal de jardín. Nuestra cena será al aire libre bajo el cielo abierto, así que recomendamos traer una chaqueta ligera o chal para la noche. Para las damas, recomendamos usar zapatos o tacones cómodos para caminar sobre calles empedradas.'
+				]
 			},
 			{
 				question: '¿Puedo llevar acompañante?',
