@@ -177,7 +177,8 @@ export const pages: Record<string, PageContent> = {
 						title: 'Welcome Dinner',
 						paragraphs: [
 							'Kick things off with us! Please join us the night before our wedding for a casual evening of drinks and bites.',
-							'Time: 7:00 PM · Location: Plaza Mayor area, Villa de Leyva.'
+							'Time: 7:00 PM',
+							'Location: Plaza Mayor area, Villa de Leyva'
 						]
 					}
 				]
@@ -186,8 +187,9 @@ export const pages: Record<string, PageContent> = {
 				date: 'Saturday, July 3, 2027',
 				events: [
 					{
-						title: 'Wedding Ceremony, Dinner and Party | 3:00 PM',
+						title: 'Wedding Ceremony, Dinner and Party',
 						paragraphs: [
+							'Time: 3:00 PM',
 							'Location: Casa de Buganvilias, Villa de Leyva',
 							'Garden formal attire. Our dinner will be outdoors under the open sky, so we recommend bringing a light jacket or shawl for the evening. For the ladies, we recommend wearing shoes or heels that are comfortable to walk in on cobblestone.'
 						]
@@ -793,7 +795,8 @@ export const pages: Record<string, PageContent> = {
 						title: 'Cena de bienvenida',
 						paragraphs: [
 							'¡Empecemos la celebración! Acompáñennos la noche antes de nuestra boda para una velada informal de tragos y bocados.',
-							'Hora: 7:00 PM · Lugar: zona Plaza Mayor, Villa de Leyva.'
+							'Hora: 7:00 PM',
+							'Lugar: zona Plaza Mayor, Villa de Leyva'
 						]
 					}
 				]
@@ -802,8 +805,9 @@ export const pages: Record<string, PageContent> = {
 				date: 'Sábado, 3 de julio de 2027',
 				events: [
 					{
-						title: 'Ceremonia, cena y fiesta | 3:00 PM',
+						title: 'Ceremonia, cena y fiesta',
 						paragraphs: [
+							'Hora: 3:00 PM',
 							'Lugar: Casa de Buganvilias, Villa de Leyva',
 							'Vestimenta formal de jardín. Nuestra cena será al aire libre bajo el cielo abierto, así que recomendamos traer una chaqueta ligera o chal para la noche. Para las damas, recomendamos usar zapatos o tacones cómodos para caminar sobre calles empedradas.'
 						]
