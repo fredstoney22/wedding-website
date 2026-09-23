@@ -1,5 +1,4 @@
 import type { NavItem, PageContent, SiteMeta } from './types';
-import { f } from './filler';
 
 export const siteMeta: SiteMeta = {
 	coupleNames: 'Carolina & Fred',
@@ -60,9 +59,7 @@ export const pages: Record<string, PageContent> = {
 		paragraphs: [
 			'We are so excited to share this weekend with you, and greatly appreciate you for the impact on our journies that lead us to each other.',
 			'We have detailed information about the wedding location, travel, and accommodations [here](/travel-information/). Please reach out to us if you have any questions.',
-			'Given the location and logistics of the wedding, we kindly request your RSVP by ' + f('January 15, 2027') + ' through the RSVP tab.',
-
-			'Fred and Caro'
+			'Given the location and logistics of the wedding, we kindly request your RSVP by January 15, 2027 through the RSVP tab.'
 		],
 		countdownTarget: siteMeta.countdownTarget,
 		details: {
@@ -140,21 +137,21 @@ export const pages: Record<string, PageContent> = {
 			},
 			{
 				name: 'transportBogota',
-				label: 'Will you need transportation from Bogot\u00e1 to Villa de Leyva and returning?',
+				label: 'Will you need transportation from Bogot\u00e1 to Villa de Leyva and returning? (Overseas Guests)',
 				type: 'select',
 				options: ['Yes', 'No'],
 				required: true
 			},
 			{
 				name: 'transportCeremony',
-				label: 'Will you need transportation from Villa de Leyva to the ceremony site: Casa Buganvilia?',
+				label: 'Will you need transportation from Villa de Leyva to the ceremony site: Casa de Buganvilias?',
 				type: 'select',
 				options: ['Yes', 'No'],
 				required: true
 			},
 			{
 				name: 'dietary',
-				label: 'Any dietary restrictions?',
+				label: 'Any dietary restrictions or allergies?',
 				type: 'textarea',
 				required: true
 			},
@@ -179,8 +176,9 @@ export const pages: Record<string, PageContent> = {
 					{
 						title: 'Welcome Dinner',
 						paragraphs: [
-							'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-							`Time: ${f('7:00 PM')} · Location: ${f('Plaza Mayor area, Villa de Leyva')}.`
+							'Kick things off with us! Please join us the night before our wedding for a casual evening of drinks and bites.',
+							'Time: 7:00 PM',
+							'Location: Plaza Mayor area, Villa de Leyva'
 						]
 					}
 				]
@@ -189,11 +187,11 @@ export const pages: Record<string, PageContent> = {
 				date: 'Saturday, July 3, 2027',
 				events: [
 					{
-						title: 'Wedding Ceremony, Dinner and Party | 3:00 PM',
+						title: 'Wedding Ceremony, Dinner and Party',
 						paragraphs: [
+							'Time: 3:00 PM',
 							'Location: Casa de Buganvilias, Villa de Leyva',
-							'Attire: Formal Attire',
-							'Ladies, please refrain from wearing white, nudes, light pinks, lavender, metallics (gold or silver) and any glitter / shinny attire. Thank you for your cooperation!',
+							'Garden formal attire. Our dinner will be outdoors under the open sky, so we recommend bringing a light jacket or shawl for the evening. For the ladies, we recommend wearing shoes or heels that are comfortable to walk in on cobblestone.'
 						]
 					}
 				]
@@ -268,7 +266,7 @@ export const pages: Record<string, PageContent> = {
 					'We will be providing complimentary transportation from Bogotá to Villa de Leyva and back for wedding guests.',
 					'The journey is approximately 3 hours by private bus, and we hope you\'ll enjoy the beautiful scenery along the way while traveling together with family and friends.',
 					'If you reside in Bogotá and have access to a vehicle, we kindly ask that you drive directly to Villa de Leyva instead of using the provided transportation. Thank you for your cooperation!',
-					`For guests whose travel itinerary does not align with the scheduled shuttle times, we recommend arranging private transportation. Please contact ${f('+57 310 555 0198')} for additional information and recommendations.`
+					'For guests whose travel itinerary does not align with the scheduled shuttle times, we recommend arranging private transportation. Please contact +57 3215009618 for additional information and recommendations.'
 				]
 			}
 		]
@@ -291,7 +289,7 @@ export const pages: Record<string, PageContent> = {
 					"Bogotá is a high-altitude metropolis nestled in the Andes Mountains (8,660 feet above sea level) and the vibrant capital of Colombia, offering a captivating blend of rich history, cultural diversity, and breathtaking natural landscapes. If you have extra time before or after the wedding, we highly recommend exploring some of Bogotá's highlights. Please see our Recommendations section for things to do in Bogotá.",
 					"In Bogotá, the average low temperatures range from 7°C to 10°C (45°F to 50°F), while daytime highs typically range from 14°C to 19°C (57°F to 66°F). Due to its high altitude, Bogotá’s weather can change quickly, so it’s a good idea to dress in layers and be prepared for variations."
 				],
-				image: { src: '/images/bogota.jpg', alt: 'Bogotá', aspect: 'portrait' }
+				image: { src: '/images/bogota.jpg', alt: 'Bogotá', aspect: 'landscape' }
 			},
 			{
 				heading: 'Villa de Leyva',
@@ -580,8 +578,7 @@ export const pages: Record<string, PageContent> = {
 			{
 				question: 'Is it safe to travel to Colombia?',
 				paragraphs: [
-					'Colombia has become an increasingly popular travel destination and is generally very welcoming to tourists. As with any international travel, we recommend practicing standard travel safety:',
-					'Bogotá and Villa de Leyva both have strong tourism infrastructure and are considered safe for visitors. We want you to feel completely at ease during your time in Colombia. This is a warm, welcoming country filled with incredible people, and we are here to make your experience as smooth and enjoyable as possible.'
+					'Colombia has become an increasingly popular travel destination and is generally very welcoming to tourists. Bogotá and Villa de Leyva both have strong tourism infrastructure and are considered safe for visitors. We want you to feel completely at ease during your time in Colombia. This is a warm, welcoming country filled with incredible people, and we are here to make your experience as smooth and enjoyable as possible. As with any international travel, we recommend practicing standard travel safety:'
 				],
 				list: [
 					'Stay aware of your surroundings in busy areas.',
@@ -595,23 +592,23 @@ export const pages: Record<string, PageContent> = {
 				question: 'Pro tips when visiting Colombia',
 				list: [
 					'Always ask prices in advance; local market prices are often negotiable.',
-					'“Rappi” is the Colombia version of UberEats and the main delivery app for food and essentials.',
+					'“Rappi” is the Colombian version of UberEats and the main delivery app for food and essentials.',
 					'In Bogotá or any other big city, avoid using your phone openly in busy areas (for Villa de Leyva and small towns it is fine).',
 					'Book tours in advance or through your hotel when possible.',
 					'**DO NOT hail a cab off the street.**',
 					'When using Uber or any other transportation service, please be gentle when closing car doors.',
 					'A simple “Por favor” (please) and “Gracias” (thank you) is always appreciated.',
 					'Tipping in Colombia is appreciated but not expected in the same way as in the U.S. Some restaurants often include a 10% optional service charge (“propina”) in the check.',
-					'Emergency number in Colombia: 112.'
+					'Emergency number in Colombia: 123 (connects to police, ambulance, and fire departments).'
 				]
 			},
 			{
 				question: 'How do I get to the venue?',
-				paragraphs: [`Complimentary shuttle from Plaza Mayor to Casa de Buganvilias (~${f('15 minutes')}). Exact pickup times shared the week of the wedding.`]
+				paragraphs: ['Complimentary shuttle from Plaza Mayor to Casa de Buganvilias (~10 minutes). Exact pickup times shared the week of the wedding.']
 			},
 			{
 				question: 'When do I need to RSVP?',
-				paragraphs: [`Please RSVP by ${f('January 15, 2027')} through this website.`]
+				paragraphs: ['Please RSVP by January 15, 2027 through this website.']
 			},
 			{
 				question: 'Where to stay?',
@@ -644,7 +641,6 @@ export const pages: Record<string, PageContent> = {
 			{
 				question: 'What should I pack?',
 				list: [
-					'The Colombian sun is much stronger than many visitors expect. Even on cool or cloudy days, UV exposure can be intense. Bring sunscreen, sunglasses, and a hat.',
 					'Bring comfortable walking shoes — Villa de Leyva is known for cobblestone streets.',
 					'Colombia uses 110V electricity with Type A and Type B plugs (the same as the United States and Canada). Guests traveling from Europe or other regions will need a plug adapter.'
 				]
@@ -658,10 +654,7 @@ export const pages: Record<string, PageContent> = {
 			{
 				question: 'What’s the dress code?',
 				paragraphs: [
-					'Garden formal attire.',
-					'We kindly ask guests to please avoid wearing white or cream-colored attire.',
-					'Our dinner will be outdoors under the open sky, so we recommend bringing a light jacket or shawl for the evening.',
-					'For the ladies, we recommend wearing shoes or heels that are comfortable to walk in on cobblestone.'
+					'Garden formal attire. Our dinner will be outdoors under the open sky, so we recommend bringing a light jacket or shawl for the evening. For the ladies, we recommend wearing shoes or heels that are comfortable to walk in on cobblestone.'
 				]
 			},
 			{
@@ -682,8 +675,9 @@ export const pages: Record<string, PageContent> = {
 			aspect: 'landscape'
 		},
 		paragraphs: [
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-			`Duis aute irure dolor in reprehenderit. Confirma asistencia en RSVP antes del ${f('15 de mayo de 2027')}.`
+			'Estamos muy emocionados de compartir este fin de semana con ustedes, y agradecemos profundamente el impacto que han tenido en el camino que nos llevó el uno al otro.',
+			'Tenemos información detallada sobre el lugar de la boda, el viaje y el alojamiento [aquí](/es/travel-information/). Por favor contáctennos si tienen alguna pregunta.',
+			'Dada la ubicación y la logística de la boda, les pedimos amablemente que confirmen su asistencia antes del 15 de enero de 2027 a través de la pestaña RSVP.'
 		],
 		countdownTarget: siteMeta.countdownTarget,
 		details: {
@@ -761,21 +755,21 @@ export const pages: Record<string, PageContent> = {
 			},
 			{
 				name: 'transportBogota',
-				label: '¿Necesitarás transporte de Bogotá a Villa de Leyva y de regreso?',
+				label: '¿Necesitarás transporte de Bogotá a Villa de Leyva y de regreso? (Invitados del exterior)',
 				type: 'select',
 				options: ['Sí', 'No'],
 				required: true
 			},
 			{
 				name: 'transportCeremony',
-				label: '¿Necesitarás transporte de Villa de Leyva al lugar de la ceremonia: Casa Buganvilia?',
+				label: '¿Necesitarás transporte de Villa de Leyva al lugar de la ceremonia: Casa de Buganvilias?',
 				type: 'select',
 				options: ['Sí', 'No'],
 				required: true
 			},
 			{
 				name: 'dietary',
-				label: '¿Alguna restricción alimentaria?',
+				label: '¿Alguna restricción alimentaria o alergia?',
 				type: 'textarea',
 				required: true
 			},
@@ -800,8 +794,9 @@ export const pages: Record<string, PageContent> = {
 					{
 						title: 'Cena de bienvenida',
 						paragraphs: [
-							'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-							`Hora: ${f('7:00 PM')} · Lugar: ${f('zona Plaza Mayor, Villa de Leyva')}.`
+							'¡Empecemos la celebración! Acompáñennos la noche antes de nuestra boda para una velada informal de tragos y bocados.',
+							'Hora: 7:00 PM',
+							'Lugar: zona Plaza Mayor, Villa de Leyva'
 						]
 					}
 				]
@@ -810,10 +805,11 @@ export const pages: Record<string, PageContent> = {
 				date: 'Sábado, 3 de julio de 2027',
 				events: [
 					{
-						title: 'Ceremonia, cena y fiesta | 3:00 PM',
+						title: 'Ceremonia, cena y fiesta',
 						paragraphs: [
+							'Hora: 3:00 PM',
 							'Lugar: Casa de Buganvilias, Villa de Leyva',
-							'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+							'Vestimenta formal de jardín. Nuestra cena será al aire libre bajo el cielo abierto, así que recomendamos traer una chaqueta ligera o chal para la noche. Para las damas, recomendamos usar zapatos o tacones cómodos para caminar sobre calles empedradas.'
 						]
 					}
 				]
@@ -888,7 +884,7 @@ export const pages: Record<string, PageContent> = {
 					'Ofreceremos transporte gratuito de Bogotá a Villa de Leyva y de regreso para los invitados de la boda.',
 					'El viaje dura aproximadamente 3 horas en bus privado, y esperamos que disfruten del hermoso paisaje mientras viajan junto a familiares y amigos.',
 					'Si viven en Bogotá y tienen vehículo, les pedimos amablemente que conduzcan directamente a Villa de Leyva en lugar de usar el transporte proporcionado. ¡Gracias por su colaboración!',
-					`Si su itinerario de viaje no coincide con los horarios programados del bus, les recomendamos organizar transporte privado. Por favor contacten a ${f('+57 310 555 0198')} para más información y recomendaciones.`
+					'Si su itinerario de viaje no coincide con los horarios programados del bus, les recomendamos organizar transporte privado. Por favor contacten a +57 3215009618 para más información y recomendaciones.'
 				]
 			}
 		]
@@ -900,13 +896,19 @@ export const pages: Record<string, PageContent> = {
 			{
 				question: '¿Es seguro viajar a Colombia?',
 				paragraphs: [
-					'Colombia se ha convertido en un destino turístico cada vez más popular y es generalmente muy acogedor con los visitantes. Como en cualquier viaje internacional, recomendamos precauciones básicas de seguridad.',
-					'Bogotá y Villa de Leyva tienen buena infraestructura turística y se consideran seguros para visitantes.'
+					'Colombia se ha convertido en un destino turístico cada vez más popular y es generalmente muy acogedor con los visitantes. Bogotá y Villa de Leyva tienen buena infraestructura turística y se consideran seguros para los visitantes. Queremos que se sientan completamente tranquilos durante su estadía en Colombia. Este es un país cálido y acogedor, lleno de gente maravillosa, y estamos aquí para que su experiencia sea lo más fácil y agradable posible. Como en cualquier viaje internacional, recomendamos precauciones básicas de seguridad:'
+				],
+				list: [
+					'Estén atentos a su entorno en zonas concurridas.',
+					'Mantengan bolsos y pertenencias a la vista en todo momento.',
+					'Eviten mostrar objetos de valor como joyas costosas o grandes cantidades de efectivo.',
+					'Usen taxis oficiales o servicios de transporte confiables.',
+					'Manténganse en zonas transitadas y recomendadas, especialmente de noche.'
 				]
 			},
 			{
 				question: '¿Cuándo debo confirmar asistencia (RSVP)?',
-				paragraphs: [`Por favor confirmen antes del ${f('15 de enero de 2027')}.`]
+				paragraphs: ['Por favor confirmen antes del 15 de enero de 2027.']
 			},
 			{
 				question: '¿Dónde alojarse?',
@@ -927,7 +929,9 @@ export const pages: Record<string, PageContent> = {
 			},
 			{
 				question: '¿Cuál es el código de vestimenta?',
-				paragraphs: [f('Formal de jardín — cóctel; chaqueta ligera recomendada por la noche.')]
+				paragraphs: [
+					'Vestimenta formal de jardín. Nuestra cena será al aire libre bajo el cielo abierto, así que recomendamos traer una chaqueta ligera o chal para la noche. Para las damas, recomendamos usar zapatos o tacones cómodos para caminar sobre calles empedradas.'
+				]
 			},
 			{
 				question: '¿Puedo llevar acompañante?',
