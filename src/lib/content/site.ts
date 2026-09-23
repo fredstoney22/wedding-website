@@ -60,9 +60,7 @@ export const pages: Record<string, PageContent> = {
 		paragraphs: [
 			'We are so excited to share this weekend with you, and greatly appreciate you for the impact on our journies that lead us to each other.',
 			'We have detailed information about the wedding location, travel, and accommodations [here](/travel-information/). Please reach out to us if you have any questions.',
-			'Given the location and logistics of the wedding, we kindly request your RSVP by ' + f('January 15, 2027') + ' through the RSVP tab.',
-
-			'Fred and Caro'
+			'Given the location and logistics of the wedding, we kindly request your RSVP by January 15, 2027 through the RSVP tab.'
 		],
 		countdownTarget: siteMeta.countdownTarget,
 		details: {
@@ -609,7 +607,7 @@ export const pages: Record<string, PageContent> = {
 			},
 			{
 				question: 'When do I need to RSVP?',
-				paragraphs: [`Please RSVP by ${f('January 15, 2027')} through this website.`]
+				paragraphs: ['Please RSVP by January 15, 2027 through this website.']
 			},
 			{
 				question: 'Where to stay?',
@@ -676,8 +674,9 @@ export const pages: Record<string, PageContent> = {
 			aspect: 'landscape'
 		},
 		paragraphs: [
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-			`Duis aute irure dolor in reprehenderit. Confirma asistencia en RSVP antes del ${f('15 de mayo de 2027')}.`
+			'Estamos muy emocionados de compartir este fin de semana con ustedes, y agradecemos profundamente el impacto que han tenido en el camino que nos llevó el uno al otro.',
+			'Tenemos información detallada sobre el lugar de la boda, el viaje y el alojamiento [aquí](/es/travel-information/). Por favor contáctennos si tienen alguna pregunta.',
+			'Dada la ubicación y la logística de la boda, les pedimos amablemente que confirmen su asistencia antes del 15 de enero de 2027 a través de la pestaña RSVP.'
 		],
 		countdownTarget: siteMeta.countdownTarget,
 		details: {
@@ -906,7 +905,7 @@ export const pages: Record<string, PageContent> = {
 			},
 			{
 				question: '¿Cuándo debo confirmar asistencia (RSVP)?',
-				paragraphs: [`Por favor confirmen antes del ${f('15 de enero de 2027')}.`]
+				paragraphs: ['Por favor confirmen antes del 15 de enero de 2027.']
 			},
 			{
 				question: '¿Dónde alojarse?',
