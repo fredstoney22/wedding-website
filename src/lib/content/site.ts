@@ -603,7 +603,7 @@ export const pages: Record<string, PageContent> = {
 			},
 			{
 				question: 'How do I get to the venue?',
-				paragraphs: [`Complimentary shuttle from Plaza Mayor to Casa de Buganvilias (~${f('15 minutes')}). Exact pickup times shared the week of the wedding.`]
+				paragraphs: ['Complimentary shuttle from Plaza Mayor to Casa de Buganvilias (~10 minutes). Exact pickup times shared the week of the wedding.']
 			},
 			{
 				question: 'When do I need to RSVP?',
