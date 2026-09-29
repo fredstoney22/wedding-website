@@ -14,6 +14,8 @@ const REQUIRED = [
 	'songs'
 ] as const;
 
+const OPTIONAL = ['notes'] as const;
+
 function escapeHtml(value: string) {
 	return value
 		.replaceAll('&', '&amp;')
@@ -37,6 +39,10 @@ export const POST: RequestHandler = async ({ request }) => {
 			return json({ error: `Missing required field: ${key}` }, { status: 400 });
 		}
 		payload[key] = value.trim();
+	}
+	for (const key of OPTIONAL) {
+		const value = body[key];
+		payload[key] = typeof value === 'string' ? value.trim() : '';
 	}
 
 	const submittedAt = new Date().toISOString();

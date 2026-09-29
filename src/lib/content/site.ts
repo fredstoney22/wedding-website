@@ -150,7 +150,13 @@ export const pages: Record<string, PageContent> = {
 			'Please let us know if you will be able to attend the wedding by January 15th 2027. We look forward to celebrating with you!'
 		],
 		fields: [
-			{ name: 'name', label: 'Name', type: 'text', placeholder: 'Name', required: true },
+			{
+				name: 'name',
+				label: 'Names (please list everyone in your party)',
+				type: 'text',
+				placeholder: 'Names',
+				required: true
+			},
 			{ name: 'email', label: 'Email', type: 'email', placeholder: 'Email', required: true },
 			{
 				name: 'phone',
@@ -189,7 +195,7 @@ export const pages: Record<string, PageContent> = {
 			},
 			{
 				name: 'dietary',
-				label: 'Any dietary restrictions or allergies?',
+				label: 'Any dietary restrictions or allergies? Please let us know who has them.',
 				type: 'textarea',
 				required: true
 			},
@@ -198,6 +204,12 @@ export const pages: Record<string, PageContent> = {
 				label: 'Song requests for dancing?',
 				type: 'textarea',
 				required: true
+			},
+			{
+				name: 'notes',
+				label: 'Anything else we should be aware of?',
+				type: 'textarea',
+				required: false
 			}
 		],
 		submitLabel: 'Send',
@@ -732,7 +744,13 @@ export const pages: Record<string, PageContent> = {
 			'Por favor confírmanos si podrás asistir a la boda antes del 15 de enero de 2027. ¡Esperamos celebrar contigo!'
 		],
 		fields: [
-			{ name: 'name', label: 'Nombre', type: 'text', placeholder: 'Nombre', required: true },
+			{
+				name: 'name',
+				label: 'Nombres (por favor incluyan a todas las personas de su grupo)',
+				type: 'text',
+				placeholder: 'Nombres',
+				required: true
+			},
 			{ name: 'email', label: 'Correo', type: 'email', placeholder: 'Correo', required: true },
 			{
 				name: 'phone',
@@ -771,7 +789,7 @@ export const pages: Record<string, PageContent> = {
 			},
 			{
 				name: 'dietary',
-				label: '¿Alguna restricción alimentaria o alergia?',
+				label: '¿Alguna restricción alimentaria o alergia? Por favor indíquennos quién la tiene.',
 				type: 'textarea',
 				required: true
 			},
@@ -780,6 +798,12 @@ export const pages: Record<string, PageContent> = {
 				label: '¿Canciones para bailar?',
 				type: 'textarea',
 				required: true
+			},
+			{
+				name: 'notes',
+				label: '¿Algo más que debamos saber?',
+				type: 'textarea',
+				required: false
 			}
 		],
 		submitLabel: 'Enviar',

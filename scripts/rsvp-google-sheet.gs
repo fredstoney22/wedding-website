@@ -4,7 +4,7 @@
  * Setup:
  * 1. Create a Google Sheet. Row 1 headers (exact order):
  *    Timestamp | Name | Email | Phone | Attend wedding | Attend welcome |
- *    Transport Bogota | Transport ceremony | Dietary | Songs
+ *    Transport Bogota | Transport ceremony | Dietary | Songs | Notes
  * 2. Extensions → Apps Script → paste this file → Save
  * 3. Deploy → New deployment → Type: Web app
  *    - Execute as: Me
@@ -30,7 +30,8 @@ function doPost(e) {
 			data.transportBogota || '',
 			data.transportCeremony || '',
 			data.dietary || '',
-			data.songs || ''
+			data.songs || '',
+			data.notes || ''
 		]);
 
 		return ContentService.createTextOutput(JSON.stringify({ ok: true })).setMimeType(
