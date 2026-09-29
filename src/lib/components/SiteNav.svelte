@@ -20,6 +20,7 @@
 		'/es/rsvp/',
 		'/es/schedule/',
 		'/es/travel-information/',
+		'/es/hotels/',
 		'/es/faqs/'
 	]);
 

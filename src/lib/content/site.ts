@@ -17,6 +17,44 @@ const storyCarousel = [
 	{ src: '/images/carousel-5.jpg', alt: 'Fred and Caro', aspect: 'portrait' as const }
 ];
 
+const villaDeLeyvaHotelTiers = [
+	{
+		price: '$$',
+		items: [
+			{ name: 'Sie Casa Hotel', href: 'https://siecasahotel.com/sie-casahotel/' },
+			{
+				name: 'Casa Boutique Villa de Leyva',
+				href: 'https://www.casaboutiquevilladeleyva.com/?lang=es'
+			},
+			{
+				name: 'Hotel Boutique La Española',
+				href: 'https://www.hotelboutiquelaespanola.com/'
+			},
+			{ name: 'Hotel Plaza Mayor', href: 'https://www.hotelplazamayorvilladeleyva.com/' },
+			{ name: 'Maria Bonita Hotel', href: 'https://www.mariabonitahoteles.com/' },
+			{ name: 'Casa Terra', href: 'https://casa-terra.hotels-villa-de-leyva.com/es/' },
+			{
+				name: 'Airbnb',
+				href: 'https://www.airbnb.com/s/Villa-de-Leyva--Boyac%C3%A1--Colombia/homes?place_id=ChIJGaF4PA7XQY4R3ZMRZnhrRGM&search_type=unknown&refinement_paths%5B%5D=%2Fhomes&acp_id=44e51621-a6ca-4e8f-95d3-9965a792afd0&date_picker_type=flexible_dates&checkin=2027-07-02&checkout=2027-07-06&query=Villa%20de%20Leyva%2C%20Boyac%C3%A1%2C%20Colombia&flexible_trip_lengths%5B%5D=one_week&monthly_start_date=2026-08-01&monthly_length=3&monthly_end_date=2026-11-01&search_mode=regular_search&price_filter_input_type=2&price_filter_num_nights=4&channel=EXPLORE&source=structured_search_input_header'
+			}
+		]
+	},
+	{
+		price: '$$$',
+		items: [
+			{
+				name: 'Campanario de La Villa',
+				href: 'https://www.hotelcampanariodelavilla.com/'
+			},
+			{ name: 'La Corada', href: 'https://www.lacorada.com/' },
+			{ name: 'Casa Real', href: 'https://www.villadeleyvahotelcr.com/en/' },
+			{ name: 'Hotel El Giro', href: 'https://elgiro.com.co/reservaciones/' },
+			{ name: 'Casa del Árbol', href: 'https://hotellacasadelarbol.com/' },
+			{ name: 'Hotel Casa Alcestre', href: 'https://www.alcestre.com/' }
+		]
+	}
+];
+
 export const navigation: NavItem[] = [
 	{ label: 'Home', href: '/' },
 	{ label: 'Our Story', href: '/our-story/' },
@@ -191,7 +229,7 @@ export const pages: Record<string, PageContent> = {
 						paragraphs: [
 							'Time: 3:00 PM',
 							'Location: Casa de Buganvilias, Villa de Leyva',
-							'Garden formal attire. Our dinner will be outdoors under the open sky, so we recommend bringing a light jacket or shawl for the evening. For the ladies, we recommend wearing shoes or heels that are comfortable to walk in on cobblestone.'
+							'Formal attire. We want you to look spectacular and be comfortable! We encourage bright colors, floral prints, and light fabrics. Our dinner will be outdoors under the open sky, so we recommend bringing a light jacket or shawl for the evening. For the ladies, we recommend wearing shoes or heels that are comfortable to walk in on cobblestone, and avoiding white or similar-colored dresses.'
 						]
 					}
 				]
@@ -507,43 +545,7 @@ export const pages: Record<string, PageContent> = {
 				intro: [
 					'We recommend staying walking distance from the plaza, as the pick-up and drop-off spots will be there. If you stay outside, you’ll likely need a vehicle to get around.'
 				],
-				tiers: [
-					{
-						price: '$$',
-						items: [
-							{ name: 'Sie Casa Hotel', href: 'https://siecasahotel.com/sie-casahotel/' },
-							{
-								name: 'Casa Boutique Villa de Leyva',
-								href: 'https://www.casaboutiquevilladeleyva.com/?lang=es'
-							},
-							{
-								name: 'Hotel Boutique La Española',
-								href: 'https://www.hotelboutiquelaespanola.com/'
-							},
-							{ name: 'Hotel Plaza Mayor', href: 'https://www.hotelplazamayorvilladeleyva.com/' },
-							{ name: 'Maria Bonita Hotel', href: 'https://www.mariabonitahoteles.com/' },
-							{ name: 'Casa Terra', href: 'https://casa-terra.hotels-villa-de-leyva.com/es/' },
-							{
-								name: 'Airbnb',
-								href: 'https://www.airbnb.com/s/Villa-de-Leyva--Boyac%C3%A1--Colombia/homes?place_id=ChIJGaF4PA7XQY4R3ZMRZnhrRGM&search_type=unknown&refinement_paths%5B%5D=%2Fhomes&acp_id=44e51621-a6ca-4e8f-95d3-9965a792afd0&date_picker_type=flexible_dates&checkin=2027-07-02&checkout=2027-07-06&query=Villa%20de%20Leyva%2C%20Boyac%C3%A1%2C%20Colombia&flexible_trip_lengths%5B%5D=one_week&monthly_start_date=2026-08-01&monthly_length=3&monthly_end_date=2026-11-01&search_mode=regular_search&price_filter_input_type=2&price_filter_num_nights=4&channel=EXPLORE&source=structured_search_input_header'
-							}
-						]
-					},
-					{
-						price: '$$$',
-						items: [
-							{
-								name: 'Campanario de La Villa',
-								href: 'https://www.hotelcampanariodelavilla.com/'
-							},
-							{ name: 'La Corada', href: 'https://www.lacorada.com/' },
-							{ name: 'Casa Real', href: 'https://www.villadeleyvahotelcr.com/en/' },
-							{ name: 'Hotel El Giro', href: 'https://elgiro.com.co/reservaciones/' },
-							{ name: 'Casa del Árbol', href: 'https://hotellacasadelarbol.com/' },
-							{ name: 'Hotel Casa Alcestre', href: 'https://www.alcestre.com/' }
-						]
-					}
-				]
+				tiers: villaDeLeyvaHotelTiers
 			}
 		]
 	},
@@ -654,7 +656,7 @@ export const pages: Record<string, PageContent> = {
 			{
 				question: 'What’s the dress code?',
 				paragraphs: [
-					'Garden formal attire. Our dinner will be outdoors under the open sky, so we recommend bringing a light jacket or shawl for the evening. For the ladies, we recommend wearing shoes or heels that are comfortable to walk in on cobblestone.'
+					'Formal attire; bright or pastel colors are more than welcome. Our dinner will be outdoors under the open sky, so we recommend bringing a light jacket or shawl for the evening. For the ladies, we recommend avoiding stiletto heels and instead wearing shoes or heels that are comfortable to walk in on cobblestone. We also kindly ask that you avoid white, ivory, light beige, or similar shades that could resemble the bride.'
 				]
 			},
 			{
@@ -693,26 +695,26 @@ export const pages: Record<string, PageContent> = {
 			{
 				heading: 'Cómo nos conocimos',
 				paragraphs: [
-					'En marzo de 2024, Fred y Carolina se dieron un “like” en Bumble. Después de conocerse un poco, Fred quedó inspirado por la emoción de Carolina por la vida y su curiosidad intelectual, y Carolina quedó inspirada por los intereses y la amabilidad de Fred. Con la obsesión de Fred por los juegos de mesa, Carolina lo acompañó a The Board Room en Washington DC, donde compartieron un par de cervezas jugando Jenga, Sushi Go y UNO. Esa noche de invierno, mientras Fred acompañaba a Carolina al metro, él siempre recordará cómo ella se aferró a sus brazos esperando la señal para cruzar, tratando de mantenerse abrigada.'
+					'En marzo de 2024, Fred y Carolina deslizaron a la derecha en Bumble. Después de conocerse un poco, Fred quedó inspirado por la emoción de Carolina por la vida y su curiosidad intelectual, y Carolina quedó inspirada por los intereses y la amabilidad de Fred. Con la obsesión de Fred por los juegos de mesa, su primera cita fue en The Board Room en Washington DC, donde compartieron un par de cervezas jugando Jenga, Sushi Go y UNO. Esa noche de invierno, mientras Fred acompañaba a Carolina al metro, él siempre recordará cómo ella, tratando de mantenerse abrigada, le abrazó esperando la señal para cruzar la calle.'
 				],
 				images: storyCarousel
 			},
 			{
 				heading: 'Conociendo DC (y Arlington)',
 				paragraphs: [
-					'Los meses que siguieron fueron un torbellino, y Fred y Caro se propusieron probar todo lo que DC (y Arlington) tenían para ofrecer: una vista panorámica de 360 grados de DC, una tarde explorando Dupont Underground, minigolf, shows de comedia, festivales de música cultural, un recorrido por las embajadas, noches de “paint and sip”, una excursión a National Harbor y, por supuesto, más arepas de pollo y whiskey de las que cualquiera de los dos puede contar. En algún punto, entre incontables noches jugando Overcooked, Fred también se propuso la seria tarea de aprender español y la diferencia entre “Te Amo” y “Te Quiero”, mientras Carolina se dedicaba a aprender los juegos de mesa favoritos de Fred.'
+					'Los meses que siguieron fueron una gran aventura, y Fred y Caro se propusieron probar todo lo que DC (y Arlington) tenían para ofrecer: una vista panorámica de 360 grados de DC, una tarde explorando Dupont Underground, minigolf, shows de comedia, festivales de cultura, un recorrido por las embajadas, noches de “paint and sip”, ir a National Harbor y, por supuesto, comer más arepas de "Chicken & Whiskey" de las que ambos pueden contar. En algún punto, entre incontables noches jugando Overcooked, Fred también se propuso la seria tarea de aprender español y la diferencia entre “Te Amo” y “Te Quiero”, mientras Carolina se dedicaba a aprender los juegos de mesa favoritos de Fred.'
 				]
 			},
 			{
 				heading: 'Grecia, abril de 2025',
 				paragraphs: [
-					'Con el paso del tiempo, y para celebrar nuestro primer aniversario, hicimos nuestro primer viaje internacional juntos a Grecia en abril de 2025. No solo sobrevivimos, sino que también nos dimos cuenta de que era el comienzo de algo más significativo que ambos queríamos seguir construyendo.'
+					'Con el paso del tiempo, y para celebrar nuestro primer aniversario, hicimos nuestro primer viaje internacional juntos a Grecia en abril de 2025. No solo sobrevivimos al viaje, sino que también nos dimos cuenta de que era el comienzo de algo más significativo que ambos queríamos seguir construyendo.'
 				]
 			},
 			{
 				heading: 'Harpers Ferry',
 				paragraphs: [
-					'El 8 de noviembre de 2025, Fred y Carolina se fueron de viaje de fin de semana a Harpers Ferry, un pueblito encantador en West Virginia con hermosas caminatas y vistas del follaje de otoño. Esa mañana, Carolina se preguntaba por qué Fred había decidido usar un pantalón semiformal para la caminata (la actividad principal del viaje), pero Fred insistió en que eran los únicos pantalones que le quedaban limpios en la maleta. Conociendo las habilidades de Fred para empacar, Carolina le creyó. Durante la subida, Fred tuvo que hacerse cargo de la bolsa con el agua y el protector solar, y convencer a Carolina de dejar un lugar hermoso para buscar uno más apartado y “explorar”. Encontramos una roca con una vista increíble donde nos sentamos juntos, uno al lado del otro. Fred había preparado un discurso (y su outfit), pero dada la emoción y la sorpresa del momento, Carolina no recuerda mucho más allá de la primera frase y su primera reacción: “¿Esto es en serio?”. Era en serio, ¡y aquí estamos!'
+					'El 8 de noviembre de 2025, Fred y Carolina se fueron de viaje de fin de semana a Harpers Ferry, un pueblito encantador en West Virginia con hermosas caminatas y vistas del paisaje de otoño. Esa mañana de noviembre, Carolina se preguntaba por qué Fred había decidido usar un pantalón semi formal para la caminata (la actividad principal del viaje), pero Fred insistió en que eran los únicos pantalones que había empacado para el viaje. Conociendo las habilidades de Fred para hacer maletas, Carolina pensó que ese era el caso. Durante la subida, Fred no solo tuvo que asegurarse que Carolina no tocara la maleta con el agua y el protector solar sino también lograr convencerla de dejar un mirador hermoso para buscar uno más apartado y “explorar”. Así fue como encontramos una roca con una vista increíble donde nos sentamos juntos, uno al lado del otro. Fred había preparado un discurso (y su outfit), pero dada la emoción y la sorpresa del momento, Carolina no recuerda mucho más allá de la primera frase y su primera reacción: “¿Es en serio?”. Era en serio, ¡y aquí estamos!'
 				]
 			},
 			{
@@ -794,7 +796,7 @@ export const pages: Record<string, PageContent> = {
 					{
 						title: 'Cena de bienvenida',
 						paragraphs: [
-							'¡Empecemos la celebración! Acompáñennos la noche antes de nuestra boda para una velada informal de tragos y bocados.',
+							'¡Empecemos la celebración! Acompáñennos la noche antes de nuestra boda para una velada informal con pasabocas y cócteles. Más información sobre el lugar exacto semanas antes de la boda.',
 							'Hora: 7:00 PM',
 							'Lugar: zona Plaza Mayor, Villa de Leyva'
 						]
@@ -809,7 +811,7 @@ export const pages: Record<string, PageContent> = {
 						paragraphs: [
 							'Hora: 3:00 PM',
 							'Lugar: Casa de Buganvilias, Villa de Leyva',
-							'Vestimenta formal de jardín. Nuestra cena será al aire libre bajo el cielo abierto, así que recomendamos traer una chaqueta ligera o chal para la noche. Para las damas, recomendamos usar zapatos o tacones cómodos para caminar sobre calles empedradas.'
+							'Vestimenta formal, queremos que luzcan espectaculares y estén cómodos. Los animamos a usar colores alegres, estampados florales y telas frescas. Nuestra cena será al aire libre bajo el cielo abierto, así que recomendamos traer una chaqueta ligera o chal para la noche. Para las damas, recomendamos usar zapatos o tacones cómodos para caminar sobre calles empedradas y evitar usar vestidos blancos o en colores similares.'
 						]
 					}
 				]
@@ -839,11 +841,11 @@ export const pages: Record<string, PageContent> = {
 				]
 			},
 			{
-				heading: 'Aduana en el BOG',
+				heading: 'Aduanas en Colombia (BOG)',
 				level: 4,
 				paragraphs: [
-					'Es obligatorio para todos los viajeros que ingresan a Colombia diligenciar el formulario Check-MIG. El Check-MIG es la versión colombiana de una declaración de salud, y todos los visitantes deben completarlo antes de llegar.',
-					'Al llegar, pasarán a la fila de migración, que puede tardar entre 30 minutos y 2 horas dependiendo del tráfico aéreo. El oficial de migración revisará su formulario Check-MIG, así que tengan listo el comprobante.'
+					'Es obligatorio para todos los viajeros que ingresan a Colombia diligenciar el formulario Check-MIG. El formulario Check MIG es la versión colombiana de un formulario de declaración de salud, que requiere que todos los visitantes compartan su estado de salud con las autoridades colombianas. Te tardas unos 2 minutos en completarlo, tu aerolínea te pedirá que lo completes antes de abordar y recibirás una copia por correo electrónico.',
+					'Al llegar, te llevarán a la fila de aduanas, lo que puede demorar entre 30 minutos y 2 horas, dependiendo del tráfico aéreo. El funcionario de aduanas verá tu formulario CheckMIG, ¡asegúrate de tenerlo a la mano! Cuando compartes tu pasaporte con la aduana, puedes compartir que vas a una boda en Villa de Leyva.'
 				],
 				links: [{ label: 'Check-MIG', href: 'https://apps.migracioncolombia.gov.co/pre-registro/public/preregistro.jsf' }]
 			},
@@ -889,6 +891,23 @@ export const pages: Record<string, PageContent> = {
 			}
 		]
 	},
+	'/es/hotels/': {
+		type: 'listings',
+		title: 'Hoteles',
+		intro: [
+			'Queremos que su estadía sea lo más fácil y cómoda posible. A continuación les recomendamos hoteles en Villa de Leyva que están en zonas convenientes para las actividades y la logística de transporte.',
+			'También pueden encontrar más opciones en [Booking](https://www.booking.com) o [Airbnb](https://www.airbnb.com). Pueden coordinar con familiares y amigos para alquilar un apartamento o una casa completa por un precio mucho menor.'
+		],
+		groups: [
+			{
+				heading: 'Hoteles en Villa de Leyva',
+				intro: [
+					'Les recomendamos alojarse a poca distancia caminando de la plaza, ya que allí serán los puntos de recogida y regreso. Si se alojan en las afueras, probablemente necesitarán un vehículo para movilizarse.'
+				],
+				tiers: villaDeLeyvaHotelTiers
+			}
+		]
+	},
 	'/es/faqs/': {
 		type: 'faq',
 		title: 'Preguntas frecuentes',
@@ -896,7 +915,7 @@ export const pages: Record<string, PageContent> = {
 			{
 				question: '¿Es seguro viajar a Colombia?',
 				paragraphs: [
-					'Colombia se ha convertido en un destino turístico cada vez más popular y es generalmente muy acogedor con los visitantes. Bogotá y Villa de Leyva tienen buena infraestructura turística y se consideran seguros para los visitantes. Queremos que se sientan completamente tranquilos durante su estadía en Colombia. Este es un país cálido y acogedor, lleno de gente maravillosa, y estamos aquí para que su experiencia sea lo más fácil y agradable posible. Como en cualquier viaje internacional, recomendamos precauciones básicas de seguridad:'
+					'Colombia se ha convertido en un destino turístico cada vez más popular y es muy acogedor con los visitantes. Bogotá y Villa de Leyva tienen buena infraestructura turística y se consideran seguras para los turistas. Queremos que se sientan completamente tranquilos durante su estadía en Colombia. Este es un país cálido y acogedor, lleno de gente maravillosa, y estamos aquí para que su experiencia sea lo más fácil y agradable posible. Como en cualquier viaje internacional, recomendamos precauciones básicas de seguridad:'
 				],
 				list: [
 					'Estén atentos a su entorno en zonas concurridas.',
@@ -913,7 +932,7 @@ export const pages: Record<string, PageContent> = {
 			{
 				question: '¿Dónde alojarse?',
 				paragraphs: ['Hemos preparado una lista de hoteles. Revisen la sección de recomendaciones.'],
-				links: [{ label: 'Hoteles', href: '/hotels/' }]
+				links: [{ label: 'Hoteles', href: '/es/hotels/' }]
 			},
 			{
 				question: '¿Cuál es la moneda local?',
@@ -930,7 +949,7 @@ export const pages: Record<string, PageContent> = {
 			{
 				question: '¿Cuál es el código de vestimenta?',
 				paragraphs: [
-					'Vestimenta formal de jardín. Nuestra cena será al aire libre bajo el cielo abierto, así que recomendamos traer una chaqueta ligera o chal para la noche. Para las damas, recomendamos usar zapatos o tacones cómodos para caminar sobre calles empedradas.'
+					'Vestimenta formal, los colores alegres o pasteles son más que bienvenidos. Nuestra cena será al aire libre bajo el cielo abierto, así que recomendamos traer una chaqueta ligera o chal para la noche. Para las damas, recomendamos evitar zapatos de aguja fina. Preferiblemente usar zapatos o tacones cómodos para caminar sobre calles empedradas. También les pedimos amablemente evitar el color blanco, marfil, beige claro o tonos similares que puedan asemejarse a la novia.'
 				]
 			},
 			{
