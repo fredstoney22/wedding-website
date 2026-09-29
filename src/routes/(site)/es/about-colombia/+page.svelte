@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-	<title>{pageTitle('Sobre Colombia')}</title>
+	<title>{pageTitle('Acerca de Colombia')}</title>
 </svelte:head>
 
 {#if content?.type === 'colombia'}

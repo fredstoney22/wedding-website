@@ -81,7 +81,7 @@ export const navigationEs: NavItem[] = [
 	{ label: 'RSVP', href: '/es/rsvp/' },
 	{ label: 'Horario', href: '/es/schedule/' },
 	{ label: 'Viaje', href: '/es/travel-information/' },
-	{ label: 'Sobre Colombia', href: '/es/about-colombia/' },
+	{ label: 'Acerca de Colombia', href: '/es/about-colombia/' },
 	{
 		label: 'Recomendaciones',
 		href: '/es/food-and-drink/',
@@ -590,7 +590,8 @@ export const pages: Record<string, PageContent> = {
 					{
 						label: 'Bogota Beer Company (Traditional Colombian Brewery)',
 						href: 'https://www.tripadvisor.com/Restaurant_Review-g676524-d15670431-Reviews-BBC_Cerveceria_Bodega_Villa_de_Leyva-Villa_de_Leyva_Boyaca_Department.html'
-					}
+					},
+					{ label: 'La Galleta', href: 'https://lagalleta.com.co/' }
 				]
 			}
 		]
@@ -929,7 +930,7 @@ export const pages: Record<string, PageContent> = {
 	},
 	'/es/about-colombia/': {
 		type: 'colombia',
-		title: 'Sobre Colombia',
+		title: 'Acerca de Colombia',
 		intro: [
 			'¡Muchas gracias por venir hasta aquí! Significa muchísimo para nosotros que hayan viajado tan lejos para celebrar nuestro amor.',
 			'¡Bienvenidos a la hermosa Colombia, el segundo país más biodiverso del mundo, donde los esperan paisajes impresionantes, una cultura vibrante y una cálida hospitalidad!',
@@ -1165,7 +1166,8 @@ export const pages: Record<string, PageContent> = {
 					{
 						label: 'Bogota Beer Company (cervecería colombiana)',
 						href: 'https://www.tripadvisor.com/Restaurant_Review-g676524-d15670431-Reviews-BBC_Cerveceria_Bodega_Villa_de_Leyva-Villa_de_Leyva_Boyaca_Department.html'
-					}
+					},
+					{ label: 'La Galleta', href: 'https://lagalleta.com.co/' }
 				]
 			}
 		]
