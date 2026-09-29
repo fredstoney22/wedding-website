@@ -81,6 +81,17 @@ export const navigationEs: NavItem[] = [
 	{ label: 'RSVP', href: '/es/rsvp/' },
 	{ label: 'Horario', href: '/es/schedule/' },
 	{ label: 'Viaje', href: '/es/travel-information/' },
+	{ label: 'Sobre Colombia', href: '/es/about-colombia/' },
+	{
+		label: 'Recomendaciones',
+		href: '/es/food-and-drink/',
+		children: [
+			{ label: 'Comida y bebida', href: '/es/food-and-drink/' },
+			{ label: 'Qué hacer', href: '/es/things-to-do/' },
+			{ label: 'Hoteles', href: '/es/hotels/' },
+			{ label: 'Restaurantes', href: '/es/restaurants/' }
+		]
+	},
 	{ label: 'Preguntas', href: '/es/faqs/' }
 ];
 
@@ -518,7 +529,7 @@ export const pages: Record<string, PageContent> = {
 						paragraphs: [
 							'A home designed by architect Octavio Mendoza that seems straight out of a fairy tale. With its organic shape and terracotta hue, the house blends perfectly with the surrounding landscape.'
 						],
-						links: [{ label: 'Casa Terracota', href: 'https://casaterracota.com/en/casa-terracotta/' }]
+						links: [{ label: 'Casa Terracota', href: 'https://casaterracota.com/' }]
 					},
 					{
 						heading: 'Just outside town',
@@ -688,6 +699,7 @@ export const pages: Record<string, PageContent> = {
 			alt: 'Fred y Caro',
 			aspect: 'landscape'
 		},
+		carousel: storyCarousel,
 		paragraphs: [
 			'Estamos muy emocionados de compartir este fin de semana con ustedes, y agradecemos profundamente el impacto que han tenido en el camino que nos llevó el uno al otro.',
 			'Tenemos información detallada sobre el lugar de la boda, el viaje y el alojamiento [aquí](/es/travel-information/). Por favor contáctennos si tienen alguna pregunta.',
@@ -877,7 +889,7 @@ export const pages: Record<string, PageContent> = {
 				heading: 'Transporte en Bogotá',
 				level: 4,
 				paragraphs: [
-					'Bogotá ofrece una variedad de opciones de transporte, incluyendo taxis oficiales del aeropuerto, servicios de transporte privado como Uber, y transporte privado. Aunque Colombia es en general un país seguro, tomen precauciones adicionales y NO tomen un taxi en la calle.'
+					'Bogotá ofrece una variedad de opciones de transporte, incluyendo taxis oficiales del aeropuerto, servicios de transporte privado como Uber, y transporte privado. Aunque Colombia es en general un país seguro, tomen precauciones adicionales y **NO tomen un taxi en la calle**.'
 				],
 				children: [
 					{
@@ -911,6 +923,249 @@ export const pages: Record<string, PageContent> = {
 					'El viaje dura aproximadamente 3 horas en bus privado, y esperamos que disfruten del hermoso paisaje mientras viajan junto a familiares y amigos.',
 					'Si viven en Bogotá y tienen vehículo, les pedimos amablemente que conduzcan directamente a Villa de Leyva en lugar de usar el transporte proporcionado. ¡Gracias por su colaboración!',
 					'Si su itinerario de viaje no coincide con los horarios programados del bus, les recomendamos organizar transporte privado. Por favor contacten a +57 3215009618 para más información y recomendaciones.'
+				]
+			}
+		]
+	},
+	'/es/about-colombia/': {
+		type: 'colombia',
+		title: 'Sobre Colombia',
+		intro: [
+			'¡Muchas gracias por venir hasta aquí! Significa muchísimo para nosotros que hayan viajado tan lejos para celebrar nuestro amor.',
+			'¡Bienvenidos a la hermosa Colombia, el segundo país más biodiverso del mundo, donde los esperan paisajes impresionantes, una cultura vibrante y una cálida hospitalidad!',
+			'Su viaje comienza en Bogotá, nuestra vibrante capital, desde donde ofreceremos opciones de transporte hacia el pintoresco pueblo de Villa de Leyva, Boyacá, el hermoso escenario de nuestra boda.',
+			'Aunque el fin de semana de la boda será en Villa de Leyva, esperamos que tengan la oportunidad de descubrir más de Colombia durante su visita. Para ayudarles a aprovechar al máximo su viaje, incluimos recomendaciones para los destinos que vivirán con nosotros, así como algunos de nuestros lugares favoritos en el país.',
+			'Ya sea que les atraigan los pueblos coloniales, las montañas exuberantes, las playas del Caribe o las famosas regiones cafeteras, Colombia tiene algo para todos. ¡No vemos la hora de que vivan la calidez, la belleza y la diversidad del país que vio nacer a Caro!'
+		],
+		cities: [
+			{
+				heading: 'Bogotá',
+				scriptHeading: true,
+				paragraphs: [
+					'Bogotá es una metrópolis de gran altitud ubicada en la cordillera de los Andes (2.640 metros sobre el nivel del mar) y la vibrante capital de Colombia, que ofrece una fascinante mezcla de historia, diversidad cultural y paisajes naturales impresionantes. Si tienen tiempo antes o después de la boda, les recomendamos conocer algunos de los lugares más destacados de Bogotá. Consulten nuestra sección de Recomendaciones para ver qué hacer en Bogotá.',
+					'En Bogotá, las temperaturas mínimas promedio van de 7 °C a 10 °C (45 °F a 50 °F), mientras que las máximas durante el día suelen estar entre 14 °C y 19 °C (57 °F a 66 °F). Por su altitud, el clima de Bogotá puede cambiar rápidamente, así que es buena idea vestirse por capas y estar preparados para los cambios.'
+				],
+				image: { src: '/images/bogota.jpg', alt: 'Bogotá', aspect: 'landscape' }
+			},
+			{
+				heading: 'Villa de Leyva',
+				scriptHeading: true,
+				paragraphs: [
+					'Ubicada en las montañas del departamento de Boyacá, Villa de Leyva es uno de los pueblos coloniales más encantadores y mejor conservados de Colombia, y el lugar donde será nuestra boda. Fundada en 1572, sus calles empedradas, sus casas blancas y su arquitectura atemporal crean un ambiente que se siente como viajar en el tiempo. En el corazón del pueblo está la icónica Plaza Mayor, una de las plazas más grandes de Sudamérica, rodeada de cafés, tiendas de artesanías y lugares históricos. Villa de Leyva es conocida por su aceite de oliva, su vino y sus artículos de cuero. Es un lugar donde la historia, la naturaleza y el romance se unen, lo que lo convierte en el destino perfecto para celebrar uno de los fines de semana más significativos de nuestras vidas. No vemos la hora de compartir este pueblo mágico con ustedes.',
+					'Para ver más recomendaciones sobre qué hacer en Villa de Leyva y sus alrededores, visiten Qué hacer.'
+				],
+				image: { src: '/images/villa-de-leyva.jpg', alt: 'Villa de Leyva', aspect: 'landscape' }
+			},
+			{
+				heading: 'Cartagena',
+				paragraphs: [
+					'Cartagena es uno de los destinos costeros más vibrantes de Colombia, conocida por su colorida arquitectura colonial, su ambiente caribeño y su animada ciudad amurallada llena de plazas, restaurantes y música en la calle. Pueden pasar los días caminando por el Centro Histórico, declarado Patrimonio de la Humanidad por la UNESCO, visitar el imponente Castillo de San Felipe, descansar en playas cercanas como Bocagrande o hacer un paseo en lancha a las Islas del Rosario para disfrutar de aguas turquesa cristalinas y arrecifes de coral. Para llegar desde Bogotá, la opción más eficiente es un vuelo directo, que dura entre 1,5 y 2 horas desde el Aeropuerto Internacional El Dorado; varias aerolíneas tienen rutas diarias frecuentes.'
+				],
+				image: { src: '/images/cartagena.jpg', alt: 'Cartagena', aspect: 'portrait' }
+			},
+			{
+				heading: 'Santa Marta',
+				paragraphs: [
+					'Santa Marta es uno de los destinos caribeños más hermosos de Colombia, conocida por su ambiente de playa relajado, sus aguas cálidas y el acceso a algunos de los paisajes naturales más impresionantes del país. Es la mezcla perfecta de historia y naturaleza: pueden recorrer el centro histórico (una de las ciudades más antiguas de Sudamérica), descansar en playas cercanas como El Rodadero o Taganga, o hacer un viaje corto a las montañas para llegar al impresionante Parque Nacional Natural Tayrona, donde la selva se encuentra con el mar turquesa. Para llegar desde Bogotá, la opción más fácil es un vuelo directo a Santa Marta, que dura entre 1,5 y 2 horas.'
+				],
+				image: { src: '/images/santa-marta.jpg', alt: 'Santa Marta', aspect: 'portrait' }
+			},
+			{
+				heading: 'Medellín',
+				paragraphs: [
+					'Medellín, conocida como la “Ciudad de la Eterna Primavera”, es uno de los destinos más dinámicos e innovadores de Colombia, con una mezcla perfecta de cultura, vida nocturna y paisajes de montaña. Ubicada en el Valle de Aburrá, es famosa por su clima agradable todo el año, sus barrios vibrantes como El Poblado y Laureles, y su transformación en un centro de diseño, arte y tecnología. Los visitantes pueden subir en los icónicos metrocables sobre las comunas, recorrer la Plaza Botero y el Museo de Antioquia, o hacer paseos de un día a joyas cercanas como Guatapé y la impresionante Piedra del Peñol. Para llegar desde Bogotá, la opción más rápida y cómoda es un vuelo directo de aproximadamente 1 hora.'
+				],
+				image: { src: '/images/medellin-1.jpg', alt: 'Medellín', aspect: 'portrait' }
+			},
+			{
+				heading: 'Eje Cafetero',
+				paragraphs: [
+					'El Eje Cafetero es una de las regiones más pintorescas y encantadoras de Colombia, famosa por sus colinas verdes, sus pueblos de estilo colonial y sus fincas cafeteras. La mejor forma de conocerlo es a través de sus pueblos, como Salento, conocido por sus calles coloridas y el acceso al impresionante Valle del Cocora, hogar de las palmas de cera más altas del mundo. Cerca, Manizales ofrece vistas espectaculares de las montañas y aguas termales, mientras que Filandia es una alternativa más tranquila e igual de colorida que Salento, con tiendas de artesanías y hermosos miradores.',
+					'El Eje Cafetero es muy accesible desde Bogotá; la opción más cómoda es un vuelo directo a los aeropuertos principales de la región, en Manizales o Armenia, de aproximadamente 1 hora. Desde cualquiera de estas ciudades pueden llegar fácilmente a pueblos cafeteros cercanos como Salento o Filandia en carro o en jeep compartido (entre 30 minutos y 1,5 horas, según el destino).'
+				],
+				image: { src: '/images/eje-cafetero.jpg', alt: 'Eje Cafetero', aspect: 'portrait' }
+			},
+			{
+				heading: 'La Amazonía',
+				paragraphs: [
+					'La Amazonía colombiana es una de las regiones más remotas y biodiversas del planeta, y ofrece una experiencia completamente diferente a la de las ciudades y los destinos costeros del país. Su punto de partida es Leticia, un pequeño pueblo en la selva ubicado en la triple frontera entre Colombia, Perú y Brasil, al que solo se puede llegar por aire o por río, lo que ayuda a conservar su ambiente intacto. Desde Leticia pueden hacer paseos guiados en lancha por el río Amazonas, ver delfines rosados, visitar comunidades indígenas, caminar por la selva con guías expertos y ver una fauna increíble, incluyendo monos, aves exóticas y especies de plantas únicas. Para llegar desde Bogotá, la única opción es un vuelo directo a Leticia de aproximadamente 2 horas; no hay conexión por carretera.',
+					'Visitar la Amazonía es increíble, pero requiere una buena preparación, porque las condiciones son muy diferentes a las de otros destinos y se exigen ciertas vacunas. Si les interesa conocer la Amazonía, avísennos y les ayudamos a encontrar guías locales certificados.'
+				],
+				image: { src: '/images/amazon.jpg', alt: 'La Amazonía', aspect: 'square' }
+			}
+		]
+	},
+	'/es/food-and-drink/': {
+		type: 'sections',
+		title: 'Comida y bebida',
+		intro: ['¿Qué no me puedo perder en Colombia?'],
+		sections: [
+			{
+				heading: 'Frutas',
+				level: 4,
+				paragraphs: [
+					'Colombia es uno de los países con mayor variedad de frutas del mundo, ¡y muchas solo crecen aquí! Las recomendaciones personales de Caro son:'
+				],
+				list: [
+					'Lulo (cítrico y ácido, se usa en jugos)',
+					'Guanábana (fruta tropical cremosa, muy común en batidos)',
+					'Feijoa',
+					'Chontaduro (fruta salada y almidonada, se come con miel o sal)',
+					'Granadilla',
+					'Uchuva'
+				]
+			},
+			{
+				heading: 'Comida típica',
+				level: 4,
+				list: [
+					'Ajiaco santafereño: la sopa icónica de Bogotá, con pollo, 3 tipos de papa, mazorca, alcaparras y crema de leche',
+					'Sancocho de gallina: sopa de gallina con papa, yuca y plátano verde',
+					'Caldo de costilla: caldo de costilla de res, típico del desayuno, con arroz',
+					'Tamales tolimenses: envueltos en hoja de plátano, rellenos de cerdo, pollo, garbanzos y masa de maíz',
+					'Arepa boyacense: arepa de maíz asada con queso (sencilla pero imprescindible)',
+					'Chocolate completo: chocolate caliente con queso, pan y almojábanas (sí, el queso se mete en el chocolate)',
+					'Almojábanas y pandebono: panes de queso, perfectos con café',
+					'Longaniza boyacense: embutido típico de la región, normalmente asado y servido con arepa o papa',
+					'Jugos naturales: prueben lulo, guanábana, maracuyá y mora. En Colombia los jugos se ofrecen en leche o en agua.'
+				]
+			},
+			{
+				heading: 'Y por supuesto, el café.',
+				level: 4
+			}
+		]
+	},
+	'/es/things-to-do/': {
+		type: 'attractions',
+		title: 'Qué hacer',
+		intro: [
+			'A continuación destacamos algunas de las mejores experiencias en Bogotá y Villa de Leyva. Esperamos que tengan tiempo de conocer estas recomendaciones durante su viaje.',
+			'Aunque nuestras sugerencias se centran en Bogotá y Villa de Leyva, si su agenda lo permite, les recomendamos visitar otras ciudades del país para vivir una experiencia colombiana más completa.',
+			'¡Disfruten el viaje!'
+		],
+		groups: [
+			{
+				heading: 'Bogotá',
+				attractions: [
+					{
+						heading: 'Barrio La Candelaria',
+						level: 5,
+						paragraphs: [],
+						links: [
+							{
+								label: 'Guía de La Candelaria',
+								href: 'https://elrinconcolombiano.com/guia-completa-para-visitar-el-barrio-la-candelaria-de-bogota/'
+							}
+						]
+					},
+					{
+						heading: 'Monserrate',
+						level: 5,
+						paragraphs: [
+							'Suban en el teleférico o el funicular hasta la cima de Monserrate para disfrutar de una vista impresionante de la ciudad.'
+						],
+						links: [{ label: 'Monserrate', href: 'https://monserrate.co/' }]
+					},
+					{
+						heading: 'Museo del Oro',
+						level: 5,
+						paragraphs: [
+							'Visiten el famoso Museo del Oro, que tiene la colección de orfebrería prehispánica más grande del mundo.'
+						],
+						links: [
+							{
+								label: 'Museo del Oro',
+								href: 'https://www.visitingbogota.com/en/museo-del-oro/'
+							}
+						]
+					},
+					{
+						heading: 'Catedral de Sal de Zipaquirá',
+						level: 5,
+						paragraphs: [
+							'Al salir de Bogotá, una parada en la Catedral de Sal es una experiencia inolvidable. Ubicada a entre 1 y 1,5 horas al norte de la ciudad, esta catedral subterránea extraordinaria está tallada en lo profundo de una mina de sal en funcionamiento.'
+						],
+						links: [{ label: 'Catedral de Sal', href: 'https://www.catedraldesal.gov.co/' }]
+					}
+				]
+			},
+			{
+				heading: 'Villa de Leyva',
+				intro: [
+					'Conocida también por su ambiente tranquilo, sus paisajes naturales impresionantes y su rica herencia cultural, Villa de Leyva ofrece la mezcla perfecta de historia, aventura y descanso.'
+				],
+				attractions: [
+					{
+						heading: 'En el pueblo',
+						level: 5,
+						paragraphs: [
+							'Recorran su enorme plaza principal empedrada, visiten el Museo Paleontológico y el Museo del Chocolate, caminen por las calles coloniales con sus casas blancas y disfruten de tardes tranquilas en cafés y tiendas de artesanías.'
+						],
+						links: [
+							{
+								label: 'Museo Paleontológico',
+								href: 'https://ciencias.bogota.unal.edu.co/museos_y_centros/museo_paleontologico_de_villa_de_leyva/'
+							}
+						]
+					},
+					{
+						heading: 'Viñedos',
+						level: 5,
+						paragraphs: ['Experiencias en los viñedos de la región.'],
+						links: [
+							{ label: 'Viñedo Ain Karim', href: 'https://ainkarim.co/' },
+							{ label: 'Viñedo Umaña Dajud', href: 'https://www.umanadajud.com/' }
+						]
+					},
+					{
+						heading: 'Casa Terracota',
+						level: 5,
+						paragraphs: [
+							'Una casa diseñada por el arquitecto Octavio Mendoza que parece sacada de un cuento de hadas. Con su forma orgánica y su color terracota, se integra perfectamente con el paisaje.'
+						],
+						links: [{ label: 'Casa Terracota', href: 'https://casaterracota.com/' }]
+					},
+					{
+						heading: 'En los alrededores',
+						level: 5,
+						paragraphs: [],
+						links: [
+							{ label: 'Pozos Azules', href: 'https://pozosazules.com.co/' },
+							{ label: 'Termales', href: 'https://termalesdevilladeleyva.com/' },
+							{ label: 'Aventura Park', href: 'http://www.aventuraparkvilladeleyva.com/segundo-inicio.html' },
+							{ label: 'Cuatrimotos y buggies', href: 'https://cuatrimotosvilladeleyva.com/' },
+							{ label: 'Granja de Avestruces', href: 'https://www.espexoticas.com.co/' }
+						]
+					}
+				]
+			},
+			{
+				heading: 'Ráquira',
+				intro: ['Este pueblo es perfecto para comprar cerámicas hechas a mano y artesanías coloridas.'],
+				links: [{ label: 'Pueblito de Barro', href: 'https://www.pueblitodebarro.com/' }],
+				attractions: []
+			}
+		]
+	},
+	'/es/restaurants/': {
+		type: 'attractions',
+		title: 'Restaurantes',
+		intro: [],
+		groups: [
+			{
+				heading: 'Villa de Leyva',
+				links: [
+					{ label: 'El Atico', href: 'https://www.instagram.com/centroelatico' },
+					{ label: 'El Patio', href: 'https://www.instagram.com/elpatiovilladeleyva' },
+					{ label: 'Casa San Pedro', href: 'https://casasanpedro.com/' },
+					{ label: 'Bombón Cocina Divina', href: 'https://www.instagram.com/bombondivinacocina' },
+					{ label: 'Chuska Cocina', href: 'https://www.instagram.com/chuskacocina/' },
+					{ label: 'Museo del Chocolate', href: 'https://museodelchocolate.com.co/' },
+					{
+						label: 'Bogota Beer Company (cervecería colombiana)',
+						href: 'https://www.tripadvisor.com/Restaurant_Review-g676524-d15670431-Reviews-BBC_Cerveceria_Bodega_Villa_de_Leyva-Villa_de_Leyva_Boyaca_Department.html'
+					}
 				]
 			}
 		]
@@ -950,8 +1205,28 @@ export const pages: Record<string, PageContent> = {
 				]
 			},
 			{
+				question: 'Consejos para visitar Colombia',
+				list: [
+					'Pregunten siempre los precios con anticipación; en los mercados locales los precios suelen ser negociables.',
+					'“Rappi” es la versión colombiana de UberEats y la principal aplicación de domicilios para comida y productos básicos.',
+					'En Bogotá o cualquier otra ciudad grande, eviten usar el celular a la vista en zonas concurridas (en Villa de Leyva y los pueblos pequeños no hay problema).',
+					'Reserven los tours con anticipación o a través de su hotel cuando sea posible.',
+					'**NO tomen un taxi en la calle.**',
+					'Cuando usen Uber o cualquier otro servicio de transporte, por favor cierren las puertas del carro con suavidad.',
+					'Un simple “Por favor” y “Gracias” siempre se agradece.',
+					'En Colombia la propina se agradece, pero no se espera de la misma forma que en Estados Unidos. Algunos restaurantes incluyen en la cuenta un cargo por servicio opcional del 10% (“propina”).',
+					'Número de emergencias en Colombia: 123 (policía, ambulancia y bomberos).'
+				]
+			},
+			{
+				question: '¿Cómo llego al lugar de la boda?',
+				paragraphs: [
+					'Habrá transporte gratuito desde la Plaza Mayor hasta Casa de Buganvilias (~10 minutos). Compartiremos los horarios exactos de recogida la semana de la boda.'
+				]
+			},
+			{
 				question: '¿Cuándo debo confirmar asistencia (RSVP)?',
-				paragraphs: ['Por favor confirmen antes del 15 de enero de 2027.']
+				paragraphs: ['Por favor confirmen antes del 15 de enero de 2027 a través de esta página web.']
 			},
 			{
 				question: '¿Dónde alojarse?',
@@ -961,7 +1236,29 @@ export const pages: Record<string, PageContent> = {
 			{
 				question: '¿Cuál es la moneda local?',
 				paragraphs: [
-					'Colombia usa el peso colombiano (COP). Las tarjetas Visa y Mastercard son ampliamente aceptadas; Amex es menos común. Conviene llevar algo de efectivo, especialmente en pueblos pequeños.'
+					'Colombia usa el peso colombiano (COP).',
+					'Las tarjetas de crédito son ampliamente aceptadas en las ciudades, pero conviene llevar algo de efectivo, especialmente en los pueblos pequeños. Visa y Mastercard son ampliamente aceptadas; Amex es menos común.',
+					'Hay cajeros automáticos en Bogotá y Villa de Leyva, pero les recomendamos cambiar algo de dinero en el aeropuerto al llegar. Eso sí, no cambien todo su dinero en el aeropuerto, porque las tasas de cambio suelen ser menos favorables.'
+				]
+			},
+			{
+				question: '¿Cómo es el clima en Colombia?',
+				paragraphs: [
+					'Por su geografía montañosa, el clima en Colombia es difícil de predecir y las aplicaciones del clima no suelen ser precisas. Les recomendamos empacar ropa para vestirse por capas y estar preparados para sol, temperaturas frescas y alguna lluvia, ¡todo en el mismo día!',
+					'Villa de Leyva tiene temperaturas templadas, como de primavera, todo el año. Durante el día la temperatura está alrededor de 18–22 °C (65–72 °F) y las noches son más frescas, alrededor de 10–13 °C (50–55 °F). Les recomendamos traer una chaqueta ligera o un suéter, especialmente para la noche.'
+				]
+			},
+			{
+				question: 'Aviso sobre la altitud',
+				paragraphs: [
+					'Bogotá está a 2.640 metros (8.660 pies) sobre el nivel del mar. Algunos visitantes pueden sentir síntomas leves de altura, como falta de aire o dolor de cabeza. Manténganse hidratados, eviten actividades intensas el primer día y tómenlo con calma si es necesario.'
+				]
+			},
+			{
+				question: '¿Qué debo empacar?',
+				list: [
+					'Traigan zapatos cómodos para caminar: Villa de Leyva es conocida por sus calles empedradas.',
+					'Colombia usa electricidad de 110V con enchufes tipo A y tipo B (los mismos de Estados Unidos y Canadá). Los invitados que viajen desde Europa u otras regiones necesitarán un adaptador.'
 				]
 			},
 			{
@@ -983,26 +1280,6 @@ export const pages: Record<string, PageContent> = {
 				]
 			}
 		]
-	},
-	/* Legacy Spanish URL → same as /es/ home content for bookmarks */
-	'/espanol1/': {
-		type: 'home',
-		title: 'INICIO',
-		hero: {
-			src: '/images/hero.jpg',
-			alt: 'Fred y Caro',
-			aspect: 'landscape'
-		},
-		paragraphs: [
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-			'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
-		],
-		countdownTarget: siteMeta.countdownTarget,
-		details: {
-			date: '3 de julio de 2027',
-			time: '3:00 PM',
-			venue: 'Casa de Buganvilias, Villa de Leyva'
-		}
 	}
 };
 

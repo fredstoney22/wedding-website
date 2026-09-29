@@ -20,7 +20,11 @@
 		'/es/rsvp/',
 		'/es/schedule/',
 		'/es/travel-information/',
+		'/es/about-colombia/',
+		'/es/food-and-drink/',
+		'/es/things-to-do/',
 		'/es/hotels/',
+		'/es/restaurants/',
 		'/es/faqs/'
 	]);
 
@@ -74,7 +78,7 @@
 							type="button"
 							class="submenu-toggle"
 							aria-expanded={expandedRecommendations}
-							aria-label="Toggle recommendations submenu"
+							aria-label={isEs ? 'Mostrar u ocultar recomendaciones' : 'Toggle recommendations submenu'}
 							onclick={() => (expandedRecommendations = !expandedRecommendations)}
 						>
 							+
