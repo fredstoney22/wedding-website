@@ -30,9 +30,17 @@
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify(data)
 			});
-			const payload = (await res.json().catch(() => ({}))) as { message?: string; error?: string };
+			const payload = (await res.json().catch(() => ({}))) as {
+				message?: string;
+				error?: string;
+				field?: string;
+			};
 			if (!res.ok) {
-				errorMessage = payload.error ?? 'Something went wrong. Please try again.';
+				const missing = fields.find((f) => f.name === payload.field);
+				errorMessage = missing
+					? `Please fill in: ${missing.label}`
+					: (payload.error ?? 'Something went wrong. Please try again.');
+				if (missing) document.getElementById(missing.name)?.focus();
 				return;
 			}
 			submitted = true;
