@@ -24,11 +24,17 @@ function escapeHtml(value: string) {
 		.replaceAll('"', '&quot;');
 }
 
+const SHEET_TIMEOUT_MS = 8000;
+const SHEET_ERROR = 'Could not save RSVP to the spreadsheet. Please try again later.';
+
 export const POST: RequestHandler = async ({ request }) => {
+	const userAgent = request.headers.get('user-agent') ?? 'unknown';
+
 	let body: Record<string, unknown>;
 	try {
 		body = (await request.json()) as Record<string, unknown>;
 	} catch {
+		console.warn('[rsvp] rejected: invalid JSON body', { userAgent });
 		return json({ error: 'Invalid JSON body.' }, { status: 400 });
 	}
 
@@ -36,7 +42,8 @@ export const POST: RequestHandler = async ({ request }) => {
 	for (const key of REQUIRED) {
 		const value = body[key];
 		if (typeof value !== 'string' || !value.trim()) {
-			return json({ error: `Missing required field: ${key}` }, { status: 400 });
+			console.warn('[rsvp] rejected: missing required field', { field: key, userAgent });
+			return json({ error: `Missing required field: ${key}`, field: key }, { status: 400 });
 		}
 		payload[key] = value.trim();
 	}
@@ -63,40 +70,55 @@ export const POST: RequestHandler = async ({ request }) => {
 	}
 
 	if (sheetUrl) {
-		const sheetRes = await fetch(sheetUrl, {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify(sheetPayload),
-			redirect: 'follow'
-		});
+		// On any save failure, log the full payload so the RSVP can be recovered by hand.
+		let detail: string;
+		try {
+			const sheetRes = await fetch(sheetUrl, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(sheetPayload),
+				redirect: 'follow',
+				signal: AbortSignal.timeout(SHEET_TIMEOUT_MS)
+			});
 
-		const detail = await sheetRes.text();
+			detail = await sheetRes.text();
 
-		if (!sheetRes.ok) {
-			console.error('[rsvp] Google Sheets webhook error', sheetRes.status, detail);
-			return json(
-				{ error: 'Could not save RSVP to the spreadsheet. Please try again later.' },
-				{ status: 502 }
+			if (!sheetRes.ok) {
+				console.error('[rsvp] Google Sheets webhook error', sheetRes.status, detail, {
+					payload: sheetPayload,
+					userAgent
+				});
+				return json({ error: SHEET_ERROR }, { status: 502 });
+			}
+		} catch (err) {
+			const timedOut = err instanceof Error && err.name === 'TimeoutError';
+			console.error(
+				timedOut
+					? `[rsvp] Google Sheets webhook timed out after ${SHEET_TIMEOUT_MS}ms`
+					: '[rsvp] Google Sheets webhook request failed',
+				err,
+				{ payload: sheetPayload, userAgent }
 			);
+			return json({ error: SHEET_ERROR }, { status: 502 });
 		}
 
 		let sheetBody: { ok?: boolean };
 		try {
 			sheetBody = JSON.parse(detail) as { ok?: boolean };
 		} catch {
-			console.error('[rsvp] Google Sheets webhook invalid JSON', detail);
-			return json(
-				{ error: 'Could not save RSVP to the spreadsheet. Please try again later.' },
-				{ status: 502 }
-			);
+			console.error('[rsvp] Google Sheets webhook invalid JSON', detail.slice(0, 500), {
+				payload: sheetPayload,
+				userAgent
+			});
+			return json({ error: SHEET_ERROR }, { status: 502 });
 		}
 
 		if (sheetBody.ok !== true) {
-			console.error('[rsvp] Google Sheets webhook rejected', detail);
-			return json(
-				{ error: 'Could not save RSVP to the spreadsheet. Please try again later.' },
-				{ status: 502 }
-			);
+			console.error('[rsvp] Google Sheets webhook rejected', detail, {
+				payload: sheetPayload,
+				userAgent
+			});
+			return json({ error: SHEET_ERROR }, { status: 502 });
 		}
 	}
 
